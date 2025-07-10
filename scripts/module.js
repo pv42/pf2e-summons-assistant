@@ -4,7 +4,7 @@ Hooks.once("init", async function () {});
 
 Hooks.once("ready", async function () {
   Hooks.on("createChatMessage", async (msg, _info, userID) => {
-    if (userID !== Gamepad.user.id) return;
+    if (userID !== game.user.id) return;
     const uuid = msg?.item?.sourceId;
     const castRank = msg?.flags?.pf2e?.origin?.castRank;
     if (!uuid) return;
