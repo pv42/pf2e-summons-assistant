@@ -1,5 +1,5 @@
 ## 1.0.1
--`Changes`
+- `Changes`
   - a sort order dropdown(@Sasano)
   - a filter by trait when multiple traits were possible (@Sasano)
   - a "Only with image" checkbox (@Sasano)
