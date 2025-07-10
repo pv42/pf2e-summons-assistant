@@ -1,3 +1,10 @@
+## 1.0.1
+-`Changes`
+  - a sort order dropdown(@Sasano)
+  - a filter by trait when multiple traits were possible (@Sasano)
+  - a "Only with image" checkbox (@Sasano)
+  - Removed extraneous Toolbelt code (@Sasano)
+
 ## 1.0.0
 
 - `New`
