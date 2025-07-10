@@ -6,15 +6,14 @@ Hooks.once("ready", async function () {
   Hooks.on("createChatMessage", async (msg, _info, userID) => {
     if (userID !== game.user.id) return;
     const uuid = msg?.item?.sourceId;
-    const castRank = msg?.flags?.pf2e?.origin?.castRank;
+    let rank = msg?.flags?.pf2e?.origin?.castRank;
     if (!uuid) return;
-    if (typeof castRank !== "number") return;
+    if (typeof rank !== "number") return;
     // TODO handle Incarnate spells at a later date
     if (!msg?.flags?.pf2e?.origin?.rollOptions?.includes("summon")) return;
     let traits = [];
     let level = 20;
 
-    let rank = options.rank;
     switch (uuid) {
       case SPELLS.SUMMON.SUMMON_DRAGON:
         traits = ["dragon"];
