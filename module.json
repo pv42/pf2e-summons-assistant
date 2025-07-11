@@ -31,6 +31,16 @@
           "verified": "2.2.0"
         }
       }
+    ],
+    "recommends": [
+      {
+        "id": "pf2e-sustain-reminder",
+        "name": "PF2e Sustain Reminder",
+        "type": "module",
+        "reason": "This module makes it easier to track what summons you are sustaining",
+        "manifest": "https://github.com/Lank891/Foundry-Pf2e-Sustain-Reminder/releases/latest/download/module.json",
+        "compatibility": {}
+      }
     ]
   },
   "esmodules": ["scripts/module.js"],
