@@ -16,3 +16,8 @@ export const SPELLS = {
   },
   INCARNATE: {},
 };
+
+
+export const SUMMON_LEVELS_BY_RANK = {
+  1: -1, 2: 1, 3: 2, 4: 3, 5: 5, 6: 7, 7: 9, 8: 11, 9: 13, 10: 15
+};

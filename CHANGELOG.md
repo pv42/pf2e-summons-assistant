@@ -1,8 +1,9 @@
-## 1.1.0
+## 1.0.3
 
 - `Updated`
   - Set the Summon's alliance to that of the summoner (@Sasane)
   - Added a recommendation for the `PF2e Sustain Reminder` module to track summons duration
+  - Preparing for future handling of other use cases `Incarnate` spells etc.
 
 ## 1.0.2
 
