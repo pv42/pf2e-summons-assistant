@@ -1,4 +1,4 @@
-import { SPELLS, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { CREATURES, SPELLS, SUMMON_LEVELS_BY_RANK } from "./const.js";
 
 Hooks.once("init", async function () { });
 
@@ -18,6 +18,7 @@ Hooks.once("ready", async function () {
 
     const details = getTraditionalSummonerSpellDetails(uuid, rank);
     const traits = details.traits;
+    const specific_uuids = details.specific_uuids;
     level = SUMMON_LEVELS_BY_RANK[details.rank];
 
     const result = await foundrySummons.SummonMenu.start({
@@ -32,10 +33,9 @@ Hooks.once("ready", async function () {
             traits.some((r) => r.toLowerCase() == q.toLowerCase())
           );
         }
-        // TODO maybe use this to set token names
-        // Hooks.once("preCreateToken", async (tokenDoc, _tokInfo, _createInfo, userID) {
-
-        // })
+        if (specific_uuids.length > 0) {
+          result &= specific_uuids.some((suuid) => suuid === actor?.uuid)
+        }
         return result;
       },
       dropdowns: [{
@@ -88,10 +88,10 @@ Hooks.once("ready", async function () {
  * 
  * @param {String} uuid UUID of the spell casting
  * @param {Number} rank Rank of the spell cating
- * @returns {{traits: String[], rank: Number}} Traits and Rank of the spell
+ * @returns {{traits: String[], rank: Number, specific_uuids?: String[]}} Traits and Rank of the spell
  */
 function getTraditionalSummonerSpellDetails(uuid, rank) {
-  const details = { traits: [], rank }
+  const details = { traits: [], rank, specific_uuids: [] }
   switch (uuid) {
     case SPELLS.SUMMON.SUMMON_DRAGON:
       details.traits = ["dragon"];
@@ -132,6 +132,9 @@ function getTraditionalSummonerSpellDetails(uuid, rank) {
       break;
     case SPELLS.SUMMON.SUMMON_MONITOR:
       details.traits = ["monitor"];
+      break;
+    case SPELLS.SUMMON.PHANTASMAL_MINION:
+      details.specific_uuids = [CREATURES.PHANTASMAL_MINION]
       break;
   }
   return details;

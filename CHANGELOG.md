@@ -1,3 +1,7 @@
+## 1.1.0
+- `New`
+  - Support for `Phantasmal Minion` spell
+
 ## 1.0.3
 
 - `Updated`

@@ -13,10 +13,15 @@ export const SPELLS = {
     SUMMON_FIEND: "Compendium.pf2e.spells-srd.Item.29ytKctjg7qSW2ff",
     SUMMON_GIANT: "Compendium.pf2e.spells-srd.Item.e9UJoVYUd5kJWUpi",
     SUMMON_MONITOR: "Compendium.pf2e.spells-srd.Item.ZbEHglw5tkJ3grQZ",
+    PHANTASMAL_MINION: "Compendium.pf2e.spells-srd.Item.xqmHD8JIjak15lRk"
   },
   INCARNATE: {},
 };
 
+
+export const CREATURES = {
+  PHANTASMAL_MINION: "Compendium.pf2e.pathfinder-bestiary.Actor.j7NNPfZwD19BwSEZ"
+}
 
 export const SUMMON_LEVELS_BY_RANK = {
   1: -1, 2: 1, 3: 2, 4: 3, 5: 5, 6: 7, 7: 9, 8: 11, 9: 13, 10: 15
