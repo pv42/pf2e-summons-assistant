@@ -72,34 +72,47 @@ Hooks.once("ready", async function () {
         }
         return result;
       },
-      toggles: [
-        {
-          id: "alsoByName",
-          name: "Sort by level only",
-          sort: (a, b, i) => {
-            if (!i) {
-              if (a.system.details.level.value == b.system.details.level.value)
-                return a.name.localeCompare(b.name);
-              else
-                return (
-                  b.system.details.level.value - a.system.details.level.value
-                );
-            } else {
-              return (
-                b.system.details.level.value - a.system.details.level.value
-              );
-            }
-          },
-          indexedFields: [
-            "system.details.level.value",
-            "system.traits.value",
-            "system.traits.rarity",
-          ],
+      dropdowns:[{
+        id:"sortOrder",
+        name:"Sort order",
+        options:[{label: "Level descending", value: 0}, {label: "Level", value:1}],
+        sort: (a,b,i) => {
+          if (i==0) {
+            if (a.system.details.level.value == b.system.details.level.value)
+              return a.name.localeCompare(b.name); 
+            else 
+              return (b.system.details.level.value-a.system.details.level.value);
+          }
+          else{  
+            if (a.system.details.level.value == b.system.details.level.value)
+              return a.name.localeCompare(b.name); 
+            else 
+              return (a.system.details.level.value-b.system.details.level.value);
+          }
+        }
+      },
+      {
+        id: "traitsFilter",
+        name: "Trait",
+        options:[{label:'', value:''}, ...traits.toSorted().map(t => ({label:t, value: t}))],
+        func: (actor, i)=>{
+          return !i || actor.system.traits.value.some(q => i.toLowerCase() == q.toLowerCase());
+        }
+      }],
+      toggles:[{
+        id:"onlyWithImages",
+        name: "Only with image",
+        func: (actor,i) => {
+          return !i || actor.img != "systems/pf2e/icons/default-icons/npc.svg";
         },
-      ],
+        indexedFields: [
+          "system.details.level.value", 
+          "system.traits.value", 
+          "system.traits.rarity", 
+          "img"
+        ]
+      }]
     });
-
-    await cast();
   });
 });
 
