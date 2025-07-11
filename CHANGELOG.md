@@ -4,6 +4,10 @@
   - Set the Summon's alliance to that of the summoner (@Sasane)
   - Added a recommendation for the `PF2e Sustain Reminder` module to track summons duration
 
+## 1.0.2
+
+- Actually released the changes from `1.0.1`
+
 ## 1.0.1
 
 - `Changes`
