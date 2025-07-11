@@ -13,6 +13,8 @@ Hooks.once("ready", async function () {
     if (!msg?.flags?.pf2e?.origin?.rollOptions?.includes("summon")) return;
     let traits = [];
     let level = 20;
+    
+    const alliance = msg.speakerActor.system.details.alliance;
 
     switch (uuid) {
       case SPELLS.SUMMON.SUMMON_DRAGON:
@@ -61,6 +63,7 @@ Hooks.once("ready", async function () {
 
     const result = await foundrySummons.SummonMenu.start({
       //packs: ['pf2e.pathfinder-monster-core'],
+      updateData: {'system.details.alliance': alliance},
       filter: (actor) => {
         let result =
           actor.system.traits.rarity == "common" &&
