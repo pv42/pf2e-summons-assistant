@@ -1,6 +1,8 @@
-## 1.1.0
+## 1.0.4
 - `New`
   - Support for `Phantasmal Minion` spell
+- `Fixed`
+  - Fixed V12 support (@Sasane)
 
 ## 1.0.3
 
