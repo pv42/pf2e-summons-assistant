@@ -1,3 +1,11 @@
+## 1.1.1
+
+- `Updated`
+  - Added `Arrival` and `Depart` actions to the `Incarnate` Summons
+    - **_Note_** using these actions directly would be missing any `RollOptions` from the original token/spellcasting and as such extra attention should be paid to specific interactions
+    - IE: If you would gain +2 circumstance bonus on saving throws against `Goblins` that would need to be manually toggled
+  - Added a `dc` attribute to key the saves on in `Incarnate` actions (captured at the point they are `Arrive`)
+
 ## 1.1.0
 
 - `New`

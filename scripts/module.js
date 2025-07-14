@@ -1,4 +1,5 @@
 import { CREATURES, MODULE_ID, SPELLS, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { extractDCValueRegex, incarnateDetails, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
 
 Hooks.once("init", async function () {
@@ -14,13 +15,19 @@ Hooks.once("ready", async function () {
     // TODO handle Incarnate spells at a later date
     //if (!msg?.flags?.pf2e?.origin?.rollOptions?.includes("summon")) return;
     let level = 20;
+    //attributes.classDC.value
 
     const summoner = ChatMessage.getSpeakerActor(msg.speaker);
     const alliance = summoner.system.details.alliance;
 
 
-    let rank = msg?.flags?.pf2e?.origin?.castRank ?? 0;
-    let details = getSpecificSummonDetails(uuid, { rank, summonerLevel: summoner.level })
+
+    const rank = msg?.flags?.pf2e?.origin?.castRank ?? 0;
+    const relevantInfo = { rank, summonerLevel: summoner.level }
+    //Grab DC for Incarnate spells
+    if (isIncarnate(msg)) relevantInfo.dc = extractDCValueRegex(msg.content) ?? 0;
+
+    let details = getSpecificSummonDetails(uuid, relevantInfo)
     if (!details) {
       details = getTraditionalSummonerSpellDetails(uuid, rank);
     }
@@ -101,7 +108,12 @@ Hooks.once("ready", async function () {
 
     const pickedActor = await foundry.utils.fromUuid(pickedUUID);
 
-    const updateData = { 'system.details.alliance': alliance, 'system.traits.value': [...pickedActor.system.traits.value, ...addedTraits], ...modifications };
+    const updateData = {
+      'system.details.alliance': alliance,
+      'system.traits.value': [...pickedActor.system.traits.value, ...addedTraits],
+      ...modifications
+    };
+    
     if (game.settings.get(MODULE_ID, "name-ownership")) {
       updateData.name = `${summoner.name}'s ${pickedActor.name}`;
       updateData["prototypeToken.name"] = `${summoner.prototypeToken.name}'s ${pickedActor.prototypeToken.name}`;
@@ -174,7 +186,7 @@ function getTraditionalSummonerSpellDetails(uuid, rank) {
   return details;
 }
 
-function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0 }) {
+function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0, dc: 0 }) {
   switch (uuid) {
     case SPELLS.SUMMON.PHANTASMAL_MINION:
       return { specific_uuids: [CREATURES.PHANTASMAL_MINION], rank: data.rank }
@@ -188,17 +200,17 @@ function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0 }) {
       }
       else return null;
     case SPELLS.INCARNATE.SUMMON_HEALING_SERVITOR:
-      return {
-        specific_uuids: [CREATURES.HEALING_SERVITOR], rank: data.rank, modifications: {
-          "level": data.rank
-        }
-      }
+      return incarnateDetails({
+        uuids: [CREATURES.HEALING_SERVITOR],
+        rank: data.rank,
+        dc: data.dc
+      })
     case SPELLS.INCARNATE.TEMPEST_OF_SHADES:
-      return {
-        specific_uuids: [CREATURES.TEMPEST_OF_SHADES], rank: data.rank, modifications: {
-          "level": data.rank
-        }
-      }
+      return incarnateDetails({
+        uuids: [CREATURES.TEMPEST_OF_SHADES],
+        rank: data.rank,
+        dc: data.dc
+      })
     case SPELLS.MISC.CALL_URSINE_ALLY:
       if (data.summonerLevel < 10) {
         return { specific_uuids: [CREATURES.BLACK_BEAR], rank: 3 }
