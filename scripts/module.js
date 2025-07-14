@@ -2,6 +2,7 @@ import { CREATURES, MODULE_ID, SPELLS, SUMMON_LEVELS_BY_RANK } from "./const.js"
 import { compFromUuid } from "./helpers.js";
 import { extractDCValueRegex, incarnateDetails, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
+import { getSpecificSummonDetails } from "./specificSummons.js";
 
 Hooks.once("init", async function () {
   setupSettings();
@@ -105,7 +106,8 @@ Hooks.once("ready", async function () {
       });
     }
 
-    const addedTraits = addTraits("summon");
+    const type = messageItemHasRollOption("thrall") ? "thrall" : "summon"
+    const addedTraits = addTraits(type);
 
     const pickedActor = await compFromUuid(pickedUUID);
 
@@ -141,44 +143,44 @@ Hooks.once("ready", async function () {
 function getTraditionalSummonerSpellDetails(uuid, rank) {
   const details = { traits: [], rank }
   switch (uuid) {
-    case SPELLS.SUMMON.SUMMON_DRAGON:
+    case SOURCES.SUMMON.SUMMON_DRAGON:
       details.traits = ["dragon"];
       break;
-    case SPELLS.SUMMON.SUMMON_UNDEAD:
+    case SOURCES.SUMMON.SUMMON_UNDEAD:
       details.traits = ["undead"];
       break;
-    case SPELLS.SUMMON.SUMMON_CELESTIAL:
+    case SOURCES.SUMMON.SUMMON_CELESTIAL:
       details.traits = ["celestial"];
       break;
-    case SPELLS.SUMMON.SUMMON_FEY:
+    case SOURCES.SUMMON.SUMMON_FEY:
       details.traits = ["fey"];
       break;
-    case SPELLS.SUMMON.SUMMON_ANIMAL:
+    case SOURCES.SUMMON.SUMMON_ANIMAL:
       details.traits = ["animal"];
       break;
-    case SPELLS.SUMMON.SUMMON_CONSTRUCT:
+    case SOURCES.SUMMON.SUMMON_CONSTRUCT:
       details.traits = ["construct"];
       break;
-    case SPELLS.SUMMON.SUMMON_LESSER_SERVITOR:
+    case SOURCES.SUMMON.SUMMON_LESSER_SERVITOR:
       details.traits = ["celestial", "fiend", "monitor", "animal"];
       if (rank > 4) details.rank = 4;
       break;
-    case SPELLS.SUMMON.SUMMON_PLANT_OR_FUNGUS:
+    case SOURCES.SUMMON.SUMMON_PLANT_OR_FUNGUS:
       details.traits = ["plant", "fungus"];
       break;
-    case SPELLS.SUMMON.SUMMON_ELEMENTAL:
+    case SOURCES.SUMMON.SUMMON_ELEMENTAL:
       details.traits = ["elemental"];
       break;
-    case SPELLS.SUMMON.SUMMON_ENTITY:
+    case SOURCES.SUMMON.SUMMON_ENTITY:
       details.traits = ["aberration"];
       break;
-    case SPELLS.SUMMON.SUMMON_FIEND:
+    case SOURCES.SUMMON.SUMMON_FIEND:
       details.traits = ["fiend"];
       break;
-    case SPELLS.SUMMON.SUMMON_GIANT:
+    case SOURCES.SUMMON.SUMMON_GIANT:
       details.traits = ["giant"];
       break;
-    case SPELLS.SUMMON.SUMMON_MONITOR:
+    case SOURCES.SUMMON.SUMMON_MONITOR:
       details.traits = ["monitor"];
       break;
     default:
@@ -186,57 +188,6 @@ function getTraditionalSummonerSpellDetails(uuid, rank) {
   }
   return details;
 }
-
-function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0, dc: 0 }) {
-  switch (uuid) {
-    case SPELLS.SUMMON.PHANTASMAL_MINION:
-      return { specific_uuids: [CREATURES.PHANTASMAL_MINION], rank: data.rank }
-    case SPELLS.MISC.LIGHT:
-      if (hasNoTargets()) {
-        return {
-          specific_uuids: Object.values(CREATURES.LIGHT), rank: data.rank, modifications: {
-            "level": data.rank
-          }
-        }
-      }
-      else return null;
-    case SPELLS.INCARNATE.SUMMON_HEALING_SERVITOR:
-      return incarnateDetails({
-        uuids: [CREATURES.HEALING_SERVITOR],
-        rank: data.rank,
-        dc: data.dc
-      })
-    case SPELLS.INCARNATE.TEMPEST_OF_SHADES:
-      return incarnateDetails({
-        uuids: [CREATURES.TEMPEST_OF_SHADES],
-        rank: data.rank,
-        dc: data.dc
-      })
-    case SPELLS.MISC.CALL_URSINE_ALLY:
-      if (data.summonerLevel < 10) {
-        return { specific_uuids: [CREATURES.BLACK_BEAR], rank: 3 }
-      } else if (data.summonerLevel < 12) {
-        return { specific_uuids: [CREATURES.GRIZZLY_BEAR], rank: 4 }
-      } else if (data.summonerLevel < 14) {
-        return { specific_uuids: [CREATURES.POLAR_BEAR], rank: 5 }
-      } else {
-        return { specific_uuids: [CREATURES.CAVE_BEAR], rank: 6 }
-      }
-    default:
-      return null;
-  }
-}
-
-
-function addTraits(type) {
-  if (type === 'summon') return ['minion', 'summoned']
-}
-
-
-function hasNoTargets() {
-  return game.user.targets.size === 0;
-}
-
 
 // function getOwnershipEffect(ownerActor, duration = { value: -1, unit: unlimited, sustained: false }) {
 //   return {

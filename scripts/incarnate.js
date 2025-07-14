@@ -1,3 +1,5 @@
+import { messageItemHasRollOption } from "./helpers.js";
+
 export function extractDCValueRegex(htmlContent) {
     // Look for button with data-action="spell-save" and extract data-dc value
     const regex = /<button[^>]*data-action="spell-save"[^>]*data-dc="(\d+)"[^>]*>/;
@@ -20,5 +22,5 @@ export function incarnateDetails({ uuids, rank, dc }) {
 
 
 export function isIncarnate(msg) {
-    return msg?.flags?.pf2e?.origin?.rollOptions?.includes("incarnate")
+    return messageItemHasRollOption(msg, "incarnate")
 }
