@@ -3,7 +3,7 @@
   "pf2e-summons-assistant": {
     "module-settings": {
       "name-ownership": {
-        "name": "Summon's Name has owner?",
+        "name": "Add Summoner's Name to Summon's Name",
         "hint": "Modify the Summon's name to show who summoned it, IE 'Giorno's Goblin' etc."
       }
     }
