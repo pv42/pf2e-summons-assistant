@@ -55,5 +55,18 @@
   "manifest": "#{MANIFEST}#",
   "download": "#{DOWNLOAD}#",
   "license": "LICENSE",
-  "readme": "README.md"
+  "readme": "README.md",
+  "packs": [
+    {
+      "name": "pf2e-summons-assistant-actors",
+      "label": "PF2e Summons Assistant Actors",
+      "path": "packs/pf2e-summons-assistant-actors",
+      "type": "Actor",
+      "system": "pf2e",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      }
+    }
+  ]
 }
