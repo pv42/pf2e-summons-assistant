@@ -1,3 +1,7 @@
+## 1.1.3
+
+- Added compatability patch for `fromUuid` for v12 (🐛 @RayG)
+
 ## 1.1.2
 
 - Added Polish Translation (@Lioheart)

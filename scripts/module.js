@@ -1,4 +1,5 @@
 import { CREATURES, MODULE_ID, SPELLS, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { compFromUuid } from "./helpers.js";
 import { extractDCValueRegex, incarnateDetails, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
 
@@ -106,14 +107,14 @@ Hooks.once("ready", async function () {
 
     const addedTraits = addTraits("summon");
 
-    const pickedActor = await foundry.utils.fromUuid(pickedUUID);
+    const pickedActor = await compFromUuid(pickedUUID);
 
     const updateData = {
       'system.details.alliance': alliance,
       'system.traits.value': [...pickedActor.system.traits.value, ...addedTraits],
       ...modifications
     };
-    
+
     if (game.settings.get(MODULE_ID, "name-ownership")) {
       updateData.name = `${summoner.name}'s ${pickedActor.name}`;
       updateData["prototypeToken.name"] = `${summoner.prototypeToken.name}'s ${pickedActor.prototypeToken.name}`;
