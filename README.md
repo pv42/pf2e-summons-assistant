@@ -26,6 +26,7 @@ https://github.com/user-attachments/assets/fe9a9176-fda4-4fae-8b43-073618ad63d7
   - [Changelog](#changelog)
   - [Handled Spells and Features](#handled-spells-and-features)
   - [Contributors](#contributors)
+  - [Assets](#assets)
 
 ## Changelog
 
@@ -59,3 +60,8 @@ You can access the changelog [here](/CHANGELOG.md).
 ## Contributors
 
 You can see everyone else who contributed to the module [here](CONTRIBUTORS.md)
+
+## Assets
+
+- `Tempest of Shades` - (credit @Chasarooni, under the [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/) license)
+- `Healing Servitor` - (credit @Chasarooni, under the [CC BY-NC](https://creativecommons.org/licenses/by-nc/4.0/) license)
