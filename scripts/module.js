@@ -1,4 +1,4 @@
-import { CREATURES, MODULE_ID, SPELLS, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { CREATURES, MODULE_ID, SOURCE, SUMMON_LEVELS_BY_RANK } from "./const.js";
 import { extractDCValueRegex, incarnateDetails, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
 
@@ -38,6 +38,7 @@ Hooks.once("ready", async function () {
     const actor_traits = details?.traits || [];
     const specific_uuids = details?.specific_uuids || [];
     const modifications = details?.modifications || {};
+    const amount = details?.amount || 1;
     level = SUMMON_LEVELS_BY_RANK[details.rank];
 
     let pickedUUID;
@@ -113,7 +114,7 @@ Hooks.once("ready", async function () {
       'system.traits.value': [...pickedActor.system.traits.value, ...addedTraits],
       ...modifications
     };
-    
+
     if (game.settings.get(MODULE_ID, "name-ownership")) {
       updateData.name = `${summoner.name}'s ${pickedActor.name}`;
       updateData["prototypeToken.name"] = `${summoner.prototypeToken.name}'s ${pickedActor.prototypeToken.name}`;
@@ -121,11 +122,12 @@ Hooks.once("ready", async function () {
     // if (game.settings.get(MODULE_ID, "effect-ownership")) updateData.items = `${summoner.name}'s ${pickedActor.name}`;
 
 
-
-    await foundrySummons.pick({
-      uuid: pickedUUID,
-      updateData,
-    });
+    for (let i = 0; i < amount; i++) {
+      await foundrySummons.pick({
+        uuid: pickedUUID,
+        updateData,
+      });
+    }
   });
 });
 
@@ -140,44 +142,44 @@ Hooks.once("ready", async function () {
 function getTraditionalSummonerSpellDetails(uuid, rank) {
   const details = { traits: [], rank }
   switch (uuid) {
-    case SPELLS.SUMMON.SUMMON_DRAGON:
+    case SOURCE.SUMMON.SUMMON_DRAGON:
       details.traits = ["dragon"];
       break;
-    case SPELLS.SUMMON.SUMMON_UNDEAD:
+    case SOURCE.SUMMON.SUMMON_UNDEAD:
       details.traits = ["undead"];
       break;
-    case SPELLS.SUMMON.SUMMON_CELESTIAL:
+    case SOURCE.SUMMON.SUMMON_CELESTIAL:
       details.traits = ["celestial"];
       break;
-    case SPELLS.SUMMON.SUMMON_FEY:
+    case SOURCE.SUMMON.SUMMON_FEY:
       details.traits = ["fey"];
       break;
-    case SPELLS.SUMMON.SUMMON_ANIMAL:
+    case SOURCE.SUMMON.SUMMON_ANIMAL:
       details.traits = ["animal"];
       break;
-    case SPELLS.SUMMON.SUMMON_CONSTRUCT:
+    case SOURCE.SUMMON.SUMMON_CONSTRUCT:
       details.traits = ["construct"];
       break;
-    case SPELLS.SUMMON.SUMMON_LESSER_SERVITOR:
+    case SOURCE.SUMMON.SUMMON_LESSER_SERVITOR:
       details.traits = ["celestial", "fiend", "monitor", "animal"];
       if (rank > 4) details.rank = 4;
       break;
-    case SPELLS.SUMMON.SUMMON_PLANT_OR_FUNGUS:
+    case SOURCE.SUMMON.SUMMON_PLANT_OR_FUNGUS:
       details.traits = ["plant", "fungus"];
       break;
-    case SPELLS.SUMMON.SUMMON_ELEMENTAL:
+    case SOURCE.SUMMON.SUMMON_ELEMENTAL:
       details.traits = ["elemental"];
       break;
-    case SPELLS.SUMMON.SUMMON_ENTITY:
+    case SOURCE.SUMMON.SUMMON_ENTITY:
       details.traits = ["aberration"];
       break;
-    case SPELLS.SUMMON.SUMMON_FIEND:
+    case SOURCE.SUMMON.SUMMON_FIEND:
       details.traits = ["fiend"];
       break;
-    case SPELLS.SUMMON.SUMMON_GIANT:
+    case SOURCE.SUMMON.SUMMON_GIANT:
       details.traits = ["giant"];
       break;
-    case SPELLS.SUMMON.SUMMON_MONITOR:
+    case SOURCE.SUMMON.SUMMON_MONITOR:
       details.traits = ["monitor"];
       break;
     default:
@@ -188,9 +190,9 @@ function getTraditionalSummonerSpellDetails(uuid, rank) {
 
 function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0, dc: 0 }) {
   switch (uuid) {
-    case SPELLS.SUMMON.PHANTASMAL_MINION:
+    case SOURCE.SUMMON.PHANTASMAL_MINION:
       return { specific_uuids: [CREATURES.PHANTASMAL_MINION], rank: data.rank }
-    case SPELLS.MISC.LIGHT:
+    case SOURCE.MISC.LIGHT:
       if (hasNoTargets()) {
         return {
           specific_uuids: Object.values(CREATURES.LIGHT), rank: data.rank, modifications: {
@@ -199,19 +201,20 @@ function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0, dc: 
         }
       }
       else return null;
-    case SPELLS.INCARNATE.SUMMON_HEALING_SERVITOR:
+
+    case SOURCE.INCARNATE.SUMMON_HEALING_SERVITOR:
       return incarnateDetails({
         uuids: [CREATURES.HEALING_SERVITOR],
         rank: data.rank,
         dc: data.dc
       })
-    case SPELLS.INCARNATE.TEMPEST_OF_SHADES:
+    case SOURCE.INCARNATE.TEMPEST_OF_SHADES:
       return incarnateDetails({
         uuids: [CREATURES.TEMPEST_OF_SHADES],
         rank: data.rank,
         dc: data.dc
       })
-    case SPELLS.MISC.CALL_URSINE_ALLY:
+    case SOURCE.MISC.CALL_URSINE_ALLY:
       if (data.summonerLevel < 10) {
         return { specific_uuids: [CREATURES.BLACK_BEAR], rank: 3 }
       } else if (data.summonerLevel < 12) {
@@ -221,6 +224,17 @@ function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0, dc: 
       } else {
         return { specific_uuids: [CREATURES.CAVE_BEAR], rank: 6 }
       }
+
+    case SOURCE.NECROMANCER.CREATE_THRALL:
+      return { specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank }
+    case SOURCE.NECROMANCER.PERFECTED_THRALL:
+      return { specific_uuids: [CREATURES.NECROMANCER.PERFECTED_THRALL], rank: data.rank }
+    case SOURCE.NECROMANCER.SKELETAL_LANCERS:
+      return { specific_uuids: [CREATURES.NECROMANCER.SKELETAL_LANCERS], rank: data.rank, amount: 5 }
+    case SOURCE.NECROMANCER.LIVING_GRAVEYARD:
+      return { specific_uuids: [CREATURES.NECROMANCER.LIVING_GRAVEYARD], rank: data.rank }
+    case SOURCE.NECROMANCER.RECURRING_NIGHTMARE:
+      return { specific_uuids: [CREATURES.NECROMANCER.RECURRING_NIGHTMARE], rank: data.rank }
     default:
       return null;
   }

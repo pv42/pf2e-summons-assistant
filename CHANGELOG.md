@@ -1,3 +1,13 @@
+## 1.2.0
+
+- **New**
+  - Added `Necromancer` spells from the Playtest
+    - `Create Thrall`
+    - `Perfected Thrall`
+    - `Skeletal Lancers`
+    - `Living Graveyard`
+    - `Recurring Nightmares`
+
 ## 1.1.2
 
 - Added Polish Translation (@Lioheart)
