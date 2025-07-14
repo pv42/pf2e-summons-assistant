@@ -1,0 +1,11 @@
+{
+  "I18N.LANGUAGE": "Polski",
+  "pf2e-summons-assistant": {
+    "module-settings": {
+      "name-ownership": {
+        "name": "Dodaj imię Przywołującego do imienia przywołanej istoty",
+        "hint": "Modyfikuje nazwę przywoływanej postaci, aby wskazywała, kto ją przywołał, np. „Goblin Ezrena” itp."
+      }
+    }
+  }
+}
