@@ -1,3 +1,5 @@
+export const MODULE_ID = 'pf2e-summons-assistant';
+
 export const SPELLS = {
   SUMMON: {
     SUMMON_DRAGON: "Compendium.pf2e.spells-srd.Item.kghwmH3tQjMIhdH1",
@@ -15,12 +17,32 @@ export const SPELLS = {
     SUMMON_MONITOR: "Compendium.pf2e.spells-srd.Item.ZbEHglw5tkJ3grQZ",
     PHANTASMAL_MINION: "Compendium.pf2e.spells-srd.Item.xqmHD8JIjak15lRk"
   },
-  INCARNATE: {},
+  INCARNATE: {
+    TEMPEST_OF_SHADES: "Compendium.pf2e.spells-srd.Item.JLdbyGKhjwAAoRLs",
+    SUMMON_HEALING_SERVITOR: "Compendium.pf2e.spells-srd.Item.3r897dYO8oYvuyn5"
+  },
+  MISC: {
+    LIGHT: "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
+    CALL_URSINE_ALLY: "Compendium.pf2e.feats-srd.Item.kYYB7ziQZjlgQWWu"
+  }
 };
 
-
 export const CREATURES = {
-  PHANTASMAL_MINION: "Compendium.pf2e.pathfinder-bestiary.Actor.j7NNPfZwD19BwSEZ"
+  PHANTASMAL_MINION: "Compendium.pf2e.pathfinder-bestiary.Actor.j7NNPfZwD19BwSEZ",
+  LIGHT: {
+    BLUE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.REPqt5wULBcqIM97",
+    DARK_BLUE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.5nY61gR66kynnp5q",
+    GREEN: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.oESGKDON1Fi3dETS",
+    WHITE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.pRL4h1K1hHBkEbIE",
+    YELLOW: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.wth1JZ22hGEusEC5"
+  },
+  HEALING_SERVITOR: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.gqrW5aGfnjqNse2T",
+  TEMPEST_OF_SHADES: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.EwmHOiQTdCEmBKfA",
+
+  BLACK_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.xxP5FJotshmUQNtY",
+  GRIZZLY_BEAR: "Compendium.pf2e.pathfinder-monster-core.Actor.6K4RWus85o8iqy0t",
+  POLAR_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.UqFObUjgFAlWrriA",
+  CAVE_BEAR: "Compendium.pf2e.pathfinder-monster-core.Actor.AZIG0COCaDBronJa"
 }
 
 export const SUMMON_LEVELS_BY_RANK = {

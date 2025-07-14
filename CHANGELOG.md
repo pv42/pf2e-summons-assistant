@@ -1,4 +1,18 @@
+## 1.1.0
+
+- `New`
+  - Added Summon support for the following spell/feats:
+    - `Call Ursine Ally`
+    - `Light` (requires JB2a)
+    - `Healing Servitor` - Includes homemade art for it
+    - `Tempest of Shades` - Includes Homemade art for it
+  - Added Feature to allow summons to be named based on the creature that summoned it
+  - Added appropriate traits to summons when summoned
+- `Updated`
+  - Requires **Foundry Summons** `2.3.1`
+
 ## 1.0.4
+
 - `New`
   - Support for `Phantasmal Minion` spell
 - `Fixed`

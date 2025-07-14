@@ -1,3 +1,11 @@
 {
-    "MODULE.hello": "hello"
+  "I18N.LANGUAGE": "English",
+  "pf2e-summons-assistant": {
+    "module-settings": {
+      "name-ownership": {
+        "name": "Summon's Name has owner?",
+        "hint": "Modify the Summon's name to show who summoned it, IE 'Giorno's Goblin' etc."
+      }
+    }
+  }
 }
