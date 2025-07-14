@@ -10,6 +10,7 @@
   - Added appropriate traits to summons when summoned
 - `Updated`
   - Requires **Foundry Summons** `2.3.1`
+  - For Summons with 1 option, it now skips straight to the summon interface (@Sasane)
 
 ## 1.0.4
 
