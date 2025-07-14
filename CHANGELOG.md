@@ -1,3 +1,7 @@
+## 1.1.2
+
+- Added Polish Translation (@Lioheart)
+
 ## 1.1.1
 
 - `Updated`
