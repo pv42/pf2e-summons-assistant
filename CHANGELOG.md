@@ -1,3 +1,15 @@
+## 1.2.0
+
+- **New**
+  - Added handling for some `Necromancer` spells from the Playtest
+    - `Create Thrall`
+    - `Perfected Thrall`
+    - `Skeletal Lancers`
+    - `Living Graveyard` - Currently does **not** handle the sustain action it has
+    - `Recurring Nightmares`
+    - `Bind Heroic Spirit - On Successful Attack`
+  - **_Note._** Currently does not track the time remaining for the summons
+
 ## 1.1.3
 
 - Added compatability patch for `fromUuid` for v12 (🐛 @RayG)
