@@ -52,6 +52,13 @@ You can access the changelog [here](/CHANGELOG.md).
   - Incarnate
     - Tempest of Shades
     - Summon Healing Servitor
+  - Necromancer
+    - Create Thrall
+    - Perfected Thrall
+    - Skeletal Lancers
+    - Living Graveyard
+    - Recurring Nightmare
+    - Bind Heroic Spirit - On Successful Attack
   - Misc
     - Light
 - Feats
