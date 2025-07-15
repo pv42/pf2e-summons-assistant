@@ -9,59 +9,57 @@ Hooks.once("init", async function () {
 });
 
 Hooks.once("ready", async function () {
-  Hooks.on("createChatMessage", async (msg, _info, userID) => {
+  Hooks.on("createChatMessage", async (chatMessage, _info, userID) => {
     if (userID !== game.user.id) return;
-    const uuid = msg?.item?.sourceId;
-    if (!uuid) return;
+    const itemUuid = chatMessage?.item?.sourceId;
+    if (!itemUuid) return;
 
     // TODO handle Incarnate spells at a later date
-    //if (!msg?.flags?.pf2e?.origin?.rollOptions?.includes("summon")) return;
-    let level = 20;
+    //if (!chatMessage?.flags?.pf2e?.origin?.rollOptions?.includes("summon")) return;
+    let summonLevel = 20;
     //attributes.classDC.value
 
-    const summoner = ChatMessage.getSpeakerActor(msg.speaker);
-    const alliance = summoner.system.details.alliance;
+    const summonerActor = ChatMessage.getSpeakerActor(chatMessage.speaker);
+    const summonerAlliance = summonerActor.system.details.alliance;
 
-
-
-    const rank = msg?.flags?.pf2e?.origin?.castRank ?? 0;
-    const relevantInfo = { rank, summonerLevel: summoner.level }
+    const spellRank = chatMessage?.flags?.pf2e?.origin?.castRank ?? 0;
+    const spellRelevantInfo = { rank: spellRank, summonerLevel: summonerActor.level }
     //Grab DC for Incarnate spells
-    if (isIncarnate(msg)) relevantInfo.dc = extractDCValueRegex(msg.content) ?? 0;
+    if (isIncarnate(chatMessage)) spellRelevantInfo.dc = extractDCValueRegex(chatMessage.content) ?? 0;
 
-    let detailsGroup = getSpecificSummonDetails(uuid, relevantInfo)
-    if (!detailsGroup) {
-      detailsGroup = getTraditionalSummonerSpellDetails(uuid, rank);
+    let summonDetailsGroup = getSpecificSummonDetails(itemUuid, spellRelevantInfo)
+    if (!summonDetailsGroup) {
+      summonDetailsGroup = getTraditionalSummonerSpellDetails(itemUuid, spellRank);
     }
 
     // No Summon Spell Found
-    if (detailsGroup === null) return;
+    if (summonDetailsGroup === null) return;
 
-    for (const details of detailsGroup) {
-      const actor_traits = details?.traits || [];
-      const specific_uuids = details?.specific_uuids || [];
-      const modifications = details?.modifications || {};
-      level = SUMMON_LEVELS_BY_RANK[details.rank];
+    for (const summonDetails of summonDetailsGroup) {
+      const requiredTraits = summonDetails?.traits || [];
+      const allowedSpecificUuids = summonDetails?.specific_uuids || [];
+      const actorModifications = summonDetails?.modifications || {};
+      summonLevel = SUMMON_LEVELS_BY_RANK[summonDetails.rank];
 
-      let pickedUUID;
-      if (specific_uuids.length === 1) {
-        pickedUUID = specific_uuids[0]
+      let selectedActorUuid;
+      if (allowedSpecificUuids.length === 1) {
+        selectedActorUuid = allowedSpecificUuids[0]
       } else {
-        pickedUUID = await foundrySummons.SummonMenu.start({
+        selectedActorUuid = await foundrySummons.SummonMenu.start({
           //packs: ['pf2e.pathfinder-monster-core'],
           noSummon: true,
-          filter: (actor) => {
+          filter: (candidateActor) => {
             const isCommonAndValidLevel =
-              actor.system.traits.rarity === "common" &&
-              actor.system.details.level.value <= level;
+              candidateActor.system.traits.rarity === "common" &&
+              candidateActor.system.details.level.value <= summonLevel;
 
-            const hasValidTraits = actor_traits.length === 0 ||
-              actor.system.traits.value.some(trait =>
-                actor_traits.some(req => req.toLowerCase() === trait.toLowerCase())
+            const hasValidTraits = requiredTraits.length === 0 ||
+              candidateActor.system.traits.value.some(actorTrait =>
+                requiredTraits.some(requiredTrait => requiredTrait.toLowerCase() === actorTrait.toLowerCase())
               );
 
-            const hasValidUuid = specific_uuids.length === 0 ||
-              specific_uuids.includes(actor?.uuid);
+            const hasValidUuid = allowedSpecificUuids.length === 0 ||
+              allowedSpecificUuids.includes(candidateActor?.uuid);
 
             return isCommonAndValidLevel && hasValidTraits && hasValidUuid;
           },
@@ -69,34 +67,34 @@ Hooks.once("ready", async function () {
             id: "sortOrder",
             name: "Sort order",
             options: [{ label: "Level descending", value: 0 }, { label: "Level", value: 1 }],
-            sort: (a, b, i) => {
-              if (i == 0) {
-                if (a.system.details.level.value == b.system.details.level.value)
-                  return a.name.localeCompare(b.name);
+            sort: (actorA, actorB, sortIndex) => {
+              if (sortIndex == 0) {
+                if (actorA.system.details.level.value == actorB.system.details.level.value)
+                  return actorA.name.localeCompare(actorB.name);
                 else
-                  return (b.system.details.level.value - a.system.details.level.value);
+                  return (actorB.system.details.level.value - actorA.system.details.level.value);
               }
               else {
-                if (a.system.details.level.value == b.system.details.level.value)
-                  return a.name.localeCompare(b.name);
+                if (actorA.system.details.level.value == actorB.system.details.level.value)
+                  return actorA.name.localeCompare(actorB.name);
                 else
-                  return (a.system.details.level.value - b.system.details.level.value);
+                  return (actorA.system.details.level.value - actorB.system.details.level.value);
               }
             }
           },
           {
             id: "traitsFilter",
             name: "Trait",
-            options: [{ label: '', value: '' }, ...actor_traits.toSorted().map(t => ({ label: t, value: t }))],
-            func: (actor, i) => {
-              return !i || actor.system.traits.value.some(q => i.toLowerCase() == q.toLowerCase());
+            options: [{ label: '', value: '' }, ...requiredTraits.toSorted().map(traitName => ({ label: traitName, value: traitName }))],
+            func: (filterActor, selectedTrait) => {
+              return !selectedTrait || filterActor.system.traits.value.some(actorTrait => selectedTrait.toLowerCase() == actorTrait.toLowerCase());
             }
           }],
           toggles: [{
             id: "onlyWithImages",
             name: "Only with image",
-            func: (actor, i) => {
-              return !i || actor.img != "systems/pf2e/icons/default-icons/npc.svg";
+            func: (toggleActor, isToggleActive) => {
+              return !isToggleActive || toggleActor.img != "systems/pf2e/icons/default-icons/npc.svg";
             },
             indexedFields: [
               "system.details.level.value",
@@ -108,33 +106,30 @@ Hooks.once("ready", async function () {
         });
       }
 
-      const type = messageItemHasRollOption("thrall") ? "thrall" : "summon"
-      const addedTraits = addTraits(type);
+      const summonType = messageItemHasRollOption("thrall") ? "thrall" : "summon"
+      const additionalTraits = addTraits(summonType);
 
-      const pickedActor = await compFromUuid(pickedUUID);
+      const selectedActor = await compFromUuid(selectedActorUuid);
 
-      const updateData = {
-        'system.details.alliance': alliance,
-        'system.traits.value': [...pickedActor.system.traits.value, ...addedTraits],
-        ...modifications
+      const actorUpdateData = {
+        'system.details.alliance': summonerAlliance,
+        'system.traits.value': [...selectedActor.system.traits.value, ...additionalTraits],
+        ...actorModifications
       };
 
       if (game.settings.get(MODULE_ID, "name-ownership")) {
-        updateData.name = `${summoner.name}'s ${pickedActor.name}`;
-        updateData["prototypeToken.name"] = `${summoner.prototypeToken.name}'s ${pickedActor.prototypeToken.name}`;
+        actorUpdateData.name = `${summonerActor.name}'s ${selectedActor.name}`;
+        actorUpdateData["prototypeToken.name"] = `${summonerActor.prototypeToken.name}'s ${selectedActor.prototypeToken.name}`;
       }
-      // if (game.settings.get(MODULE_ID, "effect-ownership")) updateData.items = `${summoner.name}'s ${pickedActor.name}`;
-
-
+      // if (game.settings.get(MODULE_ID, "effect-ownership")) actorUpdateData.items = `${summonerActor.name}'s ${selectedActor.name}`;
 
       await foundrySummons.pick({
-        uuid: pickedUUID,
-        updateData,
+        uuid: selectedActorUuid,
+        updateData: actorUpdateData,
       });
     }
   });
 });
-
 
 
 /**
