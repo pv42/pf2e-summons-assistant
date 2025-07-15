@@ -1,4 +1,4 @@
-import { MODULE_ID, SOURCE, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { MODULE_ID, SOURCES, SUMMON_LEVELS_BY_RANK } from "./const.js";
 import { addTraits, compFromUuid, messageItemHasRollOption } from "./helpers.js";
 import { extractDCValueRegex, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
@@ -14,7 +14,7 @@ Hooks.once("ready", async function () {
 
     // Handle Specific Case Bind Heroic Spirit
     const itemUuid = isBindHeroicSpiritHit(chatMessage)
-      ? SOURCE.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE
+      ? SOURCES.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE
       : chatMessage?.item?.sourceId;
 
     if (!itemUuid) return;

@@ -1,6 +1,6 @@
 export const MODULE_ID = 'pf2e-summons-assistant';
 
-export const SOURCE = {
+export const SOURCES = {
   SUMMON: {
     SUMMON_DRAGON: "Compendium.pf2e.spells-srd.Item.kghwmH3tQjMIhdH1",
     SUMMON_UNDEAD: "Compendium.pf2e.spells-srd.Item.9WGeBwIIbbUuWKq0",
