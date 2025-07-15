@@ -29,106 +29,109 @@ Hooks.once("ready", async function () {
     //Grab DC for Incarnate spells
     if (isIncarnate(msg)) relevantInfo.dc = extractDCValueRegex(msg.content) ?? 0;
 
-    let details = getSpecificSummonDetails(uuid, relevantInfo)
-    if (!details) {
-      details = getTraditionalSummonerSpellDetails(uuid, rank);
+    let detailsGroup = getSpecificSummonDetails(uuid, relevantInfo)
+    if (!detailsGroup) {
+      detailsGroup = getTraditionalSummonerSpellDetails(uuid, rank);
     }
 
     // No Summon Spell Found
-    if (details === null) return;
+    if (detailsGroup === null) return;
 
-    const actor_traits = details?.traits || [];
-    const specific_uuids = details?.specific_uuids || [];
-    const modifications = details?.modifications || {};
-    level = SUMMON_LEVELS_BY_RANK[details.rank];
+    for (const details of detailsGroup) {
+      const actor_traits = details?.traits || [];
+      const specific_uuids = details?.specific_uuids || [];
+      const modifications = details?.modifications || {};
+      level = SUMMON_LEVELS_BY_RANK[details.rank];
 
-    let pickedUUID;
-    if (specific_uuids.length === 1) {
-      pickedUUID = specific_uuids[0]
-    } else {
-      pickedUUID = await foundrySummons.SummonMenu.start({
-        //packs: ['pf2e.pathfinder-monster-core'],
-        noSummon: true,
-        filter: (actor) => {
-          let result =
-            actor.system.traits.rarity == "common" &&
-            actor.system.details.level.value <= level;
-          if (actor_traits.length > 0) {
-            result &= actor.system.traits.value.some((q) =>
-              actor_traits.some((r) => r.toLowerCase() == q.toLowerCase())
-            );
-          }
-          if (specific_uuids.length > 0) {
-            result &= specific_uuids.some((suuid) => suuid === actor?.uuid)
-          }
-          return result;
-        },
-        dropdowns: [{
-          id: "sortOrder",
-          name: "Sort order",
-          options: [{ label: "Level descending", value: 0 }, { label: "Level", value: 1 }],
-          sort: (a, b, i) => {
-            if (i == 0) {
-              if (a.system.details.level.value == b.system.details.level.value)
-                return a.name.localeCompare(b.name);
-              else
-                return (b.system.details.level.value - a.system.details.level.value);
-            }
-            else {
-              if (a.system.details.level.value == b.system.details.level.value)
-                return a.name.localeCompare(b.name);
-              else
-                return (a.system.details.level.value - b.system.details.level.value);
-            }
-          }
-        },
-        {
-          id: "traitsFilter",
-          name: "Trait",
-          options: [{ label: '', value: '' }, ...actor_traits.toSorted().map(t => ({ label: t, value: t }))],
-          func: (actor, i) => {
-            return !i || actor.system.traits.value.some(q => i.toLowerCase() == q.toLowerCase());
-          }
-        }],
-        toggles: [{
-          id: "onlyWithImages",
-          name: "Only with image",
-          func: (actor, i) => {
-            return !i || actor.img != "systems/pf2e/icons/default-icons/npc.svg";
+      let pickedUUID;
+      if (specific_uuids.length === 1) {
+        pickedUUID = specific_uuids[0]
+      } else {
+        pickedUUID = await foundrySummons.SummonMenu.start({
+          //packs: ['pf2e.pathfinder-monster-core'],
+          noSummon: true,
+          filter: (actor) => {
+            const isCommonAndValidLevel =
+              actor.system.traits.rarity === "common" &&
+              actor.system.details.level.value <= level;
+
+            const hasValidTraits = actor_traits.length === 0 ||
+              actor.system.traits.value.some(trait =>
+                actor_traits.some(req => req.toLowerCase() === trait.toLowerCase())
+              );
+
+            const hasValidUuid = specific_uuids.length === 0 ||
+              specific_uuids.includes(actor?.uuid);
+
+            return isCommonAndValidLevel && hasValidTraits && hasValidUuid;
           },
-          indexedFields: [
-            "system.details.level.value",
-            "system.traits.value",
-            "system.traits.rarity",
-            "img"
-          ]
-        }]
+          dropdowns: [{
+            id: "sortOrder",
+            name: "Sort order",
+            options: [{ label: "Level descending", value: 0 }, { label: "Level", value: 1 }],
+            sort: (a, b, i) => {
+              if (i == 0) {
+                if (a.system.details.level.value == b.system.details.level.value)
+                  return a.name.localeCompare(b.name);
+                else
+                  return (b.system.details.level.value - a.system.details.level.value);
+              }
+              else {
+                if (a.system.details.level.value == b.system.details.level.value)
+                  return a.name.localeCompare(b.name);
+                else
+                  return (a.system.details.level.value - b.system.details.level.value);
+              }
+            }
+          },
+          {
+            id: "traitsFilter",
+            name: "Trait",
+            options: [{ label: '', value: '' }, ...actor_traits.toSorted().map(t => ({ label: t, value: t }))],
+            func: (actor, i) => {
+              return !i || actor.system.traits.value.some(q => i.toLowerCase() == q.toLowerCase());
+            }
+          }],
+          toggles: [{
+            id: "onlyWithImages",
+            name: "Only with image",
+            func: (actor, i) => {
+              return !i || actor.img != "systems/pf2e/icons/default-icons/npc.svg";
+            },
+            indexedFields: [
+              "system.details.level.value",
+              "system.traits.value",
+              "system.traits.rarity",
+              "img"
+            ]
+          }]
+        });
+      }
+
+      const type = messageItemHasRollOption("thrall") ? "thrall" : "summon"
+      const addedTraits = addTraits(type);
+
+      const pickedActor = await compFromUuid(pickedUUID);
+
+      const updateData = {
+        'system.details.alliance': alliance,
+        'system.traits.value': [...pickedActor.system.traits.value, ...addedTraits],
+        ...modifications
+      };
+
+      if (game.settings.get(MODULE_ID, "name-ownership")) {
+        updateData.name = `${summoner.name}'s ${pickedActor.name}`;
+        updateData["prototypeToken.name"] = `${summoner.prototypeToken.name}'s ${pickedActor.prototypeToken.name}`;
+      }
+      // if (game.settings.get(MODULE_ID, "effect-ownership")) updateData.items = `${summoner.name}'s ${pickedActor.name}`;
+
+
+
+      await foundrySummons.pick({
+        uuid: pickedUUID,
+        updateData,
       });
     }
-
-    const type = messageItemHasRollOption("thrall") ? "thrall" : "summon"
-    const addedTraits = addTraits(type);
-
-    const pickedActor = await compFromUuid(pickedUUID);
-
-    const updateData = {
-      'system.details.alliance': alliance,
-      'system.traits.value': [...pickedActor.system.traits.value, ...addedTraits],
-      ...modifications
-    };
-
-    if (game.settings.get(MODULE_ID, "name-ownership")) {
-      updateData.name = `${summoner.name}'s ${pickedActor.name}`;
-      updateData["prototypeToken.name"] = `${summoner.prototypeToken.name}'s ${pickedActor.prototypeToken.name}`;
-    }
-    // if (game.settings.get(MODULE_ID, "effect-ownership")) updateData.items = `${summoner.name}'s ${pickedActor.name}`;
-
-
-
-    await foundrySummons.pick({
-      uuid: pickedUUID,
-      updateData,
-    });
   });
 });
 
@@ -186,7 +189,7 @@ function getTraditionalSummonerSpellDetails(uuid, rank) {
     default:
       return null;
   }
-  return details;
+  return [details];
 }
 
 // function getOwnershipEffect(ownerActor, duration = { value: -1, unit: unlimited, sustained: false }) {
