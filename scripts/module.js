@@ -44,8 +44,10 @@ Hooks.once("ready", async function () {
       const requiredTraits = summonDetails?.traits || [];
       const allowedSpecificUuids = summonDetails?.specific_uuids || [];
       const actorModifications = summonDetails?.modifications || {};
+      const itemsToAdd = summonDetails?.itemsToAdd || [];
       const amount = summonDetails?.amount || 1;
-      summonLevel = SUMMON_LEVELS_BY_RANK[summonDetails.rank];
+      if (allowedSpecificUuids.length === 0)
+        summonLevel = SUMMON_LEVELS_BY_RANK[summonDetails.rank];
 
       let selectedActorUuid;
       if (allowedSpecificUuids.length === 1) {
@@ -129,10 +131,14 @@ Hooks.once("ready", async function () {
       }
       // if (game.settings.get(MODULE_ID, "effect-ownership")) actorUpdateData.items = `${summonerActor.name}'s ${selectedActor.name}`;
       for (let i = 0; i < amount; i++) {
-        await foundrySummons.pick({
+        const tokDoc = await foundrySummons.pick({
           uuid: selectedActorUuid,
           updateData: actorUpdateData,
         });
+
+        if (itemsToAdd.length > 0) {
+          await tokDoc.actor.createEmbeddedDocuments("Item", itemsToAdd)
+        }
       }
     }
   });

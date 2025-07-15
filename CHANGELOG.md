@@ -1,3 +1,12 @@
+## 1.3.0
+
+- **New**
+  - Add Time till death for `Necromancer` thralls
+
+## 1.2.1
+
+- Fixed bug where specific summon spells might not go off as planned due to level restriction (@Dods)
+
 ## 1.2.0
 
 - **New**
