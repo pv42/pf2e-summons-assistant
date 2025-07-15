@@ -1,5 +1,5 @@
 import { MODULE_ID, SOURCE, SUMMON_LEVELS_BY_RANK } from "./const.js";
-import { compFromUuid } from "./helpers.js";
+import { addTraits, compFromUuid, messageItemHasRollOption } from "./helpers.js";
 import { extractDCValueRegex, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
 import { getSpecificSummonDetails } from "./specificSummons.js";
@@ -11,12 +11,11 @@ Hooks.once("init", async function () {
 Hooks.once("ready", async function () {
   Hooks.on("createChatMessage", async (chatMessage, _info, userID) => {
     if (userID !== game.user.id) return;
-    // Handle Specific Case Bind Heroic Spirit
-    if ()
 
-      const itemUuid = isBindHeroicSpiritHit(chatMessage)
-        ? SOURCE.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE
-        : chatMessage?.item?.sourceId;
+    // Handle Specific Case Bind Heroic Spirit
+    const itemUuid = isBindHeroicSpiritHit(chatMessage)
+      ? SOURCE.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE
+      : chatMessage?.item?.sourceId;
 
     if (!itemUuid) return;
 
@@ -45,6 +44,7 @@ Hooks.once("ready", async function () {
       const requiredTraits = summonDetails?.traits || [];
       const allowedSpecificUuids = summonDetails?.specific_uuids || [];
       const actorModifications = summonDetails?.modifications || {};
+      const amount = summonDetails?.amount || 1;
       summonLevel = SUMMON_LEVELS_BY_RANK[summonDetails.rank];
 
       let selectedActorUuid;
@@ -128,11 +128,12 @@ Hooks.once("ready", async function () {
         actorUpdateData["prototypeToken.name"] = `${summonerActor.prototypeToken.name}'s ${selectedActor.prototypeToken.name}`;
       }
       // if (game.settings.get(MODULE_ID, "effect-ownership")) actorUpdateData.items = `${summonerActor.name}'s ${selectedActor.name}`;
-
-      await foundrySummons.pick({
-        uuid: selectedActorUuid,
-        updateData: actorUpdateData,
-      });
+      for (let i = 0; i < amount; i++) {
+        await foundrySummons.pick({
+          uuid: selectedActorUuid,
+          updateData: actorUpdateData,
+        });
+      }
     }
   });
 });

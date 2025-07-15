@@ -40,7 +40,7 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
             }
 
         case SOURCE.NECROMANCER.CREATE_THRALL:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank, amount: getNecromancerProf(summonerLevel) }]
+            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank, amount: getNecromancerProf(data.summonerLevel) }]
         case SOURCE.NECROMANCER.PERFECTED_THRALL:
             return [{ specific_uuids: [CREATURES.NECROMANCER.PERFECTED_THRALL], rank: data.rank }]
         case SOURCE.NECROMANCER.SKELETAL_LANCERS:
@@ -52,8 +52,9 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
             ]
         case SOURCE.NECROMANCER.RECURRING_NIGHTMARE:
             return [{ specific_uuids: [CREATURES.NECROMANCER.RECURRING_NIGHTMARE], rank: data.rank }]
+
         case SOURCE.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank }]
+            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: 1 }]
         default:
             return null;
     }
