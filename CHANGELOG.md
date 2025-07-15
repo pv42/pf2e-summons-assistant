@@ -1,7 +1,3 @@
-## 1.3.0
-
-- **New**
-  - Add Time till death for `Necromancer` thralls
 
 ## 1.2.1
 
