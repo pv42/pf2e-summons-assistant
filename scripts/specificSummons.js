@@ -1,5 +1,6 @@
 import { CREATURES, SOURCE } from "./const.js";
 import { hasNoTargets } from "./helpers.js";
+import { incarnateDetails } from "./incarnate.js";
 
 export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0, dc: 0 }) {
     switch (uuid) {
@@ -39,16 +40,34 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
             }
 
         case SOURCE.NECROMANCER.CREATE_THRALL:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank }]
+            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank, amount: getNecromancerProf(summonerLevel) }]
         case SOURCE.NECROMANCER.PERFECTED_THRALL:
             return [{ specific_uuids: [CREATURES.NECROMANCER.PERFECTED_THRALL], rank: data.rank }]
         case SOURCE.NECROMANCER.SKELETAL_LANCERS:
             return [{ specific_uuids: [CREATURES.NECROMANCER.SKELETAL_LANCERS], rank: data.rank, amount: 5 }]
         case SOURCE.NECROMANCER.LIVING_GRAVEYARD:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.LIVING_GRAVEYARD], rank: data.rank }]
+            return [
+                { specific_uuids: [CREATURES.NECROMANCER.LIVING_GRAVEYARD], rank: data.rank },
+                { specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank, amount: 5 }
+            ]
         case SOURCE.NECROMANCER.RECURRING_NIGHTMARE:
             return [{ specific_uuids: [CREATURES.NECROMANCER.RECURRING_NIGHTMARE], rank: data.rank }]
+        case SOURCE.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE:
+            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank }]
         default:
             return null;
+    }
+}
+
+
+function getNecromancerProf(lvl) {
+    if (lvl < 7) {
+        return 1;
+    } else if (lvl < 15) {
+        return 2;
+    } else if (lvl < 19) {
+        return 3;
+    } else {
+        return 4;
     }
 }

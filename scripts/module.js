@@ -1,6 +1,6 @@
-import { CREATURES, MODULE_ID, SPELLS, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { MODULE_ID, SOURCE, SUMMON_LEVELS_BY_RANK } from "./const.js";
 import { compFromUuid } from "./helpers.js";
-import { extractDCValueRegex, incarnateDetails, isIncarnate } from "./incarnate.js";
+import { extractDCValueRegex, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
 import { getSpecificSummonDetails } from "./specificSummons.js";
 
@@ -11,7 +11,13 @@ Hooks.once("init", async function () {
 Hooks.once("ready", async function () {
   Hooks.on("createChatMessage", async (chatMessage, _info, userID) => {
     if (userID !== game.user.id) return;
-    const itemUuid = chatMessage?.item?.sourceId;
+    // Handle Specific Case Bind Heroic Spirit
+    if ()
+
+      const itemUuid = isBindHeroicSpiritHit(chatMessage)
+        ? SOURCE.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE
+        : chatMessage?.item?.sourceId;
+
     if (!itemUuid) return;
 
     // TODO handle Incarnate spells at a later date
@@ -185,6 +191,13 @@ function getTraditionalSummonerSpellDetails(uuid, rank) {
       return null;
   }
   return [details];
+}
+
+
+function isBindHeroicSpiritHit(chatMessage) {
+  return chatMessage?.flags?.pf2e?.context?.type === 'attack-roll'
+    && ['success', 'criticalSuccess'].includes(chatMessage?.flags?.pf2e?.context?.outcome)
+    && chatMessage?.flags?.pf2e?.context?.options?.includes("self:effect:bind-heroic-spirit")
 }
 
 // function getOwnershipEffect(ownerActor, duration = { value: -1, unit: unlimited, sustained: false }) {
