@@ -1,5 +1,3 @@
-2025/07/14-17:59:00.776172 ffff7a7fc0c0 Recovering log #3
-2025/07/14-17:59:00.776388 ffff7a7fc0c0 Level-0 table #5: started
-2025/07/14-17:59:00.778929 ffff7a7fc0c0 Level-0 table #5: 44800 bytes OK
-2025/07/14-17:59:00.783387 ffff7a7fc0c0 Delete type=0 #3
-2025/07/14-17:59:00.783437 ffff7a7fc0c0 Delete type=3 #2
+2025/07/16-04:25:34.178832 ffff7a7fc0c0 Recovering log #10
+2025/07/16-04:25:34.183841 ffff7a7fc0c0 Delete type=0 #10
+2025/07/16-04:25:34.183860 ffff7a7fc0c0 Delete type=3 #7

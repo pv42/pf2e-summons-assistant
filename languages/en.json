@@ -5,6 +5,10 @@
       "name-ownership": {
         "name": "Add Summoner's Name to Summon's Name",
         "hint": "Modify the Summon's name to show who summoned it, IE 'Giorno's Goblin' etc."
+      },
+      "effect-ownership": {
+        "name": "Add Summon's Owner Effect",
+        "hint": "Adds an effect to summons with an icon of the token that summoned them for easier tracking"
       }
     }
   }

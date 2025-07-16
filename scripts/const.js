@@ -19,10 +19,12 @@ export const SOURCES = {
   },
   INCARNATE: {
     TEMPEST_OF_SHADES: "Compendium.pf2e.spells-srd.Item.JLdbyGKhjwAAoRLs",
-    SUMMON_HEALING_SERVITOR: "Compendium.pf2e.spells-srd.Item.3r897dYO8oYvuyn5"
+    SUMMON_HEALING_SERVITOR: "Compendium.pf2e.spells-srd.Item.3r897dYO8oYvuyn5",
+    SUMMON_ELEMENTAL_HERALD: "Compendium.pf2e.spells-srd.Item.kVNo3ga0lwLKPrem",
   },
   MISC: {
     LIGHT: "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
+    FLOATING_FLAME: "Compendium.pf2e.spells-srd.Item.2ZdHjnpEQJuqOYSG",
     CALL_URSINE_ALLY: "Compendium.pf2e.feats-srd.Item.kYYB7ziQZjlgQWWu"
   },
   NECROMANCER: {
@@ -31,6 +33,8 @@ export const SOURCES = {
     SKELETAL_LANCERS: "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.qtgps2eYcmWueed1",
     LIVING_GRAVEYARD: "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.SK8vQklaSQGd5DXw",
     RECURRING_NIGHTMARE: "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.ZVQziQ2l2vdZ5Wfr",
+
+    INEVITABLE_RETURN: "Compendium.pf2e-playtest-data.impossible-playtest-actions.Item.jyhYP51XI09DFSqy",
 
     BIND_HEROIC_SPIRIT_STRIKE: "Compendium.pf2e-playtest-data.impossible-playtest-effects.Item.MTYxqIqJVzza1Lro"
   }
@@ -45,8 +49,18 @@ export const CREATURES = {
     WHITE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.pRL4h1K1hHBkEbIE",
     YELLOW: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.wth1JZ22hGEusEC5"
   },
+  FLOATING_FLAME: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HOq9yGxQLhhZcEAP",
+
   HEALING_SERVITOR: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.gqrW5aGfnjqNse2T",
   TEMPEST_OF_SHADES: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.EwmHOiQTdCEmBKfA",
+  ELEMENTAL_HERALD: {
+    AIR: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.upqvdqYb387AV0mW",
+    EARTH: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.9UfzRa3RWxk0CiJU",
+    FIRE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.RYXePI8AGXkOIOm0",
+    METAL: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.etj1RoPaZdXWsiDL",
+    WATER: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.5pPl44PJyTu14aZM",
+    WOOD: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.y1WKpar1MIgAN45Y",
+  },
 
   BLACK_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.xxP5FJotshmUQNtY",
   GRIZZLY_BEAR: "Compendium.pf2e.pathfinder-monster-core.Actor.6K4RWus85o8iqy0t",
@@ -65,3 +79,66 @@ export const CREATURES = {
 export const SUMMON_LEVELS_BY_RANK = {
   1: -1, 2: 1, 3: 2, 4: 3, 5: 5, 6: 7, 7: 9, 8: 11, 9: 13, 10: 15
 };
+
+
+export const EFFECTS = {
+  NECROMANCER: {
+    THRALL_EXPIRATION: {
+      "name": "Effect: Thrall Expiration Date",
+      "type": "effect",
+      "system": {
+        "description": {
+          "value": "<p>This measures how long till this thrall expires.</p>",
+          "gm": ""
+        },
+        "publication": {
+          "title": "PF2e Summons Assistant",
+          "authors": "",
+          "license": "OGL",
+          "remaster": true
+        },
+        "level": {
+          "value": 1
+        },
+        "duration": {
+          "value": 1,
+          "unit": "minutes",
+          "expiry": "turn-start",
+        },
+        "tokenIcon": {
+          "show": true
+        },
+      },
+      "img": "icons/magic/death/grave-tombstone-glow-teal.webp",
+    },
+  },
+  SUMMON_OWNER: (imagePath) => ({
+    "name": "Summon's Owner",
+    "type": "effect",
+    "system": {
+      "description": {
+        "value": "",
+        "gm": ""
+      },
+      "publication": {
+        "title": "PF2e Summons Assistant",
+        "authors": "",
+        "license": "OGL",
+        "remaster": true
+      },
+      "level": {
+        "value": 1
+      },
+      "duration": {
+        "value": -1,
+        "unit": "unlimited",
+        "expiry": null,
+        "sustained": false
+      },
+      "tokenIcon": {
+        "show": true
+      },
+    },
+    "img": imagePath,
+  })
+}

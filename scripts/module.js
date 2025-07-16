@@ -1,4 +1,4 @@
-import { MODULE_ID, SOURCES, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { EFFECTS, MODULE_ID, SOURCES, SUMMON_LEVELS_BY_RANK } from "./const.js";
 import { addTraits, compFromUuid, messageItemHasRollOption } from "./helpers.js";
 import { extractDCValueRegex, isIncarnate } from "./incarnate.js";
 import { setupSettings } from "./settings.js";
@@ -45,6 +45,13 @@ Hooks.once("ready", async function () {
       const allowedSpecificUuids = summonDetails?.specific_uuids || [];
       const actorModifications = summonDetails?.modifications || {};
       const itemsToAdd = summonDetails?.itemsToAdd || [];
+      if (game.settings.get(MODULE_ID, "effect-ownership")) {
+        itemsToAdd.unshift(
+          EFFECTS.SUMMON_OWNER(
+            getTokenImage(summonerActor.prototypeToken)
+          )
+        );
+      }
       const amount = summonDetails?.amount || 1;
       if (allowedSpecificUuids.length === 0)
         summonLevel = SUMMON_LEVELS_BY_RANK[summonDetails.rank];
@@ -114,7 +121,7 @@ Hooks.once("ready", async function () {
         });
       }
 
-      const summonType = messageItemHasRollOption("thrall") ? "thrall" : "summon"
+      const summonType = messageItemHasRollOption(chatMessage, "thrall") ? "thrall" : "summon"
       const additionalTraits = addTraits(summonType);
 
       const selectedActor = await compFromUuid(selectedActorUuid);
@@ -205,6 +212,12 @@ function isBindHeroicSpiritHit(chatMessage) {
   return chatMessage?.flags?.pf2e?.context?.type === 'attack-roll'
     && ['success', 'criticalSuccess'].includes(chatMessage?.flags?.pf2e?.context?.outcome)
     && chatMessage?.flags?.pf2e?.context?.options?.includes("self:effect:bind-heroic-spirit")
+}
+
+function getTokenImage(prototypeToken) {
+  return prototypeToken?.ring?.enabled
+    ? prototypeToken?.ring?.subject?.texture ?? prototypeToken?.texture?.src
+    : prototypeToken?.texture?.src || "icons/svg/cowled.svg";
 }
 
 // function getOwnershipEffect(ownerActor, duration = { value: -1, unit: unlimited, sustained: false }) {

@@ -1,4 +1,4 @@
-import { CREATURES, SOURCES } from "./const.js";
+import { CREATURES, EFFECTS, SOURCES } from "./const.js";
 import { hasNoTargets } from "./helpers.js";
 import { incarnateDetails } from "./incarnate.js";
 
@@ -15,6 +15,8 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
                 }]
             }
             else return null;
+        case SOURCES.MISC.FLOATING_FLAME:
+            return [{ specific_uuids: [CREATURES.FLOATING_FLAME], rank: data.rank }]
 
         case SOURCES.INCARNATE.SUMMON_HEALING_SERVITOR:
             return [incarnateDetails({
@@ -28,6 +30,14 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
                 rank: data.rank,
                 dc: data.dc
             })]
+        case SOURCES.INCARNATE.SUMMON_ELEMENTAL_HERALD:
+            return [incarnateDetails({
+                uuids: Object.values(CREATURES.ELEMENTAL_HERALD),
+                rank: data.rank,
+                dc: data.dc
+            })]
+
+
         case SOURCES.MISC.CALL_URSINE_ALLY:
             if (data.summonerLevel < 10) {
                 return [{ specific_uuids: [CREATURES.BLACK_BEAR], rank: 3 }]
@@ -40,21 +50,59 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
             }
 
         case SOURCES.NECROMANCER.CREATE_THRALL:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank, amount: getNecromancerProf(data.summonerLevel) }]
+            return [{
+                specific_uuids: [CREATURES.NECROMANCER.THRALL],
+                rank: data.rank,
+                amount: getNecromancerProf(data.summonerLevel),
+                itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+            }]
         case SOURCES.NECROMANCER.PERFECTED_THRALL:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.PERFECTED_THRALL], rank: data.rank }]
+            return [{
+                specific_uuids: [CREATURES.NECROMANCER.PERFECTED_THRALL],
+                rank: data.rank,
+                itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+            }]
         case SOURCES.NECROMANCER.SKELETAL_LANCERS:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.SKELETAL_LANCERS], rank: data.rank, amount: 5 }]
+            return [{
+                specific_uuids: [CREATURES.NECROMANCER.SKELETAL_LANCERS],
+                rank: data.rank,
+                amount: 5,
+                itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+            }]
         case SOURCES.NECROMANCER.LIVING_GRAVEYARD:
             return [
-                { specific_uuids: [CREATURES.NECROMANCER.LIVING_GRAVEYARD], rank: data.rank },
-                { specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: data.rank, amount: 5 }
+                {
+                    specific_uuids: [CREATURES.NECROMANCER.LIVING_GRAVEYARD],
+                    rank: data.rank,
+                    itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+                },
+                {
+                    specific_uuids: [CREATURES.NECROMANCER.THRALL],
+                    rank: data.rank,
+                    amount: 5,
+                    itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+                }
             ]
         case SOURCES.NECROMANCER.RECURRING_NIGHTMARE:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.RECURRING_NIGHTMARE], rank: data.rank }]
+            return [{
+                specific_uuids: [CREATURES.NECROMANCER.RECURRING_NIGHTMARE],
+                rank: data.rank,
+                itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+            }]
 
+        case SOURCES.NECROMANCER.INEVITABLE_RETURN:
+            return [{
+                specific_uuids: [CREATURES.NECROMANCER.THRALL],
+                rank: data.rank,
+                amount: 1,
+                itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+            }]
         case SOURCES.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE:
-            return [{ specific_uuids: [CREATURES.NECROMANCER.THRALL], rank: 1 }]
+            return [{
+                specific_uuids: [CREATURES.NECROMANCER.THRALL],
+                rank: 1,
+                itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION]
+            }]
         default:
             return null;
     }

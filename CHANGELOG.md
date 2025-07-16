@@ -1,3 +1,14 @@
+## 1.3.0
+
+- **New**
+  - Add Expiration Date for `Necromancer` thralls
+  - Added setting to allow adding an Icon showing the summoner of the creature
+  - Added support for these:
+    - `Floating Flame` - Art Requires JB2a
+    - `Summon Elemental Herald` - Art requires `Pathfinder Tokens: Bestiary`
+    - `Inevitable Return` (Necromancer)
+- **Fixed**
+  - Fixed traits on `Necromancer` Thralls to not include minion or summoned
 
 ## 1.2.1
 

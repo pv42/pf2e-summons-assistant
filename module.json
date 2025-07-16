@@ -72,6 +72,17 @@
         "PLAYER": "OBSERVER",
         "ASSISTANT": "OWNER"
       }
+    },
+    {
+      "name": "pf2e-summons-assistant-items",
+      "label": "PF2e Summons Assistant Items",
+      "path": "packs/pf2e-summons-assistant-items",
+      "type": "Item",
+      "ownership": {
+        "PLAYER": "OBSERVER",
+        "ASSISTANT": "OWNER"
+      },
+      "system": "pf2e"
     }
   ]
 }

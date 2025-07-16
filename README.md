@@ -52,15 +52,18 @@ You can access the changelog [here](/CHANGELOG.md).
   - Incarnate
     - Tempest of Shades
     - Summon Healing Servitor
+    - Summon Elemental Herald - Art requires `Pathfinder Tokens: Bestiary`
   - Necromancer
     - Create Thrall
     - Perfected Thrall
     - Skeletal Lancers
     - Living Graveyard
     - Recurring Nightmare
+    - Inevitable Return
     - Bind Heroic Spirit - On Successful Attack
   - Misc
-    - Light
+    - Light - Art Requires JB2a
+    - Floating Flame - Art Requires JB2a
 - Feats
   - Call Ursine Ally
 
