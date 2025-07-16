@@ -1,6 +1,7 @@
 import { EFFECTS, MODULE_ID, SOURCES, SUMMON_LEVELS_BY_RANK } from "./const.js";
 import { addTraits, compFromUuid, messageItemHasRollOption } from "./helpers.js";
 import { extractDCValueRegex, isIncarnate } from "./incarnate.js";
+import { scaleActorItems, scaleNPCToLevel } from "./scaleActor/scaleActor.js";
 import { setupSettings } from "./settings.js";
 import { getSpecificSummonDetails } from "./specificSummons.js";
 
@@ -124,10 +125,14 @@ Hooks.once("ready", async function () {
       const additionalTraits = addTraits(summonType);
 
       const selectedActor = await compFromUuid(selectedActorUuid);
+      const originalActorLevel = selectedActor.level;
+
+      const houseRuleUpdates = await getHouseRuleUpdates(selectedActor, summonLevel, chatMessage, itemUuid);
 
       const actorUpdateData = {
         'system.details.alliance': summonerAlliance,
         'system.traits.value': [...selectedActor.system.traits.value, ...additionalTraits],
+        ...houseRuleUpdates,
         ...actorModifications
       };
 
@@ -135,12 +140,16 @@ Hooks.once("ready", async function () {
         actorUpdateData.name = `${summonerActor.name}'s ${selectedActor.name}`;
         actorUpdateData["prototypeToken.name"] = `${summonerActor.prototypeToken.name}'s ${selectedActor.prototypeToken.name}`;
       }
-      // if (game.settings.get(MODULE_ID, "effect-ownership")) actorUpdateData.items = `${summonerActor.name}'s ${selectedActor.name}`;
+
       for (let i = 0; i < amount; i++) {
         const tokDoc = await foundrySummons.pick({
           uuid: selectedActorUuid,
           updateData: actorUpdateData,
         });
+
+        if (isMaxSummonLevelRuleActive(selectedActor, summonLevel, chatMessage, itemUuid)) {
+          await scaleActorItems(tokDoc.actor, originalActorLevel, summonLevel)
+        }
 
         if (itemsToAdd.length > 0) {
           await tokDoc.actor.createEmbeddedDocuments("Item", itemsToAdd)
@@ -227,6 +236,25 @@ function getMaxSummonLevel(spellRank) {
     return SUMMON_LEVELS_BY_RANK[spellRank]
   }
 }
+
+async function getHouseRuleUpdates(actor, maxSummonLevel, chatMessage, itemUuid) {
+  if (isMaxSummonLevelRuleActive(actor, maxSummonLevel, chatMessage, itemUuid)) {
+    const oldLevel = actor.level;
+    if (oldLevel < maxSummonLevel) {
+      return await scaleNPCToLevel(actor, maxSummonLevel);
+    }
+  } else {
+    return {}
+  }
+}
+
+function isMaxSummonLevelRuleActive(actor, maxSummonLevel, chatMessage, itemUuid) {
+  return game.settings.get(MODULE_ID, "house-rule.scale-to-max-summon-level-for-rank")
+    && messageItemHasRollOption(chatMessage, "summon")
+    && itemUuid !== SOURCES.SUMMON.PHANTASMAL_MINION
+    && actor.level < maxSummonLevel
+}
+
 
 
 

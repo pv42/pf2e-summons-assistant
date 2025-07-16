@@ -14,6 +14,10 @@
         "rank-upgrade": {
           "name": "[House Rule] Summon Spells are Rank + 1",
           "hint": "Warning: I take no responsibility for how this might impact the balance of your games. This rule treats summon spells as if they were 1 rank higher for the sake of which creatures they summon"
+        },
+        "scale-to-max-summon-level-for-rank": {
+          "name": "[House Rule] Summon Spells Scale to Max Level",
+          "hint": "Warning: I take no responsibility for how this might impact the balance of your games. This uses PF2e Workbench's Scale to level code to scale creatures summoned via traditional summoning spells (IE Summon Animals etc.) to the stats of a creature of the highest level that spell rank can summon."
         }
       }
     }

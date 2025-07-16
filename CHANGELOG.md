@@ -1,3 +1,10 @@
+## 1.5.0
+
+- **New**
+  - `House Rule`
+    - **Summon Spells Scale to Max Level**
+      - This uses PF2e Workbench's Scale to level code to scale creatures summoned via traditional summoning spells (IE Summon Animals etc.) to the stats of a creature of the highest level that spell rank can summon.
+
 ## 1.4.0
 
 - **New**
