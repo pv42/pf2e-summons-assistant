@@ -1,0 +1,25 @@
+{
+  "I18N.LANGUAGE": "Français",
+  "pf2e-summons-assistant": {
+    "module-settings": {
+      "name-ownership": {
+        "name": "Ajouter le nom du convocateur au nom de la convocation",
+        "hint": "Modifier le nom de la convocation pour montrer qui l'a convoqué, ex 'Gobelin d'Herendil' etc."
+      },
+      "effect-ownership": {
+        "name": "Ajouter l'effet propriétaire sur la convocation",
+        "hint": "Ajoute un effet aux convocations avec une icône du jeton qui l'a convoqué pour en conserver la trace facilement"
+      },
+      "house-rule": {
+        "rank-upgrade": {
+          "name": "[Règle maison] Les sorts de convocation sont de Rang +1",
+          "hint": "Avertissement : Je ne prends pas la responsabilité sur la manière dont cela peut affecter l'équilibre de votre partie. Cette règle considère que les sorts de convocation sont d'un rang de plus pour déterminer quelle créature est conjurée."
+      },
+        "scale-to-max-summon-level-for-rank": {
+          "name": "[Règle maison] Les sorts de convocation sont élevés au niveau Max",
+          "hint": "Avertissement : Je ne prends pas la responsabilité sur la manière dont cela peut affecter l'équilibre de votre partie. Ceci utilise le code Élever au niveau Max du module PF2e Workbench pour élever les créatures convoquées par des sorts de convocation par des sorts de convocation traditionnels (ex Convocation d'animaux etc.) aux stats d'une créature du plus haut niveau possible que ce rang de sort peut convoquer."
+        }
+      }
+    }
+  }
+}
