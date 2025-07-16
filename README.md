@@ -60,7 +60,7 @@ You can access the changelog [here](/CHANGELOG.md).
     - Recurring Nightmare
     - Bind Heroic Spirit - On Successful Attack
   - Misc
-    - Light
+    - Light - Only works when not targetting anyone
 - Feats
   - Call Ursine Ally
 
