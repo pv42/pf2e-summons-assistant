@@ -62,7 +62,7 @@ You can access the changelog [here](/CHANGELOG.md).
     - Inevitable Return
     - Bind Heroic Spirit - On Successful Attack
   - Misc
-    - Light - Art Requires JB2a
+    - Light - Only works when not targetting anyone (Art Requires JB2a)
     - Floating Flame - Art Requires JB2a
 - Feats
   - Call Ursine Ally
