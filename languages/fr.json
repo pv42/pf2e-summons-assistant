@@ -1,0 +1,21 @@
+{
+  "I18N.LANGUAGE": "Français",
+  "pf2e-summons-assistant": {
+    "module-settings": {
+      "name-ownership": {
+        "name": "Ajouter le nom du conjurateur au nom de la conjuration",
+        "hint": "Modifier le nom de la conjuration pour montrer qui l'a conjuré, ex 'Gobelin d'Herendil' etc."
+      },
+      "effect-ownership": {
+        "name": "Ajouter l'effet propriétaire sur la conjuration",
+        "hint": "Ajoute un effet aux conjurations avec une icône du jeton qui l'a conjuré pour en conserver la trace facilement"
+      },
+      "house-rule": {
+        "rank-upgrade": {
+          "name": "[Règle maison] Les sorts de conjuration sont de Rang +1",
+          "hint": "Avertissement : Je ne prends pas la responsabilité sur la manière dont cela peut affecter l'équilibre de votre partie. Cette règle considère que les sorts de conjuration sont d'un rang de plus pour déterminer quelle céature est conjurée."
+        }
+      }
+    }
+  }
+}
