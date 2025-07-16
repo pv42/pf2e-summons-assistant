@@ -9,6 +9,12 @@
       "effect-ownership": {
         "name": "Add Summon's Owner Effect",
         "hint": "Adds an effect to summons with an icon of the token that summoned them for easier tracking"
+      },
+      "house-rule": {
+        "rank-upgrade": {
+          "name": "[House Rule] Summon Spells are Rank + 1",
+          "hint": "Warning: I take no responsibility for how this might impact the balance of your games. This rule treats summon spells as if they were 1 rank higher for the sake of which creatures they summon"
+        }
       }
     }
   }

@@ -25,6 +25,7 @@ https://github.com/user-attachments/assets/fe9a9176-fda4-4fae-8b43-073618ad63d7
   - [Table of Contents](#table-of-contents)
   - [Changelog](#changelog)
   - [Handled Spells and Features](#handled-spells-and-features)
+    - [House Rules](#house-rules)
   - [Contributors](#contributors)
   - [Assets](#assets)
 
@@ -53,6 +54,7 @@ You can access the changelog [here](/CHANGELOG.md).
     - Tempest of Shades
     - Summon Healing Servitor
     - Summon Elemental Herald - Art requires `Pathfinder Tokens: Bestiary`
+    - Call Fluxwraith
   - Necromancer
     - Create Thrall
     - Perfected Thrall
@@ -66,6 +68,10 @@ You can access the changelog [here](/CHANGELOG.md).
     - Floating Flame - Art Requires JB2a
 - Feats
   - Call Ursine Ally
+
+### House Rules
+
+- **Summon Spells are Rank + 1**. - Treat summon spells as rank + 1 for creatures it summons
 
 ## Contributors
 

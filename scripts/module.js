@@ -53,8 +53,7 @@ Hooks.once("ready", async function () {
         );
       }
       const amount = summonDetails?.amount || 1;
-      if (allowedSpecificUuids.length === 0)
-        summonLevel = SUMMON_LEVELS_BY_RANK[summonDetails.rank];
+      summonLevel = getMaxSummonLevel(summonDetails.rank);
 
       let selectedActorUuid;
       if (allowedSpecificUuids.length === 1) {
@@ -73,10 +72,10 @@ Hooks.once("ready", async function () {
                 requiredTraits.some(requiredTrait => requiredTrait.toLowerCase() === actorTrait.toLowerCase())
               );
 
-            const hasValidUuid = allowedSpecificUuids.length === 0 ||
+            const hasValidUuid = allowedSpecificUuids.length > 0 &&
               allowedSpecificUuids.includes(candidateActor?.uuid);
 
-            return isCommonAndValidLevel && hasValidTraits && hasValidUuid;
+            return (isCommonAndValidLevel && hasValidTraits) || hasValidUuid;
           },
           dropdowns: [{
             id: "sortOrder",
@@ -220,16 +219,15 @@ function getTokenImage(prototypeToken) {
     : prototypeToken?.texture?.src || "icons/svg/cowled.svg";
 }
 
-// function getOwnershipEffect(ownerActor, duration = { value: -1, unit: unlimited, sustained: false }) {
-//   return {
-//     name: `${ownerActor.name}'s Summon`,
-//     img: ownerActor.protoTy,
-//     system: {
-//       duration
-//     },
-//     type: "effect"
-//   }
-// }
+
+function getMaxSummonLevel(spellRank) {
+  if (game.settings.get(MODULE_ID, "house-rule.rank-upgrade")) {
+    return SUMMON_LEVELS_BY_RANK[Math.min(spellRank + 1, 10)]
+  } else {
+    return SUMMON_LEVELS_BY_RANK[spellRank]
+  }
+}
+
 
 
 

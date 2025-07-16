@@ -36,6 +36,12 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
                 rank: data.rank,
                 dc: data.dc
             })]
+        case SOURCES.INCARNATE.CALL_FLUXWRAITH:
+            return [incarnateDetails({
+                uuids: [CREATURES.FLUXWRAITH],
+                rank: data.rank,
+                dc: data.dc
+            })]
 
 
         case SOURCES.MISC.CALL_URSINE_ALLY:

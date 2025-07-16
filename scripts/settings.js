@@ -19,4 +19,13 @@ export function setupSettings() {
         default: true,
         type: Boolean,
     });
+    game.settings.register(MODULE_ID, "house-rule.rank-upgrade", {
+        name: `${MODULE_ID}.module-settings.house-rule.rank-upgrade.name`,
+        hint: `${MODULE_ID}.module-settings.house-rule.rank-upgrade.hint`,
+        requiresReload: false,
+        scope: "world",
+        config: true,
+        default: false,
+        type: Boolean,
+    });
 }

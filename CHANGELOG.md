@@ -1,3 +1,11 @@
+## 1.4.0
+
+- **New**
+  - Added support for
+    - `Call Fluxwraith`
+  - Added new option for the House Rule `Summon Spells are Rank + 1`
+    - Treats summon spells as one rank higher for the purpose of what creatures they can summon
+
 ## 1.3.0
 
 - **New**
