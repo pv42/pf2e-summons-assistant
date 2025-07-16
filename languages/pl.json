@@ -5,6 +5,16 @@
       "name-ownership": {
         "name": "Dodaj imię Przywołującego do imienia przywołanej istoty",
         "hint": "Modyfikuje nazwę przywoływanej postaci, aby wskazywała, kto ją przywołał, np. „Goblin Ezrena” itp."
+      },
+      "effect-ownership": {
+        "name": "Dodaje efekt \"Właściciela\"",
+        "hint": "Dodaje efekt do przywołań z ikoną tokena, który je przywołał dla łatwiejszego śledzenia"
+      },
+      "house-rule": {
+        "rank-upgrade": {
+          "name": "[Zasada domowa] Zaklęcia przywołania mają rangę + 1",
+          "hint": "Ostrzeżenie: Nie biorę żadnej odpowiedzialności za to, jak może to wpłynąć na balans waszych gier. Ta zasada traktuje zaklęcia przywołania tak, jakby były o 1 rangę wyższe ze względu na to, jakie stworzenia przywołują"
+        }
       }
     }
   }
