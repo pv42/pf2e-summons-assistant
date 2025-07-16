@@ -54,7 +54,12 @@
       "lang": "pl",
       "name": "Polski",
       "path": "languages/pl.json"
-    }
+    },
+    {
+        "lang": "fr",
+        "name": "Français",
+        "path": "languages/fr.json"
+    },
   ],
   "url": "#{URL}#",
   "manifest": "#{MANIFEST}#",
