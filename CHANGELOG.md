@@ -1,3 +1,11 @@
+## 1.5.1
+
+- **Updates**
+  - Fixed bug causing the light spell to not function properly
+- **Languages**
+  - Added French translation (@rectulo)
+  - Updated Polish Translation (@Lioheart)
+
 ## 1.5.0
 
 - **New**

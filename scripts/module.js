@@ -76,7 +76,9 @@ Hooks.once("ready", async function () {
             const hasValidUuid = allowedSpecificUuids.length > 0 &&
               allowedSpecificUuids.includes(candidateActor?.uuid);
 
-            return (isCommonAndValidLevel && hasValidTraits) || hasValidUuid;
+            return allowedSpecificUuids.length > 0
+              ? hasValidUuid
+              : isCommonAndValidLevel && hasValidTraits;
           },
           dropdowns: [{
             id: "sortOrder",
