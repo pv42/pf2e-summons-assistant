@@ -17,7 +17,7 @@
       },
         "scale-to-max-summon-level-for-rank": {
           "name": "[Règle maison] Les sorts de convocation sont élevés au niveau Max",
-          "hint": "Avertissement : Je ne prends pas la responsabilité sur la manière dont cela peut affecter l'équilibre de votre partie. Ceci utilise le code Élever au niveau Max du module PF2e Workbench pour élever les créatures convoquées par des sorts de convocation par des sorts de convocation traditionnels (ex Convocation d'animaux etc.) aux stats d'une créature du plus haut niveau possible que ce rang de sort peut convoquer."
+          "hint": "Avertissement : Je ne prends pas la responsabilité sur la manière dont cela peut affecter l'équilibre de votre partie. Ceci utilise le code Élever au niveau Max du module PF2e Workbench pour élever les créatures convoquées par des sorts de convocation traditionnels (ex Convocation d'animaux etc.) aux stats d'une créature du plus haut niveau possible que ce rang de sort peut convoquer."
         }
       }
     }
