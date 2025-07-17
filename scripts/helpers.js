@@ -26,3 +26,8 @@ export function messageItemHasRollOption(msg, roll_option) {
 export function hasNoTargets() {
     return game.user.targets.size === 0;
 }
+
+
+export function onlyHasJB2AFree() {
+    return game.modules.get("JB2A_DnD5e")?.active && !game.modules.get("jb2a_patreon")?.active
+}

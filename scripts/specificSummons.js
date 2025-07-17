@@ -1,5 +1,5 @@
-import { CREATURES, EFFECTS, SOURCES } from "./const.js";
-import { hasNoTargets } from "./helpers.js";
+import { ALT_ART, CREATURES, EFFECTS, SOURCES } from "./const.js";
+import { hasNoTargets, onlyHasJB2AFree } from "./helpers.js";
 import { incarnateDetails } from "./incarnate.js";
 
 export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 0, dc: 0 }) {
@@ -10,13 +10,26 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
             if (hasNoTargets()) {
                 return [{
                     specific_uuids: Object.values(CREATURES.LIGHT), rank: data.rank, modifications: {
-                        "level": data.rank
+                        "level": data.rank,
+                        ...(
+                            onlyHasJB2AFree() ?
+                                { "prototypeToken.texture.src": ALT_ART.JB2A_FREE.LIGHT }
+                                : {}
+                        )
                     }
                 }]
             }
             else return null;
         case SOURCES.MISC.FLOATING_FLAME:
-            return [{ specific_uuids: [CREATURES.FLOATING_FLAME], rank: data.rank }]
+            return [{
+                specific_uuids: [CREATURES.FLOATING_FLAME], rank: data.rank, modifications: {
+                    ...(
+                        onlyHasJB2AFree() ?
+                            { "prototypeToken.texture.src": ALT_ART.JB2A_FREE.FLOATING_FLAME }
+                            : {}
+                    )
+                }
+            }]
 
         case SOURCES.INCARNATE.SUMMON_HEALING_SERVITOR:
             return [incarnateDetails({

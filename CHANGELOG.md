@@ -1,3 +1,8 @@
+## 1.5.2
+
+- **Updates**
+  - Added handling for art of people who don't own `jb2a_patreon`
+
 ## 1.5.1
 
 - **Updates**

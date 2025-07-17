@@ -82,6 +82,13 @@ export const SUMMON_LEVELS_BY_RANK = {
   1: -1, 2: 1, 3: 2, 4: 3, 5: 5, 6: 7, 7: 9, 8: 11, 9: 13, 10: 15
 };
 
+export const ALT_ART = {
+  JB2A_FREE: {
+    LIGHT: "modules/JB2A_DnD5e/Library/Generic/Marker/MarkerLightOrbLoop_01_Regular_Blue_400x400.webm",
+    FLOATING_FLAME: "modules/JB2A_DnD5e/Library/2nd_Level/Flaming_Sphere/FlamingSphere_02_Orange_400x400.webm"
+  }
+}
+
 
 export const EFFECTS = {
   NECROMANCER: {
