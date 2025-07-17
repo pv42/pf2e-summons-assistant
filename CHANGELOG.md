@@ -1,3 +1,13 @@
+## 1.6.0
+
+- **New**
+  - Support for for SF2e's Mechanic's `Mines` (🎨@Sasane, 🖥️@Sasane)
+  - `Update Messages`
+    - Little update messages for each new update will appear the first time you open a server after an update
+- **Updates**
+  - Updated French translation (@rectulo)
+  - Updated Polish Translation (@Lioheart)
+
 ## 1.5.2
 
 - **Updates**

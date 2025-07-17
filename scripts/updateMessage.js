@@ -5,8 +5,12 @@ const sampleData = {
 }
 
 const updateData = {
-    new: [],
-    update: []
+    new: [
+        { item: "Support for for SF2e's Mechanic's `Mines` (🎨 @Sasane, 🖥️ @Sasane)" },
+        { item: "<code>Update Messages</code>" },
+        { children: ["Little update messages for each new update will appear the first time you open a server after an update"] }
+    ],
+    update: [{ item: "Updated French translation (@rectulo)" }, { item: "Updated Polish Translation (@Lioheart)" },]
 }
 
 export async function handleUpdateMessage() {
