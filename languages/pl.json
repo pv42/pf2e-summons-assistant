@@ -14,6 +14,10 @@
         "rank-upgrade": {
           "name": "[Zasada domowa] Zaklęcia przywołania mają rangę + 1",
           "hint": "Ostrzeżenie: Nie biorę żadnej odpowiedzialności za to, jak może to wpłynąć na balans waszych gier. Ta zasada traktuje zaklęcia przywołania tak, jakby były o 1 rangę wyższe ze względu na to, jakie stworzenia przywołują"
+        },
+        "scale-to-max-summon-level-for-rank": {
+          "name": "[Zasada domowa] Zaklęcia przywołania skalują się do maksymalnego poziomu",
+          "hint": "Ostrzeżenie: Nie biorę odpowiedzialności za to, jak może to wpłynąć na balans gry. Wykorzystuje to kod Skalowania poziomu w PF2e Workbench do skalowania stworzeń przywoływanych za pomocą tradycyjnych zaklęć przywoływania (np. Przywołanie zwierząt itp.) do statystyk stworzenia o najwyższym poziomie, jakie może przywołać zaklęcie."
         }
       }
     }
