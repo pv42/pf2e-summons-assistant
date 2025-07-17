@@ -5,6 +5,7 @@ import { isMechanic, setMechanicRelevantInfo } from "./mechanic.js";
 import { scaleActorItems, scaleNPCToLevel } from "./scaleActor/scaleActor.js";
 import { setupSettings } from "./settings.js";
 import { getSpecificSummonDetails } from "./specificSummons.js";
+import { handleUpdateMessage } from "./updateMessage.js";
 
 Hooks.once("init", async function () {
   loadTemplates([
@@ -14,6 +15,7 @@ Hooks.once("init", async function () {
 });
 
 Hooks.once("ready", async function () {
+  handleUpdateMessage()
   Hooks.on("createChatMessage", async (chatMessage, _info, userID) => {
     if (userID !== game.user.id) return;
 

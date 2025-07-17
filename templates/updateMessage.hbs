@@ -6,10 +6,10 @@
   margin: 10px 0;
   box-shadow: 0 2px 4px rgba(32, 178, 170, 0.15);"
 >
-  <h4 style="color: #053e64">
+  <h5 style="color: #053e64">
     <i class="{{icon}}"></i>
     {{name}}
-  </h4>
+  </h5>
   <i>
     Version
     <b>
@@ -18,41 +18,77 @@
     brings the following changes:
   </i>
   <br />
-  {{#if new && new?.length > 0 }}
-  <b>
-    New
-    <i class="fa-solid fa-sparkles"></i>
-  </b>
   <br />
-  {{#each new}}
-    {{#if this.item}}
-        • {{this.item}}
-    {{else}}
-        {{#each this.children}}
-            &nbsp;&nbsp;&nbsp;◦ {{this}}
-        {{/each}}
+  {{#if isNew}}
+    <b>
+      New
+      <i class="fa-solid fa-sparkles"></i>
+    </b>
+    <br />
+    <ul>
+      {{#each new}}
+        {{#if this.item}}
+          <li>
+            {{#if this.feat}}
+              <code>
+                {{this.item}}
+              </code>
+            {{else}}
+              {{this.item}}
+            {{/if}}
+            {{#if this.hasChild}}
+              <ul>
+                {{#each this.children}}
+                  <li>
+                    {{this}}
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
+  {{/if}}
+  {{#if isUpdate}}
+    <b>
+      Updated
+      <i class="fa-solid fa-comments"></i>
+    </b>
+    <br />
+    <ul>
+      {{#each update}}
+        {{#if this.item}}
+          <li>
+            {{#if this.feat}}
+              <code>
+                {{this.item}}
+              </code>
+            {{else}}
+              {{this.item}}
+            {{/if}}
+            {{#if this.hasChild}}
+              <ul>
+                {{#each this.children}}
+                  <li>
+                    {{this}}
+                  </li>
+                {{/each}}
+              </ul>
+            {{/if}}
+          </li>
+        {{/if}}
+      {{/each}}
+    </ul>
   {{/if}}
   <br />
-  {{/each}}
-  {{/if}}
-  {{#if update && update?.length > 0 }}
-  <b>
-    Updated
-    <i class="fa-solid fa-comments"></i>
-  </b>
-  <br />
-  {{#each update}}
-    {{#if this.item}}
-        • {{this.item}}
-    {{else}}
-        {{#each this.children}}
-            &nbsp;&nbsp;&nbsp;◦ {{this}}
-        {{/each}}
-  {{/if}}
-  <br />
-  {{/each}}
-  {{/if}}
-  <br />
-  Thanks for attending this patch note update, if you'd like to support my development time and get access to <i style="color:darkgray">Literally nothing just bragging rights</i> consider supporting me on <a href="https://ko-fi.com/chasarooni" style="color:#44ACD1">Kofi</a>
+  Thanks for attending this patch note update, if you'd like to support my development time and get access to
+  <i style="color:darkgray">
+    Literally nothing just bragging rights
+  </i>
+  consider supporting me on
+  <a href="https://ko-fi.com/chasarooni" style="color:#44ACD1">
+    Kofi
+  </a>
   <br />
 </div>
