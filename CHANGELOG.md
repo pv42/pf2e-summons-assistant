@@ -1,3 +1,7 @@
+## 1.6.1
+
+- Fixed update message not firing for previous version
+
 ## 1.6.0
 
 - **New**

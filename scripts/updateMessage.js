@@ -30,7 +30,6 @@ export async function handleUpdateMessage() {
         game.modules.get(MODULE_ID).version
     );
     if (
-        last_version === "" ||
         last_version === game.modules.get(MODULE_ID).version
     )
         return;
