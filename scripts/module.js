@@ -6,6 +6,9 @@ import { setupSettings } from "./settings.js";
 import { getSpecificSummonDetails } from "./specificSummons.js";
 
 Hooks.once("init", async function () {
+  loadTemplates([
+    `modules/${MODULE_ID}/templates/updateMessage.hbs`,
+  ])
   setupSettings();
 });
 

@@ -37,4 +37,13 @@ export function setupSettings() {
         default: false,
         type: Boolean,
     });
+
+    game.settings.register(MODULE_ID, "last-version", {
+        name: "last-version",
+        hint: "last-version",
+        scope: "world",
+        config: false,
+        default: "",
+        type: String
+    });
 }

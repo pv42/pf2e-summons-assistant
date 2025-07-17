@@ -1,0 +1,58 @@
+<div
+  style="border: 2px solid #2078b2;
+  border-radius: 12px;
+  padding: 15px;
+  background-color: #ffffff67;
+  margin: 10px 0;
+  box-shadow: 0 2px 4px rgba(32, 178, 170, 0.15);"
+>
+  <h4 style="color: #053e64">
+    <i class="{{icon}}"></i>
+    {{name}}
+  </h4>
+  <i>
+    Version
+    <b>
+      {{version}}
+    </b>
+    brings the following changes:
+  </i>
+  <br />
+  {{#if new && new?.length > 0 }}
+  <b>
+    New
+    <i class="fa-solid fa-sparkles"></i>
+  </b>
+  <br />
+  {{#each new}}
+    {{#if this.item}}
+        • {{this.item}}
+    {{else}}
+        {{#each this.children}}
+            &nbsp;&nbsp;&nbsp;◦ {{this}}
+        {{/each}}
+  {{/if}}
+  <br />
+  {{/each}}
+  {{/if}}
+  {{#if update && update?.length > 0 }}
+  <b>
+    Updated
+    <i class="fa-solid fa-comments"></i>
+  </b>
+  <br />
+  {{#each update}}
+    {{#if this.item}}
+        • {{this.item}}
+    {{else}}
+        {{#each this.children}}
+            &nbsp;&nbsp;&nbsp;◦ {{this}}
+        {{/each}}
+  {{/if}}
+  <br />
+  {{/each}}
+  {{/if}}
+  <br />
+  Thanks for attending this patch note update, if you'd like to support my development time and get access to <i style="color:darkgray">Literally nothing just bragging rights</i> consider supporting me on <a href="https://ko-fi.com/chasarooni" style="color:#44ACD1">Kofi</a>
+  <br />
+</div>
