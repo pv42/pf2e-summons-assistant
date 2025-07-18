@@ -234,9 +234,14 @@ function isBindHeroicSpiritHit(chatMessage) {
 }
 
 function getTokenImage(prototypeToken) {
-  return prototypeToken?.ring?.enabled
+  const art = prototypeToken?.ring?.enabled
     ? prototypeToken?.ring?.subject?.texture ?? prototypeToken?.texture?.src
     : prototypeToken?.texture?.src || "icons/svg/cowled.svg";
+
+  // Handles Wildcard
+  if (art?.includes("*")) return 'icons/magic/symbols/star-yellow.webp'
+
+  return art;
 }
 
 

@@ -1,3 +1,7 @@
+## 1.6.2
+
+- Handle exception for the Effect Ownership settings, when the token is a wildcard token
+
 ## 1.6.1
 
 - Fixed update message not firing for previous version

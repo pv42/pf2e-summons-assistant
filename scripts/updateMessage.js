@@ -6,18 +6,9 @@ const sampleData = {
 
 const updateData = {
     new: [
-        {
-            item: "Support for for SF2e's Mechanic's `Mines` (🎨 @Sasane, 🖥️ @Sasane)",
-        },
-        {
-            item: "Update Messages", feat: true, children: [
-                "Little update messages for each new update will appear the first time you open a server after an update",
-            ],
-        },
     ],
     update: [
-        { item: "Updated French translation (@rectulo)" },
-        { item: "Updated Polish Translation (@Lioheart)" },
+        { item: "Handle exception for the Effect Ownership settings, when the token is a wildcard token" },
     ],
 };
 
