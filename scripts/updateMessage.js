@@ -14,6 +14,7 @@ const updateData = {
         ],
         update: [
             { item: "Added localization to some action" },
+            { item: "Updated required version of **Foundry Summons** to `2.3.3`" }
         ],
     }
 };

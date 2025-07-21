@@ -7,7 +7,8 @@
     - Adds a setting to default the picker to show only tokens with art
 - **Updates**
   - Added localization to some action
-
+  - Updated required version of **Foundry Summons** to `2.3.3`
+ 
 ## 1.6.2
 
 - Handle exception for the Effect Ownership settings, when the token is a wildcard token
