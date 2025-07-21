@@ -25,6 +25,14 @@
           "name": "[Necromancer] Handle Living Graveyard Movement",
           "hint": "If enabled when a Living Graveyard is moved it will send a chat message which when clicked will cause the graveyard to spawn a thrall (as in accordance with the rules)"
         }
+      },
+      "filter": {
+        "default": {
+          "token-with-art": {
+            "name": "[Filter] Default to Tokens with Art Only",
+            "hint": "Have the actor picker default to showing only actors with art by default"
+          }
+        }
       }
     },
     "message": {
