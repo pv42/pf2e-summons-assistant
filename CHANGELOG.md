@@ -6,7 +6,7 @@
 ## 1.7.0
 
 - **New**
-  - `Living Gravyard - Movement Summon`
+  - `Living Graveyard - Movement Summon`
     - On Movement ask the user if they want to summon 3 thralls from the living graveyard (🖥️ @Sasane)
   - `Show Only Token With Art`
     - Adds a setting to default the picker to show only tokens with art
