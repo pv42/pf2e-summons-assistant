@@ -5,11 +5,15 @@ const sampleData = {
 };
 
 const updateData = {
-    new: [
-    ],
-    update: [
-        { item: "Handle exception for the Effect Ownership settings, when the token is a wildcard token" },
-    ],
+    '1.7.0': {
+        new: [
+            { item: "Living Gravyard - Movement Summon", feat: true },
+            { children: ["On Movement ask the user if they want to summon 3 thralls from the living graveyard (🖥️ @Sasane)"] },
+        ],
+        update: [
+            { item: "Added localization to some action" },
+        ],
+    }
 };
 
 export async function handleUpdateMessage() {
@@ -22,13 +26,19 @@ export async function handleUpdateMessage() {
     );
     if (
         last_version === game.modules.get(MODULE_ID).version
-    )
+    ) {
         return;
+    }
+
+    const updateStuff = updateData?.[game.modules.get(MODULE_ID).version];
+
+    if (!updateStuff) return;
+
     const updateMessage = {
         name: game.modules.get(MODULE_ID).title,
         icon: "fa-solid fa-wand-magic-sparkles",
         version: game.modules.get(MODULE_ID).version,
-        ...updateData,
+        ...updateStuff,
     };
     updateMessage.isNew = updateMessage?.new && updateMessage?.new?.length > 0
     updateMessage.isUpdate = updateMessage?.update && updateMessage?.update?.length > 0

@@ -129,7 +129,7 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
                     'system.resources.dc.value': data.classDC, 
                     'system.abilities.int.mod': data.int
                 },
-                itemsToAdd: data.hasCriticalExplosion ? [ACTIONS.MECHANIC.CRITICAL_EXPLOSION] : []
+                itemsToAdd: data.hasCriticalExplosion ? [ACTIONS.MECHANIC.CRITICAL_EXPLOSION()] : []
             }]
         case SOURCES.MECHANIC.DOUBLE_DEPLOYMENT:
             return [{ specific_uuids: [CREATURES.MECHANIC.MINE], rank: data.rank, amount: 2,                 
@@ -138,7 +138,7 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
                     'system.resources.dc.value': data.classDC, 
                     'system.abilities.int.mod': data.int
                 },
-                itemsToAdd: data.hasCriticalExplosion ? [ACTIONS.MECHANIC.CRITICAL_EXPLOSION] : []
+                itemsToAdd: data.hasCriticalExplosion ? [ACTIONS.MECHANIC.CRITICAL_EXPLOSION()] : []
             }]	
         default:
             return null;

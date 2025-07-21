@@ -1,3 +1,11 @@
+## 1.7.0
+
+- **New**
+  - `Living Gravyard - Movement Summon`
+    - On Movement ask the user if they want to summon 3 thralls from the living graveyard (🖥️ @Sasane)
+- **Updates**
+  - Added localization to some action
+
 ## 1.6.2
 
 - Handle exception for the Effect Ownership settings, when the token is a wildcard token

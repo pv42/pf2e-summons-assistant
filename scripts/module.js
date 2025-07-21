@@ -1,12 +1,12 @@
 import { MODULE_ID, SOURCES } from "./const.js";
 import { messageItemHasRollOption } from "./helpers.js";
 import { extractDCValueRegex, isIncarnate } from "./incarnate.js";
-import { isMechanic, setMechanicRelevantInfo } from "./mechanic.js";
+import { isMechanic, setMechanicRelevantInfo } from "./specificClasses/mechanic.js";
 import { setupSettings } from "./settings.js";
 import { getSpecificSummonDetails } from "./specificSummons.js";
 import { handleUpdateMessage } from "./updateMessage.js";
 import { summon, getTraditionalSummonerSpellDetails } from "./summon.js";
-import { setNecromancerHooks } from "./necromancer.js";
+import { isBindHeroicSpiritHit, setNecromancerHooks } from "./specificClasses/necromancer.js";
 
 Hooks.once("init", async function () {
   loadTemplates([
@@ -53,13 +53,4 @@ Hooks.once("ready", async function () {
   });
 });
 
-function isBindHeroicSpiritHit(chatMessage) {
-  return chatMessage?.flags?.pf2e?.context?.type === 'attack-roll'
-    && ['success', 'criticalSuccess'].includes(chatMessage?.flags?.pf2e?.context?.outcome)
-    && chatMessage?.flags?.pf2e?.context?.options?.includes("self:effect:bind-heroic-spirit")
-}
 
-// function getMap(uuid) {
-//   const name = fromUuidSync(uuid).name.toUpperCase().split(' ').join('_')
-//       console.log(`${name}: "${uuid}",`)
-//   }
