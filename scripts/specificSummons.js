@@ -109,6 +109,13 @@ export function getSpecificSummonDetails(uuid, data = { rank: 0, summonerLevel: 
                 itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION(data.duration)]
             }]
 
+        case SOURCES.NECROMANCER.CONGLOMERATE_OF_LIMBS:
+            return [{
+                specific_uuids: [CREATURES.NECROMANCER.CONGLOMERATE_OF_LIMBS],
+                rank: data.rank,
+                itemsToAdd: [EFFECTS.NECROMANCER.THRALL_EXPIRATION(data.duration)]
+            }]
+
         case SOURCES.NECROMANCER.INEVITABLE_RETURN:
             return [{
                 specific_uuids: [CREATURES.NECROMANCER.THRALL],

@@ -41,7 +41,7 @@ $(document).on('click', ".living-graveyard-move-yes", async function () {
 
 export function setNecromancerHooks() {
     Hooks.on("preUpdateToken", (tokenDoc, data, id) => {
-        if (game.settings.get(MODULE_ID, "necromancer.handle-living-graveyard-movement")) {
+        if (!game.settings.get(MODULE_ID, "necromancer.handle-living-graveyard-movement")) {
             return;
         }
         if (tokenDoc?.actor?.isDead || !game?.combats?.active) {

@@ -1,3 +1,8 @@
+### Upcoming
+- **New**
+  - Support for the following:
+    - `Conglomerate of Limbs`
+
 ## 1.7.0
 
 - **New**
