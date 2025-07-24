@@ -2,6 +2,9 @@
 - **New**
   - Support for the following:
     - `Conglomerate of Limbs`
+    - `Manifest Eidolon` - (🖥️ @Sasane)
+
+
 
 ## 1.7.0
 

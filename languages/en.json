@@ -41,6 +41,11 @@
         "summon": "Summon!"
       }
     },
+    "notification": {
+      "summoner": {
+        "too-many-eidolons": "We have detected you have too many eidolons and have picked the first one for you"
+      }
+    },
     "items": {
       "actions": {
         "mechanic": {
