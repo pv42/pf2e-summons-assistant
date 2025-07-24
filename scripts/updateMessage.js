@@ -5,6 +5,14 @@ const sampleData = {
 };
 
 const updateData = {
+    '1.8.0': {
+        new: [
+            { item: "Added Support for the following" },
+            { children: ["Conglomerate of Limbs", "Manifest Eidolon (🖥️ @Sasane)"] },
+        ],
+        update: [
+        ],
+    },
     '1.7.0': {
         new: [
             { item: "Living Graveyard - Movement Summon", feat: true },

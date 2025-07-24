@@ -1,10 +1,9 @@
-### Upcoming
+## 1.8.0
+
 - **New**
   - Support for the following:
     - `Conglomerate of Limbs`
-    - `Manifest Eidolon` - (🖥️ @Sasane)
-
-
+    - `Manifest Eidolon` (🖥️ @Sasane)
 
 ## 1.7.0
 
@@ -16,7 +15,7 @@
 - **Updates**
   - Added localization to some action
   - Updated required version of **Foundry Summons** to `2.3.3`
- 
+
 ## 1.6.2
 
 - Handle exception for the Effect Ownership settings, when the token is a wildcard token
