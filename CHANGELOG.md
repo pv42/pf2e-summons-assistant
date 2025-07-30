@@ -1,3 +1,8 @@
+## 1.8.1
+
+- **Updates**
+  - Fixed issue with some properties not being optionally chained causing `Manifest Eidolon` to fail
+
 ## 1.8.0
 
 - **New**

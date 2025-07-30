@@ -18,7 +18,7 @@ export async function getEidolon(summonerActorId) {
     const eidolons = game.actors
         .filter(act =>
             act.type == 'character' &&
-            act.class.sourceId == EIDOLON_CLASS_UUID &&
+            act?.class?.sourceId == EIDOLON_CLASS_UUID &&
             getNonGMOwnerStringified(act) === getNonGMOwnerStringified(summonerActor)
         )
         .map(act => ({ name: act.name, uuid: act.uuid, selected: defaultEidolonUUID && act.uuid == defaultEidolonUUID }));
@@ -36,7 +36,7 @@ export async function getEidolon(summonerActorId) {
 
 function getNonGMOwnerStringified(actor) {
     return JSON.stringify(
-        Object.entries(actor.ownership)
+        Object.entries(actor?.ownership ?? {})
             .filter(owner =>
                 owner[1] === CONST.DOCUMENT_OWNERSHIP_LEVELS.OWNER &&
                 owner[0] !== game.users?.activeGM?.id
