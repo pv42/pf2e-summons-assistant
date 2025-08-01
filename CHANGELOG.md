@@ -1,3 +1,8 @@
+## 1.8.3
+
+- **Updates**
+  - Fixed bug causing all summons to fail (🐛@Le Chat Lunatique)
+
 ## 1.8.2
 
 - **Updates**

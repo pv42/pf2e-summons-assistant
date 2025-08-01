@@ -22,12 +22,12 @@ Hooks.once("ready", async function () {
   Hooks.on("createChatMessage", async (chatMessage, _info, userID) => {
     if (userID !== game.user.id) return;
 
-    const isBindHeroicSpiritHit = isBindHeroicSpiritHit(chatMessage);
+    const isBindHeroicSpiritSuccess = isBindHeroicSpiritHit(chatMessage);
 
     if (chatMessage.isRoll) return;
 
     // Handle Specific Case Bind Heroic Spirit
-    const itemUuid = isBindHeroicSpiritHit
+    const itemUuid = isBindHeroicSpiritSuccess
       ? SOURCES.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE
       : chatMessage?.item?.sourceId;
 
