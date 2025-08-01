@@ -22,8 +22,12 @@ Hooks.once("ready", async function () {
   Hooks.on("createChatMessage", async (chatMessage, _info, userID) => {
     if (userID !== game.user.id) return;
 
+    const isBindHeroicSpiritHit = isBindHeroicSpiritHit(chatMessage);
+
+    if (chatMessage.isRoll) return;
+
     // Handle Specific Case Bind Heroic Spirit
-    const itemUuid = isBindHeroicSpiritHit(chatMessage)
+    const itemUuid = isBindHeroicSpiritHit
       ? SOURCES.NECROMANCER.BIND_HEROIC_SPIRIT_STRIKE
       : chatMessage?.item?.sourceId;
 
@@ -43,7 +47,7 @@ Hooks.once("ready", async function () {
     if (isMechanic(chatMessage)) {
       setMechanicRelevantInfo(summonerActor, spellRelevantInfo);
     }
-    if (isSummoner(chatMessage)){
+    if (isSummoner(chatMessage)) {
       setSummonerRelevantInfo(summonerActor, spellRelevantInfo);
     }
 
@@ -57,7 +61,7 @@ Hooks.once("ready", async function () {
   });
 });
 
-function getSummonType(chatMessage){
+function getSummonType(chatMessage) {
   if (isMechanic(chatMessage))
     return "mechanic";
   if (messageItemHasRollOption(chatMessage, "thrall"))
