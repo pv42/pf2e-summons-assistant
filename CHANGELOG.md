@@ -1,3 +1,14 @@
+## 1.9.0
+
+- **New**
+  - **Support For** `Commander - Plant Banner`
+    - This is only the start of automation (IE handles the base case but not other effects modifying the banner itself)
+    - Those may / hopefully will be handled at a later time
+    - Also bless @Vauxs for thinking of crosshairParams to begin with
+- **Updates**
+  - Fix for missing logic to handle `Bind Heroic Spirit` (@Loki123)
+  - Fix for `Light` spell not properly handling higher level casts
+
 ## 1.8.3
 
 - **Updates**

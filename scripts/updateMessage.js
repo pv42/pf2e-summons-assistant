@@ -5,6 +5,22 @@ const sampleData = {
 };
 
 const updateData = {
+    '1.9.0': {
+        new: [
+            { item: "Support For Commander - Plant Banner", feat: true },
+            {
+                children: [
+                    "This is only the start of automation (IE handles the base case but not other effects modifying the banner itself)",
+                    "Those may / hopefully will be handled at a later time",
+                    "Also bless @Vauxs for thinking of crosshairParams to begin with"
+                ]
+            },
+        ],
+        update: [
+            { item: "Fix for missing logic to handle `Bind Heroic Spirit` (@Loki123)" },
+            { item: "Fix for `Light` spell not properly handling higher level casts" }
+        ],
+    },
     '1.8.0': {
         new: [
             { item: "Added Support for the following" },

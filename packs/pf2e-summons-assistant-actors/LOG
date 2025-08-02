@@ -1,1 +1,6 @@
-2025/07/17-19:33:18.867411 ffff7affd0c0 Delete type=3 #1
+2025/08/01-20:39:13.870872 ffff7affd0c0 Recovering log #37
+2025/08/01-20:39:13.875842 ffff7affd0c0 Delete type=0 #37
+2025/08/01-20:39:13.875885 ffff7affd0c0 Delete type=3 #36
+2025/08/01-20:39:13.875902 ffff7affd0c0 Delete type=3 #32
+2025/08/01-20:39:13.875921 ffff7affd0c0 Delete type=2 #31
+2025/08/01-20:39:13.875960 ffff7affd0c0 Delete type=0 #33

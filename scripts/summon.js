@@ -14,6 +14,7 @@ export async function summon(summonerActor, itemUuid, summonType, summonDetailsG
     const actorModifications = summonDetails?.modifications || {};
     const itemsToAdd = summonDetails?.itemsToAdd || [];
     const isCharacter = summonDetails?.isCharacter;
+    const crosshairParameters = summonDetails?.crosshairParameters || {};
     if (game.settings.get(MODULE_ID, "effect-ownership") && !isCharacter) {
       itemsToAdd.unshift(
         EFFECTS.SUMMON_OWNER(
@@ -113,6 +114,7 @@ export async function summon(summonerActor, itemUuid, summonType, summonDetailsG
       const tokDoc = await foundrySummons.pick({
         uuid: selectedActorUuid,
         updateData: actorUpdateData,
+        crosshairParameters: crosshairParameters
       });
 
       const summonedActor = tokDoc.actor ?? game.actors.get(tokDoc.actorId);
