@@ -160,6 +160,7 @@ export async function getSpecificSummonDetails(uuid, data = { rank: 0, summonerL
                 specific_uuids: [CREATURES.COMMANDER.PLANTED_BANNER],
                 modifications: {
                     'system.details.level.value': data.summonerLevel,
+                    'system.abilities.int.mod': data.int
                 },
                 crosshairParameters: {
                     snap: {

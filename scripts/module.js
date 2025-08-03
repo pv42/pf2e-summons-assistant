@@ -50,6 +50,9 @@ Hooks.once("ready", async function () {
     if (isSummoner(chatMessage)) {
       setSummonerRelevantInfo(summonerActor, spellRelevantInfo);
     }
+    if (itemUuid === SOURCES.COMMANDER.PLANTED_BANNER) {
+      spellRelevantInfo.int = summonerActor.system.abilities.int.mod;
+    }
 
     let summonDetailsGroup = await getSpecificSummonDetails(itemUuid, spellRelevantInfo)
     if (!summonDetailsGroup) {

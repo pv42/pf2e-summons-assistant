@@ -1,3 +1,7 @@
+## 1.9.1
+
+- Ductape Fix for `Plant Banner`
+
 ## 1.9.0
 
 - **New**
