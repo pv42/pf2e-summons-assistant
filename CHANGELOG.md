@@ -1,3 +1,7 @@
+## 1.10.1
+
+- Cleaned up the packages again
+
 ## 1.10.0
 
 - **New**
