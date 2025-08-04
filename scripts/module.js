@@ -33,6 +33,8 @@ Hooks.once("ready", async function () {
 
     if (!itemUuid) return;
 
+    if (chatMessage?.flags?.pf2e?.appliedDamage) return;
+
     // TODO handle Incarnate spells at a later date
     //if (!chatMessage?.flags?.pf2e?.origin?.rollOptions?.includes("summon")) return;
     let summonLevel = 20;

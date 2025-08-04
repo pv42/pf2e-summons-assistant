@@ -1,6 +1,9 @@
-## 1.9.1
+## 1.10.0
 
-- Ductape Fix for `Plant Banner`
+- **Updates**
+  - Fix for `Plant Banner`
+  - Fixed `Necromancer - Summon Thrall` activating on `attack rolls` and `Damage Applied` messages
+  - Added CLI to clear up the packs thanks to (@Vauxs)
 
 ## 1.9.0
 
