@@ -5,6 +5,22 @@ const sampleData = {
 };
 
 const updateData = {
+    '1.10.0': {
+        new: [
+            { item: "Support for the following:", feat: true },
+            {
+                children: [
+                    "`SF2e - Summon Robot` (🖥️ @Sasane)"
+                ]
+            },
+        ],
+        update: [
+            { item: "Fix for `Commander - Plant Banner`" },
+            { item: "Fixed `Necromancer - Summon Thrall` activating on `attack rolls` and `Damage Applied` messages" },
+            { item: "Added CLI to clear up the packs thanks to (@Vauxs)" },
+            { item: "Updated french translation (@rectulo, @Sasane)" },
+        ],
+    },
     '1.9.0': {
         new: [
             { item: "Support For Commander - Plant Banner", feat: true },
