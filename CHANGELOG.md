@@ -1,9 +1,13 @@
 ## 1.10.0
 
+- **New**
+  - Support for the following:
+    - `SF2e - Summon Robot` (🖥️ @Sasane)
 - **Updates**
   - Fix for `Commander - Plant Banner`
   - Fixed `Necromancer - Summon Thrall` activating on `attack rolls` and `Damage Applied` messages
   - Added CLI to clear up the packs thanks to (@Vauxs)
+  - Updated french translation (@rectulo, @Sasane)
 
 ## 1.9.0
 

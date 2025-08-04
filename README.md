@@ -72,7 +72,10 @@ You can access the changelog [here](/CHANGELOG.md).
 - Feats
   - Call Ursine Ally
 - SF2e
-  - Mechanic's Mines
+  - Spells
+    - Summon Robot
+  - Mechanic
+    - Mine
 
 ### House Rules
 
