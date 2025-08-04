@@ -1,7 +1,7 @@
 ## 1.10.0
 
 - **Updates**
-  - Fix for `Plant Banner`
+  - Fix for `Commander - Plant Banner`
   - Fixed `Necromancer - Summon Thrall` activating on `attack rolls` and `Damage Applied` messages
   - Added CLI to clear up the packs thanks to (@Vauxs)
 
