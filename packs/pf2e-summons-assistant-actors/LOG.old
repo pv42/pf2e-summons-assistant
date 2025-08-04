@@ -1,6 +1,4 @@
-2025/08/03-07:46:30.410880 ffff7affd0c0 Delete type=0 #37
-2025/08/03-07:46:30.410912 ffff7affd0c0 Delete type=3 #36
-2025/08/03-07:46:30.410933 ffff7affd0c0 Delete type=3 #32
-2025/08/03-07:46:30.410947 ffff7affd0c0 Delete type=2 #31
-2025/08/03-07:46:30.410979 ffff7affd0c0 Delete type=3 #38
-2025/08/03-07:46:30.410992 ffff7affd0c0 Delete type=0 #33
+2025/08/04-01:03:36.534 fda8 Recovering log #49
+2025/08/04-01:03:36.955 fda8 Delete type=0 #49
+2025/08/04-01:03:36.955 fda8 Delete type=3 #45
+2025/08/04-01:03:36.955 fda8 Delete type=3 #47
