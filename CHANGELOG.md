@@ -1,3 +1,7 @@
+## 1.10.2
+
+- Actually Fixed the `Commander - Plant Banner`
+
 ## 1.10.1
 
 - Cleaned up the packages again
