@@ -83,7 +83,7 @@ export async function getFoeInfo(token, rank) {
     }
 
     const actions = actor.system.actions.map((act, index) => ({
-        traits: act.weaponTraits.map(t => t.name),
+        traits: act?.weaponTraits?.map(t => t.name) ?? act?.traits?.map(t => t.name),
         slug: act.slug,
         totalModifier: act.modifiers
             .filter(mod => mod.type === 'circumstance' && mod.enabled)
