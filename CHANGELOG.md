@@ -1,3 +1,8 @@
+## 1.11.2
+
+- **Updated**
+  - Fixed handling of NPC Strikes with `Duplicate Foe`, but actually this time
+
 ## 1.11.1
 
 - **Updated**
