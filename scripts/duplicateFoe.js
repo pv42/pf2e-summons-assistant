@@ -107,7 +107,7 @@ export async function getFoeInfo(token, rank) {
     }
     return {
         changes: data,
-        strikeRules: [...actionsToStrikeRE(actions), damagePerTurn],
+        strikeRules: [...actionsToStrikeRE(actions), damagePerTurn, healingImmune],
         items
     }
 }
@@ -337,4 +337,9 @@ const damagePerTurn = {
     "onDeleteActions": {
         "grantee": "cascade"
     }
+}
+
+const healingImmune = {
+    "key": "Immunity",
+    "type": "healing"
 }
