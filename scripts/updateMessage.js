@@ -5,6 +5,9 @@ const sampleData = {
 };
 
 const updateData = {
+    '1.11.0': {
+        new: [{ item: 'Support for `Duplicate Foe` spell' }]
+    },
     '1.10.0': {
         new: [
             { item: "Support for the following:", feat: true },

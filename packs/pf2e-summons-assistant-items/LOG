@@ -1,3 +1,6 @@
-2025/08/04-01:56:53.696 1e2cc Recovering log #27
-2025/08/04-01:56:53.821 1e2cc Delete type=0 #27
-2025/08/04-01:56:53.821 1e2cc Delete type=3 #26
+2025/08/06-04:16:54.891 af0c Recovering log #44
+2025/08/06-04:16:55.027 af0c Delete type=2 #11
+2025/08/06-04:16:55.028 af0c Delete type=0 #42
+2025/08/06-04:16:55.047 af0c Delete type=0 #44
+2025/08/06-04:16:55.048 af0c Delete type=3 #28
+2025/08/06-04:16:55.048 af0c Delete type=3 #43

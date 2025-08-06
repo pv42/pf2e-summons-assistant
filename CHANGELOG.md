@@ -1,3 +1,8 @@
+## 1.11.0
+
+- **New**
+  - Support for `Duplicate Foe` spell
+
 ## 1.10.2
 
 - Actually Fixed the `Commander - Plant Banner`
