@@ -5,6 +5,20 @@ const sampleData = {
 };
 
 const updateData = {
+    '1.12.0': {
+        new: [
+            { item: "Support for the following:", feat: true },
+            {
+                children: [
+                    "Telekinetic Hand"
+                ]
+            },
+        ],
+        update: [
+            { item: "`Duplicate Foe`'s Level is now the spell rank" },
+            { item: "`Light` & `Floating Flame` now handle the actor image for users of free JB2a" },
+        ],
+    },
     '1.11.0': {
         new: [{ item: 'Support for `Duplicate Foe` spell' }]
     },
