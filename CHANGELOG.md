@@ -1,3 +1,8 @@
+## Uncommitted
+
+- **Updated**
+  - `Duplicate Foe`'s Level is now the spell rank
+
 ## 1.11.2
 
 - **Updated**

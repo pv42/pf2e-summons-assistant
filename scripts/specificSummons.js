@@ -88,7 +88,10 @@ export async function getSpecificSummonDetails(uuid, data = {
                 return [{
                     specific_uuids: [CREATURES.DUPLICATE_FOE],
                     rank: data.rank,
-                    modifications: info.changes,
+                    modifications: {
+                        ...info.changes,
+                        'system.details.level.value': data.rank
+                    },
                     itemsToAdd: [effect, ...(info?.items ?? [])]
                 }]
             }
