@@ -47,7 +47,8 @@
       }
     },
     "dialog": {
-      "duplicate-foe": "Did the target fail their save?"
+      "duplicate-foe": "Did the target fail their save?",
+      "telekinetic-hand": "Do you choose to make the hand you summon invisible?"
     },
     "items": {
       "actions": {

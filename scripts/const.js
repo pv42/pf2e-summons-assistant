@@ -26,6 +26,7 @@ export const SOURCES = {
   },
   MISC: {
     LIGHT: "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
+    TELEKINETIC_HAND: "Compendium.pf2e.spells-srd.Item.pwzdSlJgYqN7bs2w",
     FLOATING_FLAME: "Compendium.pf2e.spells-srd.Item.2ZdHjnpEQJuqOYSG",
     CALL_URSINE_ALLY: "Compendium.pf2e.feats-srd.Item.kYYB7ziQZjlgQWWu",
     DUPLICATE_FOE: "Compendium.pf2e.spells-srd.Item.73rToy0v5Ra9NvL6"
@@ -67,6 +68,7 @@ export const CREATURES = {
     YELLOW: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.wth1JZ22hGEusEC5"
   },
   FLOATING_FLAME: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HOq9yGxQLhhZcEAP",
+  TELEKINETIC_HAND: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.llXyX6eS8UHGqpnn",
 
   DUPLICATE_FOE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.03gFpid5kBiI3vXS",
 
@@ -117,8 +119,18 @@ export const SUMMON_LEVELS_BY_RANK = {
 
 export const ALT_ART = {
   JB2A_FREE: {
-    LIGHT: "modules/JB2A_DnD5e/Library/Generic/Marker/MarkerLightOrbLoop_01_Regular_Blue_400x400.webm",
-    FLOATING_FLAME: "modules/JB2A_DnD5e/Library/2nd_Level/Flaming_Sphere/FlamingSphere_02_Orange_400x400.webm"
+    LIGHT: {
+      TOKEN: "modules/JB2A_DnD5e/Library/Generic/Marker/MarkerLightOrbLoop_01_Regular_Blue_400x400.webm",
+      ACTOR: "modules/JB2A_DnD5e/Library/Generic/Marker/MarkerLightOrbLoop_01_Regular_Blue_Thumb.webp"
+    },
+    FLOATING_FLAME: {
+      TOKEN: "modules/JB2A_DnD5e/Library/2nd_Level/Flaming_Sphere/FlamingSphere_02_Orange_400x400.webm",
+      ACTOR: "modules/JB2A_DnD5e/Library/2nd_Level/Flaming_Sphere/FlamingSphere_02_Orange_Thumb.webp"
+    },
+    TELEKINETIC_HAND: {
+      TOKEN: "modules/JB2A_DnD5e/Library/5th_Level/Arcane_Hand/ArcaneHand_Human_01_Idle_Blue_400x400.webm",
+      ACTOR: "modules/JB2A_DnD5e/Library/5th_Level/Arcane_Hand/ArcaneHand_Human_01_Idle_Blue_Thumb.webp"
+    }
   }
 }
 
@@ -229,7 +241,10 @@ export const EFFECTS = {
       "slug": "effect-duplicate-foe"
     },
     "img": "systems/pf2e/icons/spells/duplicate-foe.webp",
-  })
+  }),
+  CONDITIONS: {
+    INVISIBLE: 'Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML'
+  }
 }
 
 export const ACTIONS = {

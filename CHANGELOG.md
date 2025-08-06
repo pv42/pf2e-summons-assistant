@@ -1,7 +1,11 @@
-## Uncommitted
+## 1.12.0
 
+- **New**
+  - Support for the following:
+    - `Telekinetic Hand`
 - **Updated**
   - `Duplicate Foe`'s Level is now the spell rank
+  - `Light` & `Floating Flame` now handle the actor image for users of free JB2a
 
 ## 1.11.2
 

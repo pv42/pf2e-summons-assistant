@@ -20,7 +20,10 @@ export async function getSpecificSummonDetails(uuid, data = {
                         "system.details.level.value": data.rank,
                         ...(
                             onlyHasJB2AFree() ?
-                                { "prototypeToken.texture.src": ALT_ART.JB2A_FREE.LIGHT }
+                                {
+                                    "prototypeToken.texture.src": ALT_ART.JB2A_FREE.LIGHT.TOKEN,
+                                    "img": ALT_ART.JB2A_FREE.LIGHT.ACTOR
+                                }
                                 : {}
                         )
                     }
@@ -32,10 +35,38 @@ export async function getSpecificSummonDetails(uuid, data = {
                 specific_uuids: [CREATURES.FLOATING_FLAME], rank: data.rank, modifications: {
                     ...(
                         onlyHasJB2AFree() ?
-                            { "prototypeToken.texture.src": ALT_ART.JB2A_FREE.FLOATING_FLAME }
+                            {
+                                "prototypeToken.texture.src": ALT_ART.JB2A_FREE.FLOATING_FLAME.TOKEN,
+                                "img": ALT_ART.JB2A_FREE.FLOATING_FLAME.ACTOR
+                            }
                             : {}
                     )
                 }
+            }]
+        case SOURCES.MISC.TELEKINETIC_HAND:
+            const isInvisible = await foundry.applications.api.DialogV2.confirm({
+                content: game.i18n.localize("pf2e-summons-assistant.dialog.telekinetic-hand"),
+                rejectClose: false
+            });
+            const itemsToAdd = []
+            if (isInvisible) {
+                const invisible = await fromUuid(EFFECTS.CONDITIONS.INVISIBLE)
+                itemsToAdd.push(invisible)
+            }
+            return [{
+                specific_uuids: [CREATURES.TELEKINETIC_HAND],
+                rank: data.rank,
+                modifications: {
+                    ...(
+                        onlyHasJB2AFree() ?
+                            {
+                                "prototypeToken.texture.src": ALT_ART.JB2A_FREE.TELEKINETIC_HAND.TOKEN,
+                                "img": ALT_ART.JB2A_FREE.TELEKINETIC_HAND.ACTOR
+                            }
+                            : {}
+                    )
+                },
+                itemsToAdd
             }]
 
         case SOURCES.INCARNATE.SUMMON_HEALING_SERVITOR:

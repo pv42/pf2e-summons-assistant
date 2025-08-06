@@ -70,6 +70,7 @@ You can access the changelog [here](/CHANGELOG.md).
     - Light - Only works when not targetting anyone (Art Requires JB2a)
     - Floating Flame - Art Requires JB2a
     - Duplicate Foe - Note: Does not work on Kineticist, does not copy over magical weapons only the strike form of them
+    - Telekinetic Hand - Art Requires JB2a
 - Feats
   - Call Ursine Ally
 - SF2e
