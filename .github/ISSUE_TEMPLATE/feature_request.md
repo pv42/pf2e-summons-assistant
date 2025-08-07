@@ -1,5 +1,5 @@
 ---
-name: Feature request (not a request for a new item)
+name: Feature request (not a request for support of a New Item/Spell/Feat)
 about: Suggest an idea for this project
 title: '[FEATURE]  '
 labels: ['enhancement']
