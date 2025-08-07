@@ -1,6 +1,7 @@
 ---
-name: Feature request
+name: Feature request (not a request for a new item)
 about: Suggest an idea for this project
+title: [FEATURE] 
 title: ''
 labels: ''
 assignees: ''
