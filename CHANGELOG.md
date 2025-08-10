@@ -1,4 +1,4 @@
-
+## 1.12.2
 - **Updated**
   - Misc code fixes
   - Added a fallback to slug for if the source Item UUID can't be found
