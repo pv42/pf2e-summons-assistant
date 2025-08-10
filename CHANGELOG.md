@@ -1,3 +1,6 @@
+- **Updated**
+  - Updated french translation (@rectulo)
+
 ## 1.12.1
 
 - **Updated**
