@@ -1,4 +1,7 @@
+
 - **Updated**
+  - Misc code fixes
+  - Added a fallback to slug for if the source Item UUID can't be found
   - Updated french translation (@rectulo)
 
 ## 1.12.1
