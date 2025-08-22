@@ -1,5 +1,11 @@
-- Updated extract/pack scripts to use @Owave's scripts
-- Updated french translation (@rectulo)
+## 1.13.0
+
+- **Updated**
+  - Added a more accurate implementation of the **Commander's** `Plant Banner` using sockets (💡 @ducke)
+    - Specifically accurately adding the Temp HP on creation, and then at the start of a creature's turn
+  - Updated extract/pack scripts to use @Owave's scripts
+  - Updated french translation (@rectulo)
+  - Now requires `socketlib` as a dependency
 
 ## 1.12.2
 

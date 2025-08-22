@@ -206,6 +206,10 @@ export const EFFECTS = {
       "img": "icons/magic/death/grave-tombstone-glow-teal.webp",
     }),
   },
+  COMMANDER: {
+    IN_PLANT_BANNER_RANGE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-items.Item.vnFV2b3aYdvGeVkM",
+    PLANT_BANNER: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-items.Item.uxS1nDflB45y3PPl"
+  },
   SUMMON_OWNER: (imagePath) => ({
     "name": game.i18n.localize("pf2e-summons-assistant.items.effects.summon's-owner.name"),
     "type": "effect",
@@ -313,5 +317,11 @@ export const ACTIONS = {
       },
       "img": "systems/pf2e/icons/actions/Passive.webp",
     })
+  }
+}
+
+export const ROLL_OPTION = {
+  COMMANDER: {
+    IN_PLANT_BANNER_RANGE: "self:effect:in-plant-banner-range"
   }
 }

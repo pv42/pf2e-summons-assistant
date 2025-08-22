@@ -1,4 +1,5 @@
 import { EFFECTS, MODULE_ID, SOURCES, SUMMON_LEVELS_BY_RANK } from "./const.js";
+import { handlePostSummon } from "./handlePostSummon.js";
 import { addTraits, compFromUuid } from "./helpers.js";
 import { scaleActorItems, scaleNPCToLevel } from "./scaleActor/scaleActor.js";
 
@@ -122,6 +123,7 @@ export async function summon(summonerActor, itemUuid, summonType, summonDetailsG
         await summonedActor?.createEmbeddedDocuments("Item", itemsToAdd)
       }
       await summonedActor?.setFlag(MODULE_ID, 'summoner', { uuid: summonerActor.uuid, id: summonerActor.id });
+      await handlePostSummon(itemUuid, summonedActor.uuid);
     }
   }
 }

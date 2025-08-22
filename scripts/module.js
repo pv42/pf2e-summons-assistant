@@ -8,6 +8,8 @@ import { getSpecificSummonDetails } from "./specificSummons.js";
 import { handleUpdateMessage } from "./updateMessage.js";
 import { summon, getTraditionalSummonerSpellDetails } from "./summon.js";
 import { isBindHeroicSpiritHit, setNecromancerHooks } from "./specificClasses/necromancer.js";
+import { setupCommanderHooks } from "./specificClasses/commander.js";
+import { setupSocket } from "./lib/socket.js";
 
 Hooks.once("init", async function () {
   loadTemplates([
@@ -16,9 +18,14 @@ Hooks.once("init", async function () {
   setupSettings();
 });
 
+Hooks.once("setup", function () {
+  if (!setupSocket())
+    console.error("Error: Unable to set up socket lib for PF2e Summons Assistant");
+});
+
 Hooks.once("ready", async function () {
   handleUpdateMessage();
-  setNecromancerHooks();
+  setupSpecificHooks();
   Hooks.on("createChatMessage", async (chatMessage, _info, userID) => {
     if (userID !== game.user.id) return;
 
@@ -78,4 +85,10 @@ function getSummonType(chatMessage) {
   if (isSummoner(chatMessage))
     return "summoner";
   return "summon";
+}
+
+
+function setupSpecificHooks() {
+  setNecromancerHooks();
+  setupCommanderHooks();
 }
