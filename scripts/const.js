@@ -24,6 +24,11 @@ export const SOURCES = {
     SUMMON_ELEMENTAL_HERALD: "Compendium.pf2e.spells-srd.Item.kVNo3ga0lwLKPrem",
     CALL_FLUXWRAITH: "Compendium.pf2e.spells-srd.Item.i6GUJCWdNu2278oA",
   },
+
+  WONDROUS_FIGURINE: {
+    JADE_SERPENT: "Compendium.pf2e.equipment-srd.Item.RjJw7iHantxqeJu1"
+  },
+
   MISC: {
     LIGHT: "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
     TELEKINETIC_HAND: "Compendium.pf2e.spells-srd.Item.pwzdSlJgYqN7bs2w",
@@ -31,6 +36,7 @@ export const SOURCES = {
     CALL_URSINE_ALLY: "Compendium.pf2e.feats-srd.Item.kYYB7ziQZjlgQWWu",
     DUPLICATE_FOE: "Compendium.pf2e.spells-srd.Item.73rToy0v5Ra9NvL6"
   },
+
   NECROMANCER: {
     CREATE_THRALL: "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.77lglowVpcnRRh3g",
     PERFECTED_THRALL: "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.kFkhtDYsR9fE0pAr",
@@ -60,41 +66,43 @@ export const SOURCES = {
 };
 
 export const SLUG_TO_SOURCE = {
-  "call-fluxwraith": "Compendium.pf2e.spells-srd.Item.i6GUJCWdNu2278oA",
-  "call-ursine-ally": "Compendium.pf2e.feats-srd.Item.kYYB7ziQZjlgQWWu",
-  "conglomerate-of-limbs": "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.OOmk0XI3lzhn42JT",
-  "create-thrall": "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.77lglowVpcnRRh3g",
-  "deploy-mine": "Compendium.starfinder-field-test-for-pf2e.actions.Item.ccVcznj9KVYHLVaY",
-  "double-deployment": "Compendium.starfinder-field-test-for-pf2e.feats.Item.x5rhl6ThqqjHGglD",
-  "duplicate-foe": "Compendium.pf2e.spells-srd.Item.73rToy0v5Ra9NvL6",
-  "floating-flame": "Compendium.pf2e.spells-srd.Item.2ZdHjnpEQJuqOYSG",
-  "inevitable-return": "Compendium.pf2e-playtest-data.impossible-playtest-actions.Item.jyhYP51XI09DFSqy",
-  "light": "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
-  "living-graveyard": "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.SK8vQklaSQGd5DXw",
-  "manifest-eidolon": "Compendium.pf2e.actionspf2e.Item.n5vwBnLSlIXL9ptp",
-  "perfected-thrall": "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.kFkhtDYsR9fE0pAr",
-  "phantasmal-minion": "Compendium.pf2e.spells-srd.Item.xqmHD8JIjak15lRk",
-  "plant-banner": "Compendium.pf2e.feats-srd.Item.xEeCaJsQeDtRAVk1",
-  "recurring-nightmare": "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.ZVQziQ2l2vdZ5Wfr",
-  "skeletal-lancers": "Compendium.pf2e-playtest-data.impossible-playtest-spells.Item.qtgps2eYcmWueed1",
-  "summon-animal": "Compendium.pf2e.spells-srd.Item.4YnON9JHYqtLzccu",
-  "summon-celestial": "Compendium.pf2e.spells-srd.Item.lTDixrrNKaCvLKwX",
-  "summon-construct": "Compendium.pf2e.spells-srd.Item.lKcsmeOrgHtK4xQa",
-  "summon-dragon": "Compendium.pf2e.spells-srd.Item.kghwmH3tQjMIhdH1",
-  "summon-elemental": "Compendium.pf2e.spells-srd.Item.lpT6LotUaQPfinjj",
-  "summon-elemental-herald": "Compendium.pf2e.spells-srd.Item.kVNo3ga0lwLKPrem",
-  "summon-entity": "Compendium.pf2e.spells-srd.Item.i1TvBID5QLyXrUCa",
-  "summon-fey": "Compendium.pf2e.spells-srd.Item.hs7h8f4Z1ZNdUt3s",
-  "summon-fiend": "Compendium.pf2e.spells-srd.Item.29ytKctjg7qSW2ff",
-  "summon-giant": "Compendium.pf2e.spells-srd.Item.e9UJoVYUd5kJWUpi",
-  "summon-healing-servitor": "Compendium.pf2e.spells-srd.Item.3r897dYO8oYvuyn5",
-  "summon-lesser-servitor": "Compendium.pf2e.spells-srd.Item.B0FZLkoHsiRgw7gv",
-  "summon-monitor": "Compendium.pf2e.spells-srd.Item.ZbEHglw5tkJ3grQZ",
-  "summon-plant-or-fungus": "Compendium.pf2e.spells-srd.Item.jSRAyd57kd4WZ4yE",
-  "summon-robot": "Compendium.sf2e-anachronism.spells.Item.KlJEDmAOk1ztdNFf",
-  "summon-undead": "Compendium.pf2e.spells-srd.Item.9WGeBwIIbbUuWKq0",
-  "telekinetic-hand": "Compendium.pf2e.spells-srd.Item.pwzdSlJgYqN7bs2w",
-  "tempest-of-shades": "Compendium.pf2e.spells-srd.Item.JLdbyGKhjwAAoRLs"
+  "call-fluxwraith": SOURCES.CALL_FLUXWRAITH,
+  "call-ursine-ally": SOURCES.CALL_URSINE_ALLY,
+  "conglomerate-of-limbs": SOURCES.NECROMANCER.CONGLOMERATE_OF_LIMBS,
+  "create-thrall": SOURCES.NECROMANCER.CREATE_THRALL,
+  "deploy-mine": SOURCES.MECHANIC.DEPLOY_MINE,
+  "double-deployment": SOURCES.MECHANIC.DOUBLE_DEPLOYMENT,
+  "duplicate-foe": SOURCES.MISC.DUPLICATE_FOE,
+  "floating-flame": SOURCES.MISC.FLOATING_FLAME,
+  "inevitable-return": SOURCES.NECROMANCER.INEVITABLE_RETURN,
+  "light": SOURCES.MISC.LIGHT,
+  "living-graveyard": SOURCES.NECROMANCER.LIVING_GRAVEYARD,
+  "manifest-eidolon": SOURCES.SUMMONER.MANIFEST_EIDOLON,
+  "perfected-thrall": SOURCES.NECROMANCER.PERFECTED_THRALL,
+  "phantasmal-minion": SOURCES.MISC.PHANTASMAL_MINION,
+  "plant-banner": SOURCES.COMMANDER.PLANT_BANNER,
+  "recurring-nightmare": SOURCES.NECROMANCER.RECURRING_NIGHTMARE,
+  "skeletal-lancers": SOURCES.NECROMANCER.SKELETAL_LANCERS,
+  "summon-animal": SOURCES.SUMMON.SUMMON_ANIMAL,
+  "summon-celestial": SOURCES.SUMMON.SUMMON_CELESTIAL,
+  "summon-construct": SOURCES.SUMMON.SUMMON_CONSTRUCT,
+  "summon-dragon": SOURCES.SUMMON.SUMMON_DRAGON,
+  "summon-elemental": SOURCES.SUMMON.SUMMON_ELEMENTAL,
+  "summon-elemental-herald": SOURCES.SUMMON.SUMMON_ELEMENTAL_HERALD,
+  "summon-entity": SOURCES.SUMMON.SUMMON_ENTITY,
+  "summon-fey": SOURCES.SUMMON.SUMMON_FEY,
+  "summon-fiend": SOURCES.SUMMON.SUMMON_FIEND,
+  "summon-giant": SOURCES.SUMMON.SUMMON_GIANT,
+  "summon-healing-servitor": SOURCES.SUMMON.SUMMON_HEALING_SERVITOR,
+  "summon-lesser-servitor": SOURCES.SUMMON.SUMMON_LESSER_SERVITOR,
+  "summon-monitor": SOURCES.SUMMON.SUMMON_MONITOR,
+  "summon-plant-or-fungus": SOURCES.SUMMON.SUMMON_PLANT_OR_FUNGUS,
+  "summon-robot": SOURCES.SUMMON.SUMMON_ROBOT,
+  "summon-undead": SOURCES.SUMMON.SUMMON_UNDEAD,
+  "telekinetic-hand": SOURCES.MISC.TELEKINETIC_HAND,
+  "tempest-of-shades": SOURCES.INCARNATE.TEMPEST_OF_SHADES,
+  "wondrous-figurine-jade-serpent": SOURCES.WONDROUS_FIGURINE.JADE_SERPENT,
+  "activation-wondrous-figurine-jade-serpent": SOURCES.WONDROUS_FIGURINE.JADE_SERPENT,
 }
 
 export const CREATURES = {
@@ -127,6 +135,8 @@ export const CREATURES = {
   GRIZZLY_BEAR: "Compendium.pf2e.pathfinder-monster-core.Actor.6K4RWus85o8iqy0t",
   POLAR_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.UqFObUjgFAlWrriA",
   CAVE_BEAR: "Compendium.pf2e.pathfinder-monster-core.Actor.AZIG0COCaDBronJa",
+
+  GIANT_VIPER: "Compendium.pf2e.pathfinder-monster-core.Actor.AJ5LuNMVPLCydryP",
 
   COMMANDER: {
     PLANTED_BANNER: 'Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.D8gtAM19NQKqbBfW'

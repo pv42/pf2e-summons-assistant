@@ -232,6 +232,10 @@ export async function getSpecificSummonDetails(uuid, data = {
                     }
                 }
             }]
+        case SOURCES.WONDROUS_FIGURINE.JADE_SERPENT:
+            return [{
+                specific_uuids: [CREATURES.GIANT_VIPER]
+            }]
 
 
         default:

@@ -1,5 +1,7 @@
 ## 1.13.0
-
+- **New**
+  - Support for the following:
+    - `Wondrous Figurine: Jade Serpent` - Also supports the Item Activation version
 - **Updated**
   - Added a more accurate implementation of the **Commander's** `Plant Banner` using sockets (💡 @ducke)
     - Specifically accurately adding the Temp HP on creation, and then at the start of a creature's turn

@@ -5,6 +5,26 @@ const sampleData = {
 };
 
 const updateData = {
+    '1.13.0': {
+        new: [
+            { item: "Support for the following:" },
+            {
+                children: [
+                    "`Wondrous Figurine: Jade Serpent` - Also supports the Item Activation version"
+                ]
+            },
+        ],
+        update: [
+            { item: "Added a more accurate implementation of the **Commander's** `Plant Banner` using sockets (💡 @ducke)" },
+            {
+                children: ["Specifically accurately adding the Temp HP on creation, and then at the start of a creature's turn"]
+            },
+            { item: "Updated extract/pack scripts to use @Owave's scripts" },
+            { item: "Updated french translation (@rectulo)" }, {
+                item: "Now requires `socketlib` as a dependency"
+            }
+        ],
+    },
     '1.12.0': {
         new: [
             { item: "Support for the following:", feat: true },
