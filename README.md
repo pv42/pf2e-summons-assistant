@@ -56,8 +56,6 @@ You can access the changelog [here](/CHANGELOG.md).
     - Summon Healing Servitor
     - Summon Elemental Herald - Art requires `Pathfinder Tokens: Bestiary`
     - Call Fluxwraith
-  - Commander
-    - Plant Banner - Basic Case (no handling of feat interactions beyond base case atm)
   - Necromancer
     - Create Thrall
     - Perfected Thrall
@@ -72,12 +70,19 @@ You can access the changelog [here](/CHANGELOG.md).
     - Duplicate Foe - Note: Does not work on Kineticist, does not copy over magical weapons only the strike form of them
     - Telekinetic Hand - Art Requires JB2a
 - Feats
-  - Call Ursine Ally
+  - Commander
+    - Plant Banner - Basic Case (no handling of feat interactions beyond base case atm)
+  - Misc
+    - Call Ursine Ally
+- Items
+  - Wondrous Figurine
+    - Jade Serpent
 - SF2e
   - Spells
     - Summon Robot
   - Mechanic
     - Mine
+    - Double Deploy
 
 ### Supported House Rules
 
