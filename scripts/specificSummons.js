@@ -1,5 +1,5 @@
 import { ACTIONS, ALT_ART, CREATURES, EFFECTS, SOURCES } from "./const.js";
-import { getFoeInfo } from "./duplicateFoe.js";
+import { getFoeInfo } from "./specificCases/duplicateFoe.js";
 import { errorNotification, hasNoTargets, onlyHasJB2AFree } from "./helpers.js";
 import { incarnateDetails } from "./incarnate.js";
 import { getEidolon } from "./specificClasses/summoner.js"
