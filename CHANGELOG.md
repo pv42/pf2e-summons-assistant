@@ -1,3 +1,13 @@
+## 1.14.2
+
+- **Updated**
+  - Fix for summons not working
+  - Updated french translation (@rectulo)
+
+## 1.14.1
+
+- Attempted fix
+
 ## 1.14.0
 
 - **New**
