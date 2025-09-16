@@ -8,6 +8,7 @@
       - Also adds a setting to support damage overflowing as its own damage message if the damage overflows the `Wooden Double`'s health
 - **Updated**
   - Added an additional fallback for when the `sourceID` and `slug` fail, it will attempt to stringify the name to see if it matches a slug
+  - Updated french translation (@rectulo)
 
 ## 1.13.0
 
