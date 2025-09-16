@@ -1,6 +1,6 @@
 import { MODULE_ID, SLUG_TO_SOURCE, SOURCES } from "./const.js";
 import { messageItemHasRollOption } from "./helpers.js";
-import { extractDCValueRegex, isIncarnate } from "./incarnate.js";
+import { extractDCValueRegex, isIncarnate } from "./specificCases/incarnate.js";
 import { isMechanic, setMechanicRelevantInfo } from "./specificClasses/mechanic.js";
 import { isSummoner, setSummonerRelevantInfo } from "./specificClasses/summoner.js";
 import { setupSettings } from "./settings.js";
