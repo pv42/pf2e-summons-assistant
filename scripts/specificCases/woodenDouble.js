@@ -10,7 +10,7 @@ export function setupWoodDoubleHooks() {
 }
 
 async function woodenDoubleHandle(message, data, userID) {
-    if (message.actor.sourceId !== CREATURES.WOODEN_DOUBLE) return;
+    if (message?.actor?.sourceId !== CREATURES.WOODEN_DOUBLE) return;
     const hpChange = message.flags?.pf2e?.appliedDamage?.updates
         ?.find(u => u?.path === "system.attributes.hp.value")?.value;
     if (!hpChange) return;

@@ -1,4 +1,4 @@
-import { messageItemHasRollOption } from "./helpers.js";
+import { messageItemHasRollOption } from "../helpers.js";
 
 export function extractDCValueRegex(htmlContent) {
     // Look for button with data-action="spell-save" and extract data-dc value

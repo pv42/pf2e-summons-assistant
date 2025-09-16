@@ -1,4 +1,4 @@
-import { getAllDamageSlugs } from "./helpers.js";
+import { getAllDamageSlugs } from "../helpers.js";
 
 export async function getFoeInfo(token, rank) {
     const actor = token.actor;

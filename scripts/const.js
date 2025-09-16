@@ -121,7 +121,7 @@ export const CREATURES = {
 
   DUPLICATE_FOE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.03gFpid5kBiI3vXS",
 
-  WOODEN_DOUBLE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HItOCcAEKmJWVVko",
+  WOODEN_DOUBLE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.WNBOiDVexWG6DwCO",
 
   HEALING_SERVITOR: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.gqrW5aGfnjqNse2T",
   TEMPEST_OF_SHADES: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.EwmHOiQTdCEmBKfA",

@@ -1,3 +1,5 @@
-2025/08/22-07:27:14.591266 ffff73fff0c0 Recovering log #140
-2025/08/22-07:27:14.595834 ffff73fff0c0 Delete type=3 #138
-2025/08/22-07:27:14.595859 ffff73fff0c0 Delete type=0 #140
+2025/09/16-11:16:55.838 7dfc Recovering log #147
+2025/09/16-11:16:56.063 7dfc Delete type=0 #146
+2025/09/16-11:16:56.063 7dfc Delete type=0 #147
+2025/09/16-11:16:56.064 7dfc Delete type=3 #144
+2025/09/16-11:16:56.064 7dfc Delete type=3 #146
