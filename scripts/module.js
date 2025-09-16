@@ -10,6 +10,7 @@ import { summon, getTraditionalSummonerSpellDetails } from "./summon.js";
 import { isBindHeroicSpiritHit, setNecromancerHooks } from "./specificClasses/necromancer.js";
 import { setupCommanderHooks } from "./specificClasses/commander.js";
 import { setupSocket } from "./lib/socket.js";
+import { setupWoodDoubleHooks } from "./specificCases/woodenDouble.js";
 
 Hooks.once("init", async function () {
   loadTemplates([
@@ -39,7 +40,7 @@ Hooks.once("ready", async function () {
       : chatMessage?.item?.sourceId;
 
     if (!itemUuid) {
-      itemUuid = itemUuid || SLUG_TO_SOURCE[chatMessage?.item?.slug];
+      itemUuid = itemUuid || SLUG_TO_SOURCE[chatMessage?.item?.slug || game.pf2e.system.sluggify(chatMessage?.item?.name || "")];
       if (!itemUuid) return;
     }
 
@@ -65,6 +66,11 @@ Hooks.once("ready", async function () {
       spellRelevantInfo.targetTokenUUID =
         chatMessage?.flags["pf2e-toolbelt"]?.targetHelper?.targets?.[0] ??
         game?.user?.targets?.first()?.document?.uuid
+    } else if (itemUuid = SOURCES.MISC.WOODEN_DOUBLE) {
+      const token = canvas.tokens.get(chatMessage.speaker.token)
+      spellRelevantInfo.tokenWidth = token ?token.document.width : 1;
+      spellRelevantInfo.tokenHeight = token ?token.document.height : 1;
+      spellRelevantInfo.position = token ? token.center : null;
     }
 
     let summonDetailsGroup = await getSpecificSummonDetails(itemUuid, spellRelevantInfo)
@@ -89,6 +95,10 @@ function getSummonType(chatMessage) {
 
 
 function setupSpecificHooks() {
+  //Classes
   setNecromancerHooks();
   setupCommanderHooks();
+
+  // Specific Cases
+  setupWoodDoubleHooks();
 }
