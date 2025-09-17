@@ -1,3 +1,7 @@
+## 1.14.4
+
+- Fixed bug causing every message to show as `Wooden Double`
+
 ## 1.14.3
 
 - Actual fix this issue
