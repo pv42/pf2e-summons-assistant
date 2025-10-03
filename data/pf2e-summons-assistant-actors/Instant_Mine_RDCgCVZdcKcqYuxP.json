@@ -242,7 +242,7 @@
           "value": "action"
         },
         "description": {
-          "value": "<p><strong>Requirements</strong> A creature who enters a square with an invisible mine. The mine instantly detonates, causing it to explode in a @Template[type:burst|distance:5]. This mine deals @Damage[(-2+@actor.level)d6[fire],(-2+@actor.level)d6[piercing]] damage. Creatures in the area can attempt a @Check[reflex|dc:resolve(@actor.attributes.ac.value)|basic] save against your class DC.</p><hr><hr><p><strong>Heightened (+1)</strong> The fire damage and piercing damage dealt by a mine each increase by [[/r 1d6]].</p>",
+          "value": "<p><strong>Requirements</strong> A creature who enters a square with an invisible mine. The mine instantly detonates, causing it to explode in a @Template[type:emanation|distance:5]. This mine deals @Damage[(-2+@actor.level)d6[fire],(-2+@actor.level)d6[piercing]] damage. Creatures in the area can attempt a @Check[reflex|dc:resolve(@actor.attributes.ac.value)|basic] save against your class DC.</p><hr><hr><p><strong>Heightened (+1)</strong> The fire damage and piercing damage dealt by a mine each increase by [[/r 1d6]].</p>",
           "gm": ""
         },
         "publication": {
