@@ -71,6 +71,16 @@ export function setupSettings() {
         type: Boolean,
     });
 
+    game.settings.register(MODULE_ID, "summon-blacklist", {
+        name: `${MODULE_ID}.module-settings.summon-blacklist.name`,
+        hint: `${MODULE_ID}.module-settings.summon-blacklist.hint`,
+        requiresReload: false,
+        scope: "world",
+        config: true,
+        default: "",
+        type: String,
+    });
+
     game.settings.register(MODULE_ID, "last-version", {
         name: "last-version",
         hint: "last-version",

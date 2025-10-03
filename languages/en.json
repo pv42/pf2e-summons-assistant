@@ -42,6 +42,10 @@
             "hint": "Have the actor picker default to showing only actors with art by default"
           }
         }
+      },
+      "summon-blacklist": {
+        "name": "Summon Backlist",
+        "hint": "Comma-seperated list of actor ids to not show when selecting a summon"
       }
     },
     "message": {

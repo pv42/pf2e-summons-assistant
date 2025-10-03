@@ -48,9 +48,12 @@ export async function summon(summonerActor, itemUuid, summonType, summonDetailsG
           const hasValidUuid = allowedSpecificUuids.length > 0 &&
             allowedSpecificUuids.includes(candidateActor?.uuid);
 
+          const blacklist = game.settings.get(MODULE_ID, "summon-blacklist").replaceAll(" ", "").split(',');
+          const isBlacklisted = blacklist.includes(candidateActor?.uuid);
+
           return allowedSpecificUuids.length > 0
             ? hasValidUuid
-            : isCommonAndValidLevel && hasValidTraits;
+            : isCommonAndValidLevel && hasValidTraits && !isBlacklisted;
         },
         dropdowns: [{
           id: "sortOrder",
@@ -92,6 +95,9 @@ export async function summon(summonerActor, itemUuid, summonType, summonDetailsG
     }
 
     const selectedActor = await compFromUuid(selectedActorUuid);
+    if (!selectedActor) {
+      console.error("Failed to find actor uuid", selectedActorUuid);
+    }
     const originalActorLevel = selectedActor.level;
 
     const houseRuleUpdates = await getHouseRuleUpdates(selectedActor, summonLevel, summonType, itemUuid);
