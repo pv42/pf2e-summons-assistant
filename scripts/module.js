@@ -51,7 +51,7 @@ Hooks.once("ready", async function () {
     const summonerActor = ChatMessage.getSpeakerActor(chatMessage.speaker);
 
     const spellRank = chatMessage?.flags?.pf2e?.origin?.castRank ?? 0;
-    const spellRelevantInfo = { rank: spellRank, summonerLevel: summonerActor.level }
+    const spellRelevantInfo = { rank: spellRank, summonerLevel: summonerActor.level, spellDC: summonerActor.system.attributes.spellDC.value }
     //Grab DC for Incarnate spells
     if (isIncarnate(chatMessage)) spellRelevantInfo.dc = extractDCValueRegex(chatMessage.content) ?? 0;
     if (isMechanic(chatMessage)) {

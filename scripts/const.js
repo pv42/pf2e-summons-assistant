@@ -35,7 +35,8 @@ export const SOURCES = {
     FLOATING_FLAME: "Compendium.pf2e.spells-srd.Item.2ZdHjnpEQJuqOYSG",
     CALL_URSINE_ALLY: "Compendium.pf2e.feats-srd.Item.kYYB7ziQZjlgQWWu",
     DUPLICATE_FOE: "Compendium.pf2e.spells-srd.Item.73rToy0v5Ra9NvL6",
-    WOODEN_DOUBLE: "Compendium.pf2e.spells-srd.Item.aUMmmtPmBdCdVDed"
+    WOODEN_DOUBLE: "Compendium.pf2e.spells-srd.Item.aUMmmtPmBdCdVDed",
+    INSTANT_MINEFIELD: "Compendium.pf2e.spells-srd.Item.vuehhQN8gPSpqcEK"
   },
 
   NECROMANCER: {
@@ -158,6 +159,7 @@ export const CREATURES = {
     RECURRING_NIGHTMARE: "Compendium.pf2e-playtest-data.impossible-playtest-thralls.Actor.uu7VA9eIwi1tUZVs",
     CONGLOMERATE_OF_LIMBS: "Compendium.pf2e-playtest-data.impossible-playtest-thralls.Actor.Xuy2zf3qpsmm8wbb"
   },
+  INSTANT_MINE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.RDCgCVZdcKcqYuxP"
 }
 
 export const FEATS = {

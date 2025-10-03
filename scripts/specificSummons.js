@@ -10,7 +10,8 @@ export async function getSpecificSummonDetails(uuid, data = {
     dc: 0,
     targetTokenUUID: null,
     tokenWidth: 1,
-    tokenHeight: 1
+    tokenHeight: 1,
+    spellDC: null
 }) {
     switch (uuid) {
         case SOURCES.SUMMON.PHANTASMAL_MINION:
@@ -268,7 +269,16 @@ export async function getSpecificSummonDetails(uuid, data = {
                         : {})
                 }
             }]
-
+        case SOURCES.MISC.INSTANT_MINEFIELD: 
+        return [{
+                specific_uuids: [CREATURES.INSTANT_MINE],
+                rank: data.rank,
+                amount: 6,
+                modifications: {
+                    'system.details.level.value': data.rank,
+                    'system.attributes.ac.value': data.spellDC
+                },
+            }]
         default:
             return null;
     }
