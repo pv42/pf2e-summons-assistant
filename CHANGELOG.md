@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 1.25.6
+
+- Fixed issue where Commander received the temp HP from `Plant Banner` (@thecoolersub)
+
 ## 1.25.5
 
 - Updated polish translation (🌐 @lioheart)

@@ -492,6 +492,7 @@ export const ACTIONS = {
 export const ROLL_OPTION = {
   COMMANDER: {
     IN_PLANT_BANNER_RANGE: "self:effect:in-plant-banner-range",
+    HAS_PLANT_BANNER_FEAT: "feat:plant-banner",
   },
 };
 
