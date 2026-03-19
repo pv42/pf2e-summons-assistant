@@ -256,7 +256,7 @@
                 "includesSelf": false,
                 "predicate": [
                   {
-                    "not": "self:signature:{actor|flags.pf2e-summons-assistant.summoner.signature}"
+                    "not": "target:signature:{actor|flags.pf2e-summons-assistant.summoner.signature}"
                   }
                 ]
               }

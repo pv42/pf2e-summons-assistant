@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 1.25.8
+
+- Fixed the RE for `Plant Banner`
+
 ## 1.25.7
 
 - Fixed issue where Commander received the temp HP from `Plant Banner` more intelligently (🐛 @thecoolersub)
