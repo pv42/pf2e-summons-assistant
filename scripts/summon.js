@@ -206,6 +206,7 @@ export async function summon(
       await summonedActor?.setFlag(MODULE_ID, "summoner", {
         uuid: summonerActor.uuid,
         id: summonerActor.id,
+        signature: summonerActor.signature,
       });
       await handlePostSummon(
         itemUuid,

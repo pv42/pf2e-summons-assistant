@@ -1,14 +1,14 @@
-2026/02/19-02:11:59.281 8310 Recovering log #504
-2026/02/19-02:12:00.115 8310 Delete type=0 #504
-2026/02/19-02:12:00.116 8310 Delete type=3 #503
-2026/02/19-02:12:00.192 14258 Level-0 table #508: started
-2026/02/19-02:12:00.238 14258 Level-0 table #508: 102081 bytes OK
-2026/02/19-02:12:00.302 14258 Delete type=0 #506
-2026/02/19-02:12:00.303 14258 Manual compaction at level-0 from '!actors!03gFpid5kBiI3vXS' @ 72057594037927935 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at '!folders!vbIrzVZPMTgmlUMs' @ 2080 : 1
-2026/02/19-02:12:00.303 14258 Compacting 1@0 + 1@1 files
-2026/02/19-02:12:00.360 14258 Generated table #509@0: 115 keys, 102081 bytes
-2026/02/19-02:12:00.360 14258 Compacted 1@0 + 1@1 files => 102081 bytes
-2026/02/19-02:12:00.424 14258 compacted to: files[ 0 1 0 0 0 0 0 ]
-2026/02/19-02:12:00.424 14258 Delete type=2 #502
-2026/02/19-02:12:00.424 14258 Delete type=2 #508
-2026/02/19-02:12:00.425 14258 Manual compaction at level-0 from '!folders!vbIrzVZPMTgmlUMs' @ 2080 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at (end)
+2026/03/19-12:02:07.906 a4a4 Recovering log #507
+2026/03/19-12:02:08.032 a4a4 Delete type=0 #507
+2026/03/19-12:02:08.032 a4a4 Delete type=3 #505
+2026/03/19-12:02:08.075 d274 Level-0 table #513: started
+2026/03/19-12:02:08.177 d274 Level-0 table #513: 102129 bytes OK
+2026/03/19-12:02:08.230 d274 Delete type=0 #511
+2026/03/19-12:02:08.230 d274 Manual compaction at level-0 from '!actors!03gFpid5kBiI3vXS' @ 72057594037927935 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at '!folders!vbIrzVZPMTgmlUMs' @ 2195 : 1
+2026/03/19-12:02:08.230 d274 Compacting 1@0 + 1@1 files
+2026/03/19-12:02:08.287 d274 Generated table #514@0: 115 keys, 102129 bytes
+2026/03/19-12:02:08.287 d274 Compacted 1@0 + 1@1 files => 102129 bytes
+2026/03/19-12:02:08.384 d274 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/03/19-12:02:08.385 d274 Delete type=2 #509
+2026/03/19-12:02:08.407 d274 Delete type=2 #513
+2026/03/19-12:02:08.407 d274 Manual compaction at level-0 from '!folders!vbIrzVZPMTgmlUMs' @ 2195 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at (end)

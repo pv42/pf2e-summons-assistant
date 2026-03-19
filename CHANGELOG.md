@@ -1,8 +1,12 @@
 ## Unreleased
 
+## 1.25.7
+
+- Fixed issue where Commander received the temp HP from `Plant Banner` more intelligently (🐛 @thecoolersub)
+
 ## 1.25.6
 
-- Fixed issue where Commander received the temp HP from `Plant Banner` (@thecoolersub)
+- Fixed issue where Commander received the temp HP from `Plant Banner` (🐛 @thecoolersub)
 
 ## 1.25.5
 

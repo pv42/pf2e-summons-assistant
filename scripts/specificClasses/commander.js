@@ -14,8 +14,8 @@ async function handlePlantBannerStartOfTurn(combatant) {
     ]
   )
     return;
-  if (isPlantedBannerOwner(combatant?.actor)) return;
-  
+//   if (isPlantedBannerOwner(combatant?.actor)) return;
+
   setTimeout(async function () {
     addPlantBanner(combatant.actor);
   }, 500);
@@ -63,6 +63,6 @@ async function addPlantBanner(actor) {
   ]);
 }
 
-function isPlantedBannerOwner(actor) {
-  return actor?.rollOptions?.all?.[ROLL_OPTION.COMMANDER.HAS_PLANT_BANNER_FEAT];
-}
+// function isPlantedBannerOwner(actor) {
+//   return actor?.rollOptions?.all?.[ROLL_OPTION.COMMANDER.HAS_PLANT_BANNER_FEAT];
+// }

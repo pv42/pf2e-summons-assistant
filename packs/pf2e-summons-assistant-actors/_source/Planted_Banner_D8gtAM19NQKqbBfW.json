@@ -22,10 +22,7 @@
         "UseRidingHeightFlag": true,
         "RidersScaleFlag": 1,
         "RiderPositioningFlag": "RowPlacement",
-        "RiderOffsetFlag": [
-          0,
-          0
-        ],
+        "RiderOffsetFlag": [0, 0],
         "TokenFormFlag": "TokenFormCircle",
         "InsideMovementFlag": false,
         "SpawnRidersFlag": "",
@@ -256,7 +253,12 @@
               {
                 "uuid": "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-items.Item.vnFV2b3aYdvGeVkM",
                 "affects": "allies",
-                "includesSelf": false
+                "includesSelf": false,
+                "predicate": [
+                  {
+                    "not": "self:signature:{actor|flags.pf2e-summons-assistant.summoner.signature}"
+                  }
+                ]
               }
             ],
             "level": "@actor.level"
@@ -265,9 +267,7 @@
         "slug": "plant-banner",
         "traits": {
           "otherTags": [],
-          "value": [
-            "aura"
-          ]
+          "value": ["aura"]
         },
         "_migration": {
           "version": 0.941,
@@ -332,25 +332,16 @@
               }
             ],
             "key": "Aura",
-            "predicate": [
-              "commanders-banner"
-            ],
+            "predicate": ["commanders-banner"],
             "radius": 30,
             "slug": "commanders-banner",
-            "traits": [
-              "emotion",
-              "mental",
-              "visual",
-              "aura"
-            ]
+            "traits": ["emotion", "mental", "visual", "aura"]
           }
         ],
         "slug": null,
         "traits": {
           "otherTags": [],
-          "value": [
-            "aura"
-          ]
+          "value": ["aura"]
         },
         "_migration": {
           "version": 0.941,
@@ -391,7 +382,13 @@
     }
   ],
   "sort": 0,
-  "flags": {},
+  "flags": {
+    "pf2e-summons-assistant": {
+      "summoner": {
+        "signature": ""
+      }
+    }
+  },
   "_stats": {
     "compendiumSource": null,
     "duplicateSource": null,
