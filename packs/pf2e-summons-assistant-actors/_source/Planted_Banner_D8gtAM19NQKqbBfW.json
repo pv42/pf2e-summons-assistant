@@ -247,7 +247,7 @@
         "rules": [
           {
             "key": "Aura",
-            "radius": 30,
+            "radius": 40,
             "traits": [],
             "effects": [
               {
@@ -333,7 +333,7 @@
             ],
             "key": "Aura",
             "predicate": ["commanders-banner"],
-            "radius": 30,
+            "radius": 40,
             "slug": "commanders-banner",
             "traits": ["emotion", "mental", "visual", "aura"]
           }

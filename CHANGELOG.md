@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 1.25.9
+
+- Fixed plant banner range
+
 ## 1.25.8
 
 - Fixed the RE for `Plant Banner`

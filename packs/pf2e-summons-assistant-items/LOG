@@ -1,14 +1,14 @@
-2026/03/19-16:43:03.337 7d00 Recovering log #475
-2026/03/19-16:43:03.540 7d00 Delete type=0 #475
-2026/03/19-16:43:03.540 7d00 Delete type=3 #473
-2026/03/19-16:43:03.565 1a74 Level-0 table #481: started
-2026/03/19-16:43:03.602 1a74 Level-0 table #481: 5443 bytes OK
-2026/03/19-16:43:03.654 1a74 Delete type=0 #479
-2026/03/19-16:43:03.654 1a74 Manual compaction at level-0 from '!folders!Jgr03TNBCPio6tdA' @ 72057594037927935 : 1 .. '!items!vnFV2b3aYdvGeVkM' @ 0 : 0; will stop at '!items!vnFV2b3aYdvGeVkM' @ 162 : 1
-2026/03/19-16:43:03.655 1a74 Compacting 1@0 + 1@1 files
-2026/03/19-16:43:03.701 1a74 Generated table #482@0: 10 keys, 5443 bytes
-2026/03/19-16:43:03.701 1a74 Compacted 1@0 + 1@1 files => 5443 bytes
-2026/03/19-16:43:03.753 1a74 compacted to: files[ 0 1 0 0 0 0 0 ]
-2026/03/19-16:43:03.754 1a74 Delete type=2 #477
-2026/03/19-16:43:03.754 1a74 Delete type=2 #481
-2026/03/19-16:43:03.755 1a74 Manual compaction at level-0 from '!items!vnFV2b3aYdvGeVkM' @ 162 : 1 .. '!items!vnFV2b3aYdvGeVkM' @ 0 : 0; will stop at (end)
+2026/03/19-22:38:08.952 c39c Recovering log #480
+2026/03/19-22:38:09.071 c39c Delete type=0 #480
+2026/03/19-22:38:09.072 c39c Delete type=3 #478
+2026/03/19-22:38:09.125 728c Level-0 table #486: started
+2026/03/19-22:38:09.168 728c Level-0 table #486: 5441 bytes OK
+2026/03/19-22:38:09.235 728c Delete type=0 #484
+2026/03/19-22:38:09.235 728c Manual compaction at level-0 from '!folders!Jgr03TNBCPio6tdA' @ 72057594037927935 : 1 .. '!items!vnFV2b3aYdvGeVkM' @ 0 : 0; will stop at '!items!vnFV2b3aYdvGeVkM' @ 172 : 1
+2026/03/19-22:38:09.235 728c Compacting 1@0 + 1@1 files
+2026/03/19-22:38:09.282 728c Generated table #487@0: 10 keys, 5441 bytes
+2026/03/19-22:38:09.282 728c Compacted 1@0 + 1@1 files => 5441 bytes
+2026/03/19-22:38:09.345 728c compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/03/19-22:38:09.346 728c Delete type=2 #482
+2026/03/19-22:38:09.346 728c Delete type=2 #486
+2026/03/19-22:38:09.346 728c Manual compaction at level-0 from '!items!vnFV2b3aYdvGeVkM' @ 172 : 1 .. '!items!vnFV2b3aYdvGeVkM' @ 0 : 0; will stop at (end)
