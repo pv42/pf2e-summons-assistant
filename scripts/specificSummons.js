@@ -76,7 +76,7 @@ const getSummonHandlers = () => ({
   [SOURCES.MISC.DRAGON_TURRET]: handlers.misc.handleDragonTurret,
   [SOURCES.MISC.DUPLICATE_FOE]: handlers.misc.handleDuplicateFoe,
   [SOURCES.MISC.FLOATING_FLAME]: handlers.misc.handleFloatingFlame,
-  [SOURCES.MISC.HEALING_WELL]: handles.misc.handleHealingWell,
+  [SOURCES.MISC.HEALING_WELL]: handlers.misc.handleHealingWell,
   [SOURCES.MISC.LIGHT]: handlers.misc.handleLight,
   [SOURCES.MISC.PROTECTOR_TREE]: handlers.misc.handleProtectorTree,
   [SOURCES.MISC.SHADOW_SELF]: handlers.misc.handleShadowSelf,
