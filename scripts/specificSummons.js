@@ -464,6 +464,12 @@ const handlers = {
               summonerActor?.system?.saves?.will?.value,
             "system.perception.value": summonerActor?.system?.perception?.value,
           },
+          crosshairParameters: {
+            distance: canvas.grid.distance,
+            snap: {
+              position: CONST.GRID_SNAPPING_MODES.VERTEX,
+            },
+          },
         },
       ];
     },

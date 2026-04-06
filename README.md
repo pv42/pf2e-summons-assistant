@@ -84,7 +84,7 @@ You can access the changelog [here](/CHANGELOG.md).
   - `Light` - Only works when not targetting anyone (Art Requires `JB2a`)
   - `Protector Tree` - Does not do any automation as of yet
   - `Shadow Self`
-  - `Swarmkeeper's Swarm` - Basic Implementation, does not have a way to sync health to the Swarmkeeper currently
+  - `Swarmkeeper's Swarm` - Can sync health automatically to the summoner if you have the `PF2e Toolbelt` feature enabled
   - `Telekinetic Hand` - Art Requires `JB2a`
   - `Wooden Double` - Places Wooden Double, and then asks you to step, also handles the damage overflow if you toggle the setting
 - **Manual**

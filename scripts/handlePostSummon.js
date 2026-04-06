@@ -159,6 +159,25 @@ export async function handlePostSummon(
         .executeAsGM("createWalls", [wallData]);
 
       break;
+
+    case SOURCES.MISC.SWARM_FORTH:
+      const actor = canvas.tokens.placeables.find(
+        (tok) => tok?.actor?.id === summonedActorID,
+      )?.actor;
+      await actor.setFlag("pf2e-toolbelt", "shareData", {
+        data: {
+          master: summonerToken.actor.id,
+          health: true,
+          languages: false,
+          timeEvents: false,
+          armorRunes: false,
+          heroPoints: false,
+          skills: false,
+          spellcasting: false,
+          weaponRunes: false,
+        },
+      });
+      break;
     //TO do set
     default:
       break;

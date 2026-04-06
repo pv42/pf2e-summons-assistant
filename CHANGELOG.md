@@ -1,5 +1,12 @@
 ## Unreleased
 
+## 1.26.1
+
+- **New**
+  - Automatically links up `Swarmkeeper's Swarm`'s Health to the summoner if you have the `Pf2e Toolbelt` feature enabled
+- **Updated**
+  - Fix `Swarmkeeper's Swarm` Crosshair snapping and size
+
 ## 1.26.0
 
 - **New**
