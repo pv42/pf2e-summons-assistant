@@ -140,17 +140,17 @@
         "max": 10,
         "details": ""
       },
-      "speed": {
-        "value": 0,
-        "otherSpeeds": [],
-        "details": ""
-      },
       "ac": {
         "value": 10,
         "details": ""
       },
       "allSaves": {
         "value": ""
+      },
+      "speed": {
+        "value": 0,
+        "otherSpeeds": [],
+        "details": ""
       }
     },
     "initiative": {
@@ -455,14 +455,14 @@
     "compendiumSource": null,
     "duplicateSource": null,
     "exportSource": null,
-    "coreVersion": "13.346",
+    "coreVersion": "13.351",
     "systemId": "pf2e",
     "systemVersion": "7.2.3",
     "createdTime": 1752750798522,
-    "modifiedTime": 1752750802840,
-    "lastModifiedBy": "qeC1C8pWj1JsmO7z"
+    "modifiedTime": 1775454702448,
+    "lastModifiedBy": "vj8VUT8j7Wtzy3Y2"
   },
   "_id": "sAVuxP25VE126TdZ",
-  "sort": 100000,
+  "sort": 1000000,
   "_key": "!actors!sAVuxP25VE126TdZ"
 }

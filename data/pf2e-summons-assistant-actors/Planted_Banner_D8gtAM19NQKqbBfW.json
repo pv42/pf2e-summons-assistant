@@ -257,7 +257,7 @@
 								"uuid": "Compendium.pf2e.feat-effects.Item.KsUQjLQO62BY0lk4",
 								"affects": "allies",
 								"includesSelf": false,
-								"predicate": [{"not":"target:signature:{actor|flags.pf2e-summons-assistant.summoner.signature}"}]
+								"predicate": [{ "not": "target:signature:{actor|flags.pf2e-summons-assistant.summoner.signature}" }]
 							}
 						],
 						"level": "@actor.level"
@@ -395,7 +395,7 @@
 	"flags": {
 		"pf2e-summons-assistant": {
 			"summoner": {
-			"signature": ""
+				"signature": ""
 			}
 		}
 	},

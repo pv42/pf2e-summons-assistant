@@ -475,7 +475,7 @@
       "_key": "!actors.items!UGy4139EDrjbVDbv.Ew1xTR9eRg4UbDxE"
     }
   ],
-  "sort": 0,
+  "sort": 400000,
   "flags": {
     "pf2e": {
       "maxhealingRank": 0
@@ -489,7 +489,7 @@
     "systemId": "pf2e",
     "systemVersion": "7.9.1",
     "createdTime": 1769672628469,
-    "modifiedTime": 1769760182722,
+    "modifiedTime": 1775454702448,
     "lastModifiedBy": "vj8VUT8j7Wtzy3Y2"
   },
   "_key": "!actors!UGy4139EDrjbVDbv"

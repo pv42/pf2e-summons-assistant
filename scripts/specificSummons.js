@@ -76,11 +76,19 @@ const getSummonHandlers = () => ({
   [SOURCES.MISC.DRAGON_TURRET]: handlers.misc.handleDragonTurret,
   [SOURCES.MISC.DUPLICATE_FOE]: handlers.misc.handleDuplicateFoe,
   [SOURCES.MISC.FLOATING_FLAME]: handlers.misc.handleFloatingFlame,
+  [SOURCES.MISC.HEALING_WELL]: handles.misc.handleHealingWell,
   [SOURCES.MISC.LIGHT]: handlers.misc.handleLight,
   [SOURCES.MISC.PROTECTOR_TREE]: handlers.misc.handleProtectorTree,
   [SOURCES.MISC.SHADOW_SELF]: handlers.misc.handleShadowSelf,
+  [SOURCES.MISC.SWARM_FORTH]: handlers.misc.handleSwarmkeepersSwarm,
   [SOURCES.MISC.TELEKINETIC_HAND]: handlers.misc.handleTelekineticHand,
   [SOURCES.MISC.WOODEN_DOUBLE]: handlers.misc.handleWoodenDouble,
+
+  // Mundane
+  [SOURCES.MUNDANE.CANDLE]: handlers.mundane.candle,
+  [SOURCES.MUNDANE.LANTERN_BULLSEYE]: handlers.mundane.lanternBullseye,
+  [SOURCES.MUNDANE.LANTERN_HOODED]: handlers.mundane.lanternHooded,
+  [SOURCES.MUNDANE.TORCH]: handlers.mundane.torch,
 
   // Walls
   [SOURCES.WALL.WALL_OF_FIRE]: handlers.wall.handleWallOfFire,
@@ -377,6 +385,18 @@ const handlers = {
       ];
     },
 
+    handleHealingWell: async (data) => {
+      return [
+        {
+          specific_uuids: [CREATURES.HEALING_WELL],
+          rank: data.rank,
+          modifications: {
+            "system.details.level.value": data.rank,
+          },
+        },
+      ];
+    },
+
     handleLight: async (data) => {
       if (hasNoTargets()) {
         return [
@@ -421,6 +441,28 @@ const handlers = {
             icon: {
               texture: texture.src,
             },
+          },
+        },
+      ];
+    },
+
+    handleSwarmkeepersSwarm: async (data) => {
+      const summonerActor = game.actors.get(data.summonerActorId);
+      return [
+        {
+          specific_uuids: [CREATURES.SWARMKEEPER_SWARM],
+          rank: data.summonerLevel,
+          modifications: {
+            "system.details.level.value": data.summonerLevel,
+            "system.attributes.ac.value":
+              summonerActor?.system?.attributes?.ac?.value,
+            "system.saves.fortitude.value":
+              summonerActor?.system?.saves?.fortitude?.value,
+            "system.saves.reflex.value":
+              summonerActor?.system?.saves?.reflex?.value,
+            "system.saves.will.value":
+              summonerActor?.system?.saves?.will?.value,
+            "system.perception.value": summonerActor?.system?.perception?.value,
           },
         },
       ];
@@ -511,6 +553,36 @@ const handlers = {
               showRange: true,
             },
           },
+        },
+      ];
+    },
+  },
+  mundane: {
+    candle: async (_data) => {
+      return [
+        {
+          specific_uuids: [CREATURES.MUNDANE.CANDLE],
+        },
+      ];
+    },
+    lanternBullseye: async (_data) => {
+      return [
+        {
+          specific_uuids: [CREATURES.MUNDANE.LANTERN_BULLSEYE],
+        },
+      ];
+    },
+    lanternHooded: async (_data) => {
+      return [
+        {
+          specific_uuids: [CREATURES.MUNDANE.LANTERN_HOODED],
+        },
+      ];
+    },
+    torch: async (_data) => {
+      return [
+        {
+          specific_uuids: [CREATURES.MUNDANE.TORCH],
         },
       ];
     },

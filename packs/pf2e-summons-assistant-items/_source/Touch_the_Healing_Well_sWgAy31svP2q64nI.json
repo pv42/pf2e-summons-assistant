@@ -1,0 +1,59 @@
+{
+  "folder": "ecP3OJIpXi5P0fYv",
+  "name": "Touch the Healing Well",
+  "type": "action",
+  "effects": [],
+  "system": {
+    "_migration": {
+      "version": 0.955,
+      "previous": null
+    },
+    "description": {
+      "value": "<p>Perform the @UUID[Compendium.pf2e.actionspf2e.pvQ5rY2zrtPI614F]{Interact} if you or an ally are adjacent to the well, that character can Interact to tap into the well's power, recovering @Damage[(4d8 + max(@item.grantedBy.level - 5, 0) * 3)[healing]] Hit Points.</p>",
+      "gm": ""
+    },
+    "publication": {
+      "title": "",
+      "authors": "",
+      "license": "OGL",
+      "remaster": false
+    },
+    "rules": [],
+    "slug": "touch-the-healing-well",
+    "traits": {
+      "otherTags": [],
+      "value": [
+        "healing",
+        "manipulate"
+      ]
+    },
+    "actionType": {
+      "value": "action"
+    },
+    "actions": {
+      "value": 1
+    },
+    "category": "interaction",
+    "deathNote": false
+  },
+  "_id": "sWgAy31svP2q64nI",
+  "img": "systems/pf2e/icons/actions/OneAction.webp",
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "vj8VUT8j7Wtzy3Y2": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "exportSource": null,
+    "coreVersion": "13.351",
+    "systemId": "pf2e",
+    "systemVersion": "7.12.1",
+    "createdTime": 1775452749028,
+    "modifiedTime": 1775453575577,
+    "lastModifiedBy": "vj8VUT8j7Wtzy3Y2"
+  },
+  "_key": "!items!sWgAy31svP2q64nI"
+}

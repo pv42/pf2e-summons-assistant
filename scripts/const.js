@@ -45,12 +45,21 @@ export const SOURCES = {
     DRAGON_TURRET: "Compendium.pf2e.spells-srd.Item.eAOClJ1KRSPik8SX",
     DUPLICATE_FOE: "Compendium.pf2e.spells-srd.Item.73rToy0v5Ra9NvL6",
     FLOATING_FLAME: "Compendium.pf2e.spells-srd.Item.2ZdHjnpEQJuqOYSG",
+    HEALING_WELL: "Compendium.pf2e.spells-srd.Item.CzjQtkRuRlzRvwzg",
     LIGHT: "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
     PHANTASMAL_MINION: "Compendium.pf2e.spells-srd.Item.xqmHD8JIjak15lRk",
     PROTECTOR_TREE: "Compendium.pf2e.spells-srd.Item.K9gI08enGtmih5X1",
     SHADOW_SELF: "Compendium.pf2e.feats-srd.Item.7YvOqcdp9Z0RALMp",
+    SWARM_FORTH: "Compendium.pf2e.actionspf2e.Item.E48YTUyreo1kc9GM",
     TELEKINETIC_HAND: "Compendium.pf2e.spells-srd.Item.pwzdSlJgYqN7bs2w",
     WOODEN_DOUBLE: "Compendium.pf2e.spells-srd.Item.aUMmmtPmBdCdVDed",
+  },
+
+  MUNDANE: {
+    CANDLE: "Compendium.pf2e.equipment-srd.Item.Ti4gWILk69LPxKuU",
+    LANTERN_BULLSEYE: "Compendium.pf2e.equipment-srd.Item.QrNvP9SgnK9DrerA",
+    LANTERN_HOODED: "Compendium.pf2e.equipment-srd.Item.dIRZ0LL7G31fJNYz",
+    TORCH: "Compendium.pf2e.equipment-srd.Item.8Jdw4yAzWYylGePS",
   },
 
   WALL: {
@@ -105,6 +114,7 @@ export const SLUG_TO_SOURCE = {
   "avenging-wildwood": SOURCES.MISC.AVENGING_WILDWOOD,
   "call-fluxwraith": SOURCES.CALL_FLUXWRAITH,
   "call-ursine-ally": SOURCES.CALL_URSINE_ALLY,
+  candle: SOURCES.MUNDANE.CANDLE,
   "conglomerate-of-limbs": SOURCES.NECROMANCER.CONGLOMERATE_OF_LIMBS,
   "create-thrall": SOURCES.NECROMANCER.CREATE_THRALL,
   "deploy-mine": SOURCES.MECHANIC.DEPLOY_MINE,
@@ -112,8 +122,11 @@ export const SLUG_TO_SOURCE = {
   "dragon-turret": SOURCES.MISC.DRAGON_TURRET,
   "duplicate-foe": SOURCES.MISC.DUPLICATE_FOE,
   "floating-flame": SOURCES.MISC.FLOATING_FLAME,
+  "healing-well": SOURCES.MISC.HEALING_WELL,
   "inevitable-return": SOURCES.NECROMANCER.INEVITABLE_RETURN,
   "jagged-berms": SOURCES.KINETICIST.JAGGED_BERMS,
+  "lantern-bulls-eye": SOURCES.MUNDANE.LANTERN_BULLSEYE,
+  "lantern-hooded": SOURCES.MUNDANE.LANTERN_HOODED,
   light: SOURCES.MISC.LIGHT,
   "living-graveyard": SOURCES.NECROMANCER.LIVING_GRAVEYARD,
   "manifest-eidolon": SOURCES.SUMMONER.MANIFEST_EIDOLON,
@@ -140,8 +153,10 @@ export const SLUG_TO_SOURCE = {
   "summon-plant-or-fungus": SOURCES.SUMMON.SUMMON_PLANT_OR_FUNGUS,
   "summon-robot": SOURCES.SUMMON.SUMMON_ROBOT,
   "summon-undead": SOURCES.SUMMON.SUMMON_UNDEAD,
+  "swarm-forth": SOURCES.MISC.SWARM_FORTH,
   "telekinetic-hand": SOURCES.MISC.TELEKINETIC_HAND,
   "tempest-of-shades": SOURCES.INCARNATE.TEMPEST_OF_SHADES,
+  torch: SOURCES.MUNDANE.TORCH,
   "timber-sentinel": SOURCES.KINETICIST.TIMBER_SENTINEL,
   "wondrous-figurine-jade-serpent": SOURCES.WONDROUS_FIGURINE.JADE_SERPENT,
   "activation-wondrous-figurine-jade-serpent":
@@ -181,6 +196,9 @@ export const CREATURES = {
 
   HEALING_SERVITOR:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.gqrW5aGfnjqNse2T",
+
+  HEALING_WELL:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.4JEJfYNtUzSuYxPW",
   TEMPEST_OF_SHADES:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.EwmHOiQTdCEmBKfA",
   ELEMENTAL_HERALD: {
@@ -194,6 +212,16 @@ export const CREATURES = {
       "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.5pPl44PJyTu14aZM",
     WOOD: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.y1WKpar1MIgAN45Y",
   },
+  MUNDANE: {
+    CANDLE:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.fTM3vgcCM5bAJmrS",
+    LANTERN_BULLSEYE:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.NYZhWZaM91h2pyrr",
+    LANTERN_HOODED:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.Fne56CFRula1SkY0",
+    TORCH:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.arDOv12cxLYNh2tW",
+  },
   FLUXWRAITH:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.3wO8dqpYCdGhIUla",
 
@@ -205,6 +233,8 @@ export const CREATURES = {
 
   SHADOW_SELF:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.nodnIFYW56Lk3mcY",
+
+  SWARMKEEPER_SWARM: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.OLl3yZYdsc3CLrld",
 
   DRAGON_TURRET:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.UGy4139EDrjbVDbv",

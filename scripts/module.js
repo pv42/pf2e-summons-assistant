@@ -96,7 +96,7 @@ Hooks.once("ready", async function () {
     if (isMechanic(chatMessage)) {
       setMechanicRelevantInfo(summonerActor, spellRelevantInfo);
     }
-    if (isSummoner(chatMessage)) {
+    if (isSummoner(chatMessage) || itemUuid === SOURCES.MISC.SWARM_FORTH) {
       setSummonerRelevantInfo(summonerActor, spellRelevantInfo);
     }
     if (itemUuid === SOURCES.COMMANDER.PLANT_BANNER) {

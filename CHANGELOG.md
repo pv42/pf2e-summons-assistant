@@ -1,5 +1,16 @@
 ## Unreleased
 
+## 1.26.0
+
+- **New**
+  - Added support for the following:
+    - `Healing Well` (💡 @Jamz)
+    - `Swarmkeeper's Swarm` - Basic Implementation, does not have a way to sync health to the Swarmkeeper
+    - `Torch`
+    - `Lantern (Bull's Eye)`
+    - `Lantern (Hooded)`
+    - `Candle`
+
 ## 1.25.9
 
 - Fixed plant banner range
@@ -33,7 +44,7 @@
 ## 1.25.2
 
 - **Updated**
-  - Made it so house rules only affect `Summon <X>` Spells as oppsoed to all spells (no more 16 AC walls) (🐛 @Nythz)
+  - Made it so house rules only affect `Summon <X>` Spells as opposed to all spells (no more 16 AC walls) (🐛 @Nythz)
 
 ## 1.25.1
 

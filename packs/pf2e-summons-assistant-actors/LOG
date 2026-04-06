@@ -1,14 +1,16 @@
-2026/03/19-22:38:08.440 c39c Recovering log #517
-2026/03/19-22:38:08.562 c39c Delete type=0 #517
-2026/03/19-22:38:08.562 c39c Delete type=3 #515
-2026/03/19-22:38:08.638 728c Level-0 table #523: started
-2026/03/19-22:38:08.695 728c Level-0 table #523: 102101 bytes OK
-2026/03/19-22:38:08.749 728c Delete type=0 #521
-2026/03/19-22:38:08.749 728c Manual compaction at level-0 from '!actors!03gFpid5kBiI3vXS' @ 72057594037927935 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at '!folders!vbIrzVZPMTgmlUMs' @ 2425 : 1
-2026/03/19-22:38:08.749 728c Compacting 1@0 + 1@1 files
-2026/03/19-22:38:08.807 728c Generated table #524@0: 115 keys, 102101 bytes
-2026/03/19-22:38:08.807 728c Compacted 1@0 + 1@1 files => 102101 bytes
-2026/03/19-22:38:08.859 728c compacted to: files[ 0 1 0 0 0 0 0 ]
-2026/03/19-22:38:08.860 728c Delete type=2 #519
-2026/03/19-22:38:08.873 728c Delete type=2 #523
-2026/03/19-22:38:08.873 728c Manual compaction at level-0 from '!folders!vbIrzVZPMTgmlUMs' @ 2425 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at (end)
+2026/04/06-01:55:19.954 1884 Recovering log #652
+2026/04/06-01:55:20.333 1884 Delete type=0 #652
+2026/04/06-01:55:20.333 1884 Delete type=3 #646
+2026/04/06-01:55:20.334 1884 Delete type=3 #649
+2026/04/06-01:55:20.398 9e18 Level-0 table #656: started
+2026/04/06-01:55:20.466 9e18 Level-0 table #656: 115795 bytes OK
+2026/04/06-01:55:20.520 9e18 Delete type=0 #654
+2026/04/06-01:55:20.520 9e18 Manual compaction at level-0 from '!actors!03gFpid5kBiI3vXS' @ 72057594037927935 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at '!folders!kBjBLs2CRkA6i1Kl' @ 2476 : 1
+2026/04/06-01:55:20.520 9e18 Compacting 2@0 + 1@1 files
+2026/04/06-01:55:20.593 9e18 Generated table #657@0: 134 keys, 115795 bytes
+2026/04/06-01:55:20.593 9e18 Compacted 2@0 + 1@1 files => 115795 bytes
+2026/04/06-01:55:20.674 9e18 compacted to: files[ 0 1 0 0 0 0 0 ]
+2026/04/06-01:55:20.674 9e18 Delete type=2 #519
+2026/04/06-01:55:20.674 9e18 Delete type=2 #647
+2026/04/06-01:55:20.675 9e18 Delete type=2 #656
+2026/04/06-01:55:20.675 9e18 Manual compaction at level-0 from '!folders!kBjBLs2CRkA6i1Kl' @ 2476 : 1 .. '!folders!vbIrzVZPMTgmlUMs' @ 0 : 0; will stop at (end)
