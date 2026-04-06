@@ -5,7 +5,7 @@
 - **New**
   - Added support for the following:
     - `Healing Well` (💡 @Jamz)
-    - `Swarmkeeper's Swarm` - Basic Implementation, does not have a way to sync health to the Swarmkeeper
+    - `Swarmkeeper's Swarm` - Basic Implementation, does not have a way to sync health to the Swarmkeeper (💡 @Kosovoy)
     - `Torch`
     - `Lantern (Bull's Eye)`
     - `Lantern (Hooded)`
