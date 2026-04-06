@@ -124,7 +124,12 @@ You can access the changelog [here](/CHANGELOG.md).
 ## Other Settings/Support
 
 - `Thrall Expiration Date` - Setting to have thralls auto expire (delete themselves when their effect is removed)
-- `Refresh Summons` - setting which when enabled will cause conditions that manipulate the actor's Spell DC (IE frightened, sickened, stupefied) to refresh their summons and thus updating any DCs/Attacks on them
+- `Refresh Summons` - Setting which when enabled will cause conditions that manipulate the actor's Spell DC (IE frightened, sickened, stupefied) to refresh their summons and thus updating any DCs/Attacks on them
+- `Disableable Summons` - At the top of the stting is a button that opens a dialog that lets you configure which summons automation you want enabled
+<img width="1174" height="825" alt="image" src="https://github.com/user-attachments/assets/5bb9740e-ec52-414e-b314-447ce88595d3" />
+- `Customizable Summons` - On item that summons (Spell/Action/Equipment/ etc.) there is a new sheet header button that will allow you to customize the summon as you wish
+<img width="958" height="655" alt="image" src="https://github.com/user-attachments/assets/098566d5-74ff-4b24-bfd7-bd1ccc7279fe" />
+
 
 ## Contributors
 
