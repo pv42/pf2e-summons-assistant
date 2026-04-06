@@ -1,5 +1,9 @@
 ## Unreleased
 
+- **New**
+  - Added Support for:
+    - `Ankou`/`Ozthoom`'s `Shadow Doubles` ability 
+
 ## 1.26.1
 
 - **New**

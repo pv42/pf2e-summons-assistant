@@ -84,6 +84,9 @@ const getSummonHandlers = () => ({
   [SOURCES.MISC.TELEKINETIC_HAND]: handlers.misc.handleTelekineticHand,
   [SOURCES.MISC.WOODEN_DOUBLE]: handlers.misc.handleWoodenDouble,
 
+  // Creature Abilities
+  [SOURCES.CREATURE_ABILITY.SHADOW_DOUBLES]: handlers.creatureAbility.handleShadowDouble,
+
   // Mundane
   [SOURCES.MUNDANE.CANDLE]: handlers.mundane.candle,
   [SOURCES.MUNDANE.LANTERN_BULLSEYE]: handlers.mundane.lanternBullseye,
@@ -559,6 +562,16 @@ const handlers = {
               showRange: true,
             },
           },
+        },
+      ];
+    },
+  },
+  creatureAbility: {
+    handleShadowDouble: async (_data) => {
+      return [
+        {
+          specific_uuids: [CREATURES.OZTHOOM_SHADOW_DOUBLE],
+          amount: 3
         },
       ];
     },

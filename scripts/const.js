@@ -62,6 +62,10 @@ export const SOURCES = {
     TORCH: "Compendium.pf2e.equipment-srd.Item.8Jdw4yAzWYylGePS",
   },
 
+  CREATURE_ABILITY: {
+    SHADOW_DOUBLES: "Actor.KE3Xq3ee3Yzmkygl.Item.Q0VRtsqm6etoZxCa",
+  },
+
   WALL: {
     WALL_OF_FIRE: "Compendium.pf2e.spells-srd.Item.IarZrgCeaiUqOuRu",
     WALL_OF_STONE: "Compendium.pf2e.spells-srd.Item.kOa055FIrO9Smnya",
@@ -135,6 +139,7 @@ export const SLUG_TO_SOURCE = {
   "plant-banner": SOURCES.COMMANDER.PLANT_BANNER,
   "protector-tree": SOURCES.MISC.PROTECTOR_TREE,
   "recurring-nightmare": SOURCES.NECROMANCER.RECURRING_NIGHTMARE,
+  "shadow-doubles": SOURCES.CREATURE_ABILITY.SHADOW_DOUBLES,
   "shadow-self": SOURCES.SHADOW_SELF,
   "skeletal-lancers": SOURCES.NECROMANCER.SKELETAL_LANCERS,
   "summon-animal": SOURCES.SUMMON.SUMMON_ANIMAL,
@@ -231,10 +236,14 @@ export const CREATURES = {
   WALL_OF_STONE:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HakOgoig5LWhcq1B",
 
+  OZTHOOM_SHADOW_DOUBLE:
+    "Compendium.pf2e.pathfinder-monster-core-2.Actor.wNa8UPQqSepdxscG",
+
   SHADOW_SELF:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.nodnIFYW56Lk3mcY",
 
-  SWARMKEEPER_SWARM: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.OLl3yZYdsc3CLrld",
+  SWARMKEEPER_SWARM:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.OLl3yZYdsc3CLrld",
 
   DRAGON_TURRET:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.UGy4139EDrjbVDbv",
