@@ -332,14 +332,11 @@
           {
             "effects": [
               {
-                "affects": "allies",
-                "uuid": "Compendium.pf2e.feat-effects.Item.JZWi6512m9RlMrNO"
+                "uuid": "Compendium.pf2e.feat-effects.Item.JZWi6512m9RlMrNO",
+                "affects": "allies"
               }
             ],
             "key": "Aura",
-            "predicate": [
-              "commanders-banner"
-            ],
             "radius": 30,
             "slug": "commanders-banner",
             "traits": [
@@ -385,11 +382,11 @@
         "compendiumSource": null,
         "duplicateSource": null,
         "exportSource": null,
-        "coreVersion": "13.346",
+        "coreVersion": "13.351",
         "systemId": "pf2e",
-        "systemVersion": "7.3.1",
+        "systemVersion": "7.12.1",
         "createdTime": 1754207756917,
-        "modifiedTime": 1754208042972,
+        "modifiedTime": 1775461376807,
         "lastModifiedBy": "vj8VUT8j7Wtzy3Y2"
       },
       "_key": "!actors.items!D8gtAM19NQKqbBfW.Ge8Il1I5HMi4rj0l"
@@ -401,6 +398,9 @@
       "summoner": {
         "signature": ""
       }
+    },
+    "pf2e": {
+      "maxhealingRank": 0
     }
   },
   "_stats": {
@@ -409,9 +409,9 @@
     "exportSource": null,
     "coreVersion": "13.351",
     "systemId": "pf2e",
-    "systemVersion": "7.3.1",
+    "systemVersion": "7.12.1",
     "createdTime": 1754207697469,
-    "modifiedTime": 1775454702448,
+    "modifiedTime": 1775461376927,
     "lastModifiedBy": "vj8VUT8j7Wtzy3Y2"
   },
   "_key": "!actors!D8gtAM19NQKqbBfW"

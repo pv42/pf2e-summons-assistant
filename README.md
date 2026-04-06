@@ -80,11 +80,18 @@ You can access the changelog [here](/CHANGELOG.md).
   - `Duplicate Foe` - Note: Does not work on Kineticist, does not copy over magical weapons only the strike form of them
   - `Dragon Turret`
   - `Floating Flame` - Art Requires `JB2a`
+  - `Healing Well`
   - `Light` - Only works when not targetting anyone (Art Requires `JB2a`)
   - `Protector Tree` - Does not do any automation as of yet
   - `Shadow Self`
+  - `Swarmkeeper's Swarm` - Basic Implementation, does not have a way to sync health to the Swarmkeeper currently
   - `Telekinetic Hand` - Art Requires `JB2a`
   - `Wooden Double` - Places Wooden Double, and then asks you to step, also handles the damage overflow if you toggle the setting
+- **Manual**
+  - `Torch`
+  - `Lantern (Bull's Eye)`
+  - `Lantern (Hooded)`
+  - `Candle`
 
 ### Feats
 

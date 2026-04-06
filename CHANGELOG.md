@@ -10,6 +10,8 @@
     - `Lantern (Bull's Eye)`
     - `Lantern (Hooded)`
     - `Candle`
+- **Updated**
+  - Fixed bug causing the `Plant Banner` to not actually apply the +1 against fear
 
 ## 1.25.9
 
