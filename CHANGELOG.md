@@ -1,5 +1,9 @@
 ## Unreleased
 
+## 1.27.1
+
+- Fixed bug causing module to fail (🐛 @Ottyn)
+
 ## 1.27.0
 
 - **New**

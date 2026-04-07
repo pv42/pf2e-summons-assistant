@@ -1,7 +1,7 @@
 import { MODULE_ID } from "./const.js";
 
 export function setupTurnReminders() {
-  if (!game.setttings.get(MODULE_ID, "reminder.message")) return;
+  if (!game.settings.get(MODULE_ID, "reminder.message")) return;
   Hooks.on("pf2e.startTurn", (combatant, _encounter) => {
     if (combatant.hasPlayerOwner) {
       if (combatant.isOwner) {
