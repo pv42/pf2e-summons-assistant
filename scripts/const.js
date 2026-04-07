@@ -50,6 +50,7 @@ export const SOURCES = {
     LIGHT: "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
     PHANTASMAL_MINION: "Compendium.pf2e.spells-srd.Item.xqmHD8JIjak15lRk",
     PROTECTOR_TREE: "Compendium.pf2e.spells-srd.Item.K9gI08enGtmih5X1",
+    RAISE_THE_HORDE: "Compendium.pf2e.actionspf2e.Item.ND1G3s4lXNUAXc1q",
     SHADOW_SELF: "Compendium.pf2e.feats-srd.Item.7YvOqcdp9Z0RALMp",
     SWARM_FORTH: "Compendium.pf2e.actionspf2e.Item.E48YTUyreo1kc9GM",
     TELEKINETIC_HAND: "Compendium.pf2e.spells-srd.Item.pwzdSlJgYqN7bs2w",
@@ -129,7 +130,7 @@ export const SLUG_TO_SOURCE = {
   "floating-flame": SOURCES.MISC.FLOATING_FLAME,
   "healing-well": SOURCES.MISC.HEALING_WELL,
   "inevitable-return": SOURCES.NECROMANCER.INEVITABLE_RETURN,
-  "instant-minefield": SOURCES.MISC.INSTANT_MINEFIELD
+  "instant-minefield": SOURCES.MISC.INSTANT_MINEFIELD,
   "jagged-berms": SOURCES.KINETICIST.JAGGED_BERMS,
   "lantern-bulls-eye": SOURCES.MUNDANE.LANTERN_BULLSEYE,
   "lantern-hooded": SOURCES.MUNDANE.LANTERN_HOODED,
@@ -140,6 +141,7 @@ export const SLUG_TO_SOURCE = {
   "phantasmal-minion": SOURCES.MISC.PHANTASMAL_MINION,
   "plant-banner": SOURCES.COMMANDER.PLANT_BANNER,
   "protector-tree": SOURCES.MISC.PROTECTOR_TREE,
+  "raise-the-horde": SOURCES.MISC.RAISE_THE_HORDE,
   "recurring-nightmare": SOURCES.NECROMANCER.RECURRING_NIGHTMARE,
   "shadow-doubles": SOURCES.CREATURE_ABILITY.SHADOW_DOUBLES,
   "shadow-self": SOURCES.SHADOW_SELF,
@@ -238,6 +240,7 @@ export const CREATURES = {
     TORCH:
       "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.arDOv12cxLYNh2tW",
   },
+  NECROLOGISTS_HORDE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.NnaI8Zd5ZFfz8zs2",
   NECROMANCER: {
     THRALL:
       "Compendium.pf2e-playtest-data.impossible-playtest-thralls.Actor.ISmLeI8zNc6YWysQ",

@@ -80,6 +80,7 @@ const getSummonHandlers = () => ({
   [SOURCES.MISC.LIGHT]: handlers.misc.handleLight,
   [SOURCES.MISC.INSTANT_MINEFIELD]: handlers.misc.handleInstantMinefield,
   [SOURCES.MISC.PROTECTOR_TREE]: handlers.misc.handleProtectorTree,
+  [SOURCES.MISC.RAISE_THE_HORDE]: handlers.misc.handleNecrologistsHorde,
   [SOURCES.MISC.SHADOW_SELF]: handlers.misc.handleShadowSelf,
   [SOURCES.MISC.SWARM_FORTH]: handlers.misc.handleSwarmkeepersSwarm,
   [SOURCES.MISC.TELEKINETIC_HAND]: handlers.misc.handleTelekineticHand,
@@ -437,6 +438,31 @@ const handlers = {
         ];
       }
       return null;
+    },
+
+    handleNecrologistsHorde: async (data) => {
+      const summonerActor = game.actors.get(data.summonerActorId);
+      return [
+        {
+          specific_uuids: [CREATURES.NECROLOGISTS_HORDE],
+          rank: data.summonerLevel,
+          modifications: {
+            "system.details.level.value": data.summonerLevel,
+            "system.attributes.ac.value":
+              summonerActor?.system?.attributes?.ac?.value,
+            "system.saves.fortitude.value":
+              summonerActor?.system?.saves?.fortitude?.value,
+            "system.saves.reflex.value":
+              summonerActor?.system?.saves?.reflex?.value,
+            "system.saves.will.value":
+              summonerActor?.system?.saves?.will?.value,
+            "system.perception.value": summonerActor?.system?.perception?.value,
+          },
+          crosshairParameters: {
+            distance: canvas.grid.distance * 1.5
+          },
+        },
+      ];
     },
 
     handleShadowSelf: (data) => {

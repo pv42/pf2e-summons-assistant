@@ -28,6 +28,7 @@ import { setupDisableItemHooks } from "./disableItems.js";
 import { setupAPI } from "./api.js";
 import { modifyActorsMenu } from "./customizeTokens.js";
 import { setupWallHooks } from "./specificCases/walls.js";
+import { setupTurnReminders } from "./summonReminder.js";
 
 Hooks.once("init", async function () {
   loadTemplates([`modules/${MODULE_ID}/templates/updateMessage.hbs`]);
@@ -46,6 +47,7 @@ Hooks.once("ready", async function () {
   handleUpdateMessage();
   setupSpecificHooks();
   setupDisableItemHooks();
+  setupTurnReminders();
 
   if (game.settings.get(MODULE_ID, "refresh.summons")) {
     setupSummonedTokenRefreshHooks();
@@ -96,7 +98,12 @@ Hooks.once("ready", async function () {
     if (isMechanic(chatMessage)) {
       setMechanicRelevantInfo(summonerActor, spellRelevantInfo);
     }
-    if (isSummoner(chatMessage) || itemUuid === SOURCES.MISC.SWARM_FORTH) {
+    if (
+      isSummoner(chatMessage) ||
+      [SOURCES.MISC.SWARM_FORTH, SOURCES.MISC.RAISE_THE_HORDE].includes(
+        itemUuid,
+      )
+    ) {
       setSummonerRelevantInfo(summonerActor, spellRelevantInfo);
     }
     if (itemUuid === SOURCES.COMMANDER.PLANT_BANNER) {

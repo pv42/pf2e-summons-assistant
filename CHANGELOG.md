@@ -1,10 +1,12 @@
 ## Unreleased
 
+## 1.27.0
+
 - **New**
   - Added Support for:
     - `Ankou`/`Ozthoom`'s `Shadow Doubles` ability
     - `Instant Minefield` (💡 @pv42)
-    - 
+    - `Necrologist's Horde` - Can sync health automatically to the summoner if you have the `PF2e Toolbelt` feature enabled (💡 @digitalshadowhawk)
 
 ## 1.26.1
 

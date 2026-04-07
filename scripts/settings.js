@@ -30,6 +30,17 @@ export function setupSettings() {
     type: Boolean,
   });
 
+  game.settings.register(MODULE_ID, "reminder.message", {
+    name: `${MODULE_ID}.module-settings.reminder.message.name`,
+    hint: `${MODULE_ID}.module-settings.reminder.message.hint`,
+    requiresReload: false,
+    scope: "world",
+    config: true,
+    default: true,
+    type: Boolean,
+    requiresReload: true,
+  });
+
 
   game.settings.register(MODULE_ID, "filter.default.token-with-art", {
     name: `${MODULE_ID}.module-settings.filter.default.token-with-art.name`,

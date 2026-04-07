@@ -32,6 +32,7 @@ _a Thanks to Vauxs for updating [Foundry Summons](https://foundryvtt.com/package
     - [Feats](#feats)
     - [Items](#items)
     - [SF2e](#sf2e)
+  - [Monster Actions](#monster-actions)
   - [Supported House Rules](#supported-house-rules)
   - [Other Settings/Support](#other-settingssupport)
   - [Contributors](#contributors)
@@ -81,17 +82,12 @@ You can access the changelog [here](/CHANGELOG.md).
   - `Dragon Turret`
   - `Floating Flame` - Art Requires `JB2a`
   - `Healing Well`
+  - `Instant Minefield`
   - `Light` - Only works when not targetting anyone (Art Requires `JB2a`)
   - `Protector Tree` - Does not do any automation as of yet
   - `Shadow Self`
-  - `Swarmkeeper's Swarm` - Can sync health automatically to the summoner if you have the `PF2e Toolbelt` feature enabled
   - `Telekinetic Hand` - Art Requires `JB2a`
   - `Wooden Double` - Places Wooden Double, and then asks you to step, also handles the damage overflow if you toggle the setting
-- **Manual**
-  - `Torch`
-  - `Lantern (Bull's Eye)`
-  - `Lantern (Hooded)`
-  - `Candle`
 
 ### Feats
 
@@ -102,9 +98,16 @@ You can access the changelog [here](/CHANGELOG.md).
   - `Jagged Berm` - Requires `JB2a` free for the spikes
 - **Misc**
   - `Call Ursine Ally`
+  - `Necrologist Dedication` - Can sync health automatically to the summoner if you have the `PF2e Toolbelt` feature enabled
+  - `Swarmkeeper Dedication` - Can sync health automatically to the summoner if you have the `PF2e Toolbelt` feature enabled
 
 ### Items
 
+- **Mundane**
+  - `Torch`
+  - `Lantern (Bull's Eye)`
+  - `Lantern (Hooded)`
+  - `Candle`
 - **Wondrous Figurine**
   - `Jade Serpent`
 
@@ -116,6 +119,13 @@ You can access the changelog [here](/CHANGELOG.md).
   - `Mine`
   - `Double Deploy`
 
+## Monster Actions
+
+- `Ankou`
+  - `Shadow Doubles`
+- `Ozthoom`
+  - `Shadow Doubles`
+
 ## Supported House Rules
 
 - **Summon Spells are Rank + 1**. - Treat summon spells as rank + 1 for creatures it summons
@@ -126,12 +136,10 @@ You can access the changelog [here](/CHANGELOG.md).
 - `Thrall Expiration Date` - Setting to have thralls auto expire (delete themselves when their effect is removed)
 - `Refresh Summons` - Setting which when enabled will cause conditions that manipulate the actor's Spell DC (IE frightened, sickened, stupefied) to refresh their summons and thus updating any DCs/Attacks on them
 - `Disableable Summons` - At the top of the stting is a button that opens a dialog that lets you configure which summons automation you want enabled
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/a3dacc09-ef60-4305-99e9-68dee50c89cb" />
-
+  <img width="400" alt="image" src="https://github.com/user-attachments/assets/a3dacc09-ef60-4305-99e9-68dee50c89cb" />
 
 - `Customizable Summons` - On item that summons (Spell/Action/Equipment/ etc.) there is a new sheet header button that will allow you to customize the summon as you wish
-<img width="400" alt="image" src="https://github.com/user-attachments/assets/098566d5-74ff-4b24-bfd7-bd1ccc7279fe" />
-
+  <img width="400" alt="image" src="https://github.com/user-attachments/assets/098566d5-74ff-4b24-bfd7-bd1ccc7279fe" />
 
 ## Contributors
 
