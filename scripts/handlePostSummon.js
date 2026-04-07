@@ -160,6 +160,7 @@ export async function handlePostSummon(
 
       break;
 
+    case SOURCES.MISC.RAISE_THE_HORDE:
     case SOURCES.MISC.SWARM_FORTH:
       const actor = canvas.tokens.placeables.find(
         (tok) => tok?.actor?.id === summonedActorID,
