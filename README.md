@@ -37,6 +37,10 @@ _a Thanks to Vauxs for updating [Foundry Summons](https://foundryvtt.com/package
   - [Other Settings/Support](#other-settingssupport)
   - [Contributors](#contributors)
   - [Assets](#assets)
+ 
+## How it works
+
+This module *generally* detects a message from a particular item/action/feat/spell that is in it's list, theneither presents the user with a choice of which summon to summon in the case of a `Summon X` spell first, or if it is only a single option or they selected the Summon they want, asks you to place the summon where you want it on the board. This is for the "average" case some cases (IE Wall of Stone) handle themselves a bit differently.
 
 ## Changelog
 
