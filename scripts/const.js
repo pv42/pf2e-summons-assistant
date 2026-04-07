@@ -46,6 +46,7 @@ export const SOURCES = {
     DUPLICATE_FOE: "Compendium.pf2e.spells-srd.Item.73rToy0v5Ra9NvL6",
     FLOATING_FLAME: "Compendium.pf2e.spells-srd.Item.2ZdHjnpEQJuqOYSG",
     HEALING_WELL: "Compendium.pf2e.spells-srd.Item.CzjQtkRuRlzRvwzg",
+    INSTANT_MINEFIELD: "Compendium.pf2e.spells-srd.Item.vuehhQN8gPSpqcEK",
     LIGHT: "Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4",
     PHANTASMAL_MINION: "Compendium.pf2e.spells-srd.Item.xqmHD8JIjak15lRk",
     PROTECTOR_TREE: "Compendium.pf2e.spells-srd.Item.K9gI08enGtmih5X1",
@@ -128,6 +129,7 @@ export const SLUG_TO_SOURCE = {
   "floating-flame": SOURCES.MISC.FLOATING_FLAME,
   "healing-well": SOURCES.MISC.HEALING_WELL,
   "inevitable-return": SOURCES.NECROMANCER.INEVITABLE_RETURN,
+  "instant-minefield": SOURCES.MISC.INSTANT_MINEFIELD
   "jagged-berms": SOURCES.KINETICIST.JAGGED_BERMS,
   "lantern-bulls-eye": SOURCES.MUNDANE.LANTERN_BULLSEYE,
   "lantern-hooded": SOURCES.MUNDANE.LANTERN_HOODED,
@@ -172,40 +174,18 @@ export const SLUG_TO_SOURCE = {
 };
 
 export const CREATURES = {
-  PHANTASMAL_MINION:
-    "Compendium.pf2e.pathfinder-bestiary.Actor.j7NNPfZwD19BwSEZ",
-  LIGHT: {
-    BLUE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.REPqt5wULBcqIM97",
-    DARK_BLUE:
-      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.5nY61gR66kynnp5q",
-    GREEN:
-      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.oESGKDON1Fi3dETS",
-    WHITE:
-      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.pRL4h1K1hHBkEbIE",
-    YELLOW:
-      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.wth1JZ22hGEusEC5",
-  },
-  FLOATING_FLAME:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HOq9yGxQLhhZcEAP",
-  TELEKINETIC_HAND:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.llXyX6eS8UHGqpnn",
-
-  DUPLICATE_FOE:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.03gFpid5kBiI3vXS",
-
   AVENGING_WILDWOOD:
     "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.LB2e6ze90XNiwFcW",
-
-  WOODEN_DOUBLE:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.WNBOiDVexWG6DwCO",
-
-  HEALING_SERVITOR:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.gqrW5aGfnjqNse2T",
-
-  HEALING_WELL:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.4JEJfYNtUzSuYxPW",
-  TEMPEST_OF_SHADES:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.EwmHOiQTdCEmBKfA",
+  BLACK_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.xxP5FJotshmUQNtY",
+  CAVE_BEAR: "Compendium.pf2e.pathfinder-monster-core.Actor.AZIG0COCaDBronJa",
+  COMMANDER: {
+    PLANTED_BANNER:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.D8gtAM19NQKqbBfW",
+  },
+  DRAGON_TURRET:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.UGy4139EDrjbVDbv",
+  DUPLICATE_FOE:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.03gFpid5kBiI3vXS",
   ELEMENTAL_HERALD: {
     AIR: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.upqvdqYb387AV0mW",
     EARTH:
@@ -217,6 +197,37 @@ export const CREATURES = {
       "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.5pPl44PJyTu14aZM",
     WOOD: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.y1WKpar1MIgAN45Y",
   },
+  FLOATING_FLAME:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HOq9yGxQLhhZcEAP",
+  FLUXWRAITH:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.3wO8dqpYCdGhIUla",
+  GIANT_VIPER: "Compendium.pf2e.pathfinder-monster-core.Actor.AJ5LuNMVPLCydryP",
+  GRIZZLY_BEAR:
+    "Compendium.pf2e.pathfinder-monster-core.Actor.6K4RWus85o8iqy0t",
+  HEALING_SERVITOR:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.gqrW5aGfnjqNse2T",
+  HEALING_WELL:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.4JEJfYNtUzSuYxPW",
+  INSTANT_MINEFIELD_MINE:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.uQjg9X2YxIUCuqyF",
+  KINETICIST: {
+    JAGGED_BERMS:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.Q93AQlbUTJcPlxYI",
+  },
+  LIGHT: {
+    BLUE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.REPqt5wULBcqIM97",
+    DARK_BLUE:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.5nY61gR66kynnp5q",
+    GREEN:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.oESGKDON1Fi3dETS",
+    WHITE:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.pRL4h1K1hHBkEbIE",
+    YELLOW:
+      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.wth1JZ22hGEusEC5",
+  },
+  MECHANIC: {
+    MINE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.sAVuxP25VE126TdZ",
+  },
   MUNDANE: {
     CANDLE:
       "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.fTM3vgcCM5bAJmrS",
@@ -227,52 +238,6 @@ export const CREATURES = {
     TORCH:
       "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.arDOv12cxLYNh2tW",
   },
-  FLUXWRAITH:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.3wO8dqpYCdGhIUla",
-
-  WALL_OF_FIRE:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.r60N6I3qmqC8K965",
-
-  WALL_OF_STONE:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HakOgoig5LWhcq1B",
-
-  OZTHOOM_SHADOW_DOUBLE:
-    "Compendium.pf2e.pathfinder-monster-core-2.Actor.wNa8UPQqSepdxscG",
-
-  SHADOW_SELF:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.nodnIFYW56Lk3mcY",
-
-  SWARMKEEPER_SWARM:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.OLl3yZYdsc3CLrld",
-
-  DRAGON_TURRET:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.UGy4139EDrjbVDbv",
-
-  BLACK_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.xxP5FJotshmUQNtY",
-  GRIZZLY_BEAR:
-    "Compendium.pf2e.pathfinder-monster-core.Actor.6K4RWus85o8iqy0t",
-  POLAR_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.UqFObUjgFAlWrriA",
-  CAVE_BEAR: "Compendium.pf2e.pathfinder-monster-core.Actor.AZIG0COCaDBronJa",
-
-  GIANT_VIPER: "Compendium.pf2e.pathfinder-monster-core.Actor.AJ5LuNMVPLCydryP",
-
-  PROTECTOR_TREE:
-    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.jVsAEp6bR4mXtwHQ",
-
-  COMMANDER: {
-    PLANTED_BANNER:
-      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.D8gtAM19NQKqbBfW",
-  },
-
-  KINETICIST: {
-    JAGGED_BERMS:
-      "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.Q93AQlbUTJcPlxYI",
-  },
-
-  MECHANIC: {
-    MINE: "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.sAVuxP25VE126TdZ",
-  },
-
   NECROMANCER: {
     THRALL:
       "Compendium.pf2e-playtest-data.impossible-playtest-thralls.Actor.ISmLeI8zNc6YWysQ",
@@ -287,6 +252,27 @@ export const CREATURES = {
     CONGLOMERATE_OF_LIMBS:
       "Compendium.pf2e-playtest-data.impossible-playtest-thralls.Actor.Xuy2zf3qpsmm8wbb",
   },
+  OZTHOOM_SHADOW_DOUBLE:
+    "Compendium.pf2e.pathfinder-monster-core-2.Actor.wNa8UPQqSepdxscG",
+  PHANTASMAL_MINION:
+    "Compendium.pf2e.pathfinder-bestiary.Actor.j7NNPfZwD19BwSEZ",
+  POLAR_BEAR: "Compendium.pf2e.pathfinder-bestiary-2.Actor.UqFObUjgFAlWrriA",
+  PROTECTOR_TREE:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.jVsAEp6bR4mXtwHQ",
+  SHADOW_SELF:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.nodnIFYW56Lk3mcY",
+  SWARMKEEPER_SWARM:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.OLl3yZYdsc3CLrld",
+  TELEKINETIC_HAND:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.llXyX6eS8UHGqpnn",
+  TEMPEST_OF_SHADES:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.EwmHOiQTdCEmBKfA",
+  WALL_OF_FIRE:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.r60N6I3qmqC8K965",
+  WALL_OF_STONE:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.HakOgoig5LWhcq1B",
+  WOODEN_DOUBLE:
+    "Compendium.pf2e-summons-assistant.pf2e-summons-assistant-actors.Actor.WNBOiDVexWG6DwCO",
 };
 
 export const FEATS = {

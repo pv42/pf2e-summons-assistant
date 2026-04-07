@@ -2,7 +2,9 @@
 
 - **New**
   - Added Support for:
-    - `Ankou`/`Ozthoom`'s `Shadow Doubles` ability 
+    - `Ankou`/`Ozthoom`'s `Shadow Doubles` ability
+    - `Instant Minefield` (💡 @pv42)
+    - 
 
 ## 1.26.1
 

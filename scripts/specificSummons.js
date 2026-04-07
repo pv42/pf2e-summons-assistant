@@ -78,6 +78,7 @@ const getSummonHandlers = () => ({
   [SOURCES.MISC.FLOATING_FLAME]: handlers.misc.handleFloatingFlame,
   [SOURCES.MISC.HEALING_WELL]: handlers.misc.handleHealingWell,
   [SOURCES.MISC.LIGHT]: handlers.misc.handleLight,
+  [SOURCES.MISC.INSTANT_MINEFIELD]: handlers.misc.handleInstantMinefield,
   [SOURCES.MISC.PROTECTOR_TREE]: handlers.misc.handleProtectorTree,
   [SOURCES.MISC.SHADOW_SELF]: handlers.misc.handleShadowSelf,
   [SOURCES.MISC.SWARM_FORTH]: handlers.misc.handleSwarmkeepersSwarm,
@@ -85,7 +86,8 @@ const getSummonHandlers = () => ({
   [SOURCES.MISC.WOODEN_DOUBLE]: handlers.misc.handleWoodenDouble,
 
   // Creature Abilities
-  [SOURCES.CREATURE_ABILITY.SHADOW_DOUBLES]: handlers.creatureAbility.handleShadowDouble,
+  [SOURCES.CREATURE_ABILITY.SHADOW_DOUBLES]:
+    handlers.creatureAbility.handleShadowDouble,
 
   // Mundane
   [SOURCES.MUNDANE.CANDLE]: handlers.mundane.candle,
@@ -400,6 +402,22 @@ const handlers = {
       ];
     },
 
+    handleInstantMinefield: async (data) => {
+      return [
+        {
+          specific_uuids: [CREATURES.INSTANT_MINEFIELD_MINE],
+          amount: 5,
+          rank: data.rank,
+          modifications: {
+            "system.details.level.value": data.rank,
+            "system.skills.stealth.value": data.dc,
+            "system.attributes.classDC.value": data.dc,
+            hidden: game.user.isGM,
+          },
+        },
+      ];
+    },
+
     handleLight: async (data) => {
       if (hasNoTargets()) {
         return [
@@ -571,7 +589,7 @@ const handlers = {
       return [
         {
           specific_uuids: [CREATURES.OZTHOOM_SHADOW_DOUBLE],
-          amount: 3
+          amount: 3,
         },
       ];
     },
